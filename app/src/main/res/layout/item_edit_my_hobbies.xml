@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/hobbies_icon" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/interests"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.bloomidea.inspirers.customViews.MyExpandableLayout
+                    android:id="@+id/expandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="500"
+                    app:el_parallax="0"
+                    app:el_expanded="false">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/hobbies_recyclerview"
+                        />
+                </com.bloomidea.inspirers.customViews.MyExpandableLayout>
+
+                <TextView
+                    android:id="@+id/no_hobbies"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:text="@string/hobbies_none" />
+            </RelativeLayout>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/view_more_no_underline"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:background="@drawable/spinner_back_no_line_no_padding">
+                <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                    android:background="@android:color/transparent"
+                    android:id="@+id/hobbie_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/text_color_333333"
+                    android:textColorHint="@color/text_color_999999"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:typeface="normal"
+                    android:ems="10"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:paddingLeft="10dp"
+                    android:hint="@string/hobbies_hint"
+                    android:text=""/>
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:id="@+id/ok_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:maxLines="1"
+                    android:layout_marginLeft="10dp"
+                    android:typeface="normal"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/text_color_999999"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:text="@string/ok"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:maxLines="1"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:typeface="normal"
+        android:textColor="#ffffff"
+        android:textColorHint="@color/text_color_999999"
+        android:textSize="@dimen/morebiRounded_10pt"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:text="@string/save"/>
+</LinearLayout>

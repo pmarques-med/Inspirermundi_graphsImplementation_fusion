@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:paddingBottom="4dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/badge_imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/grandparenting" />
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2 afilhados"
+        android:ellipsize="end"
+        android:id="@+id/badge_text_textView"
+        android:typeface="normal"
+        android:textColor="@color/text_color_666666"
+        android:textSize="@dimen/morebiRounded_7pt"/>
+</LinearLayout>

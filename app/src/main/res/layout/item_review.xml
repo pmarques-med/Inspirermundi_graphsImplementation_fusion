@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc"/>
+    <RelativeLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/default_avatar"
+            app:civ_border_color="#00ffffff"
+            app:civ_border_width="0dp" />
+
+        <com.bloomidea.inspirers.customViews.ProgressBar
+            android:id="@+id/profile_image_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/user_name_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Rui"
+        android:textStyle="bold"
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/morebiRounded_10pt"
+        android:typeface="normal" />
+    <com.github.ornolfr.ratingview.RatingView
+        android:id="@+id/evaluation_ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:drawable_empty="@drawable/icon_star_empty"
+        app:drawable_filled="@drawable/icon_star_filled"
+        app:drawable_half="@drawable/icon_star_half"
+        android:layout_marginTop="5dp"
+        app:drawable_margin="0dp"
+        app:drawable_size="16dp"
+        app:is_indicator="true"
+        app:max_count="5"
+        app:rating="3.5" />
+
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/rating_text_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/morebiRounded_9pt"
+        android:typeface="normal" />
+
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/date_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="10/9/2016 - 12:25"
+        android:textStyle="bold"
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/morebiRounded_7pt"
+        android:typeface="normal"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+</LinearLayout>

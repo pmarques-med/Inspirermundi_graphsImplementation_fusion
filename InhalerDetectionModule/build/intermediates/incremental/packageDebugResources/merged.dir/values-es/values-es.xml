@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InspirerMundi</string>
+    <string name="back_button_text">Volver</string>
+    <string name="cancel_button_text">Cancelar</string>
+    <string name="capture_delta">InspirerMundi</string>
+    <string name="confirm_doses">Confirma las dosis restantes en tu inhalador</string>
+    <string name="continue_button_text">Continuar</string>
+    <string name="detect_remanining_doses">Después de hacer las nn inhalaciones, toca en Iniciar para detectar las dosis restantes.</string>
+    <string name="fail_message">Detección terminada	</string>
+    <string name="ok_text">Siguiente</string>
+    <string name="permission_error_text">Necesitas dar ambos permisos para avanzar, por favor intenta de nuevo!</string>
+    <string name="permission_error_title">Error</string>
+    <string name="permission_request_text">Necesitamos que nos autorices a acceder a la cámara y la tarjeta de memoria para guardar algunas fotos para el análisis.</string>
+    <string name="permission_request_title">Solicitud de permisos</string>
+    <string name="pre_rec_checkbox_instructions">No volver a mostrar este mensaje</string>
+    <string name="pre_rec_instruction_notemplate">Toca el botón Inicio y coloca tu medicamento dentro del cuadro de color en la vista de camera.</string>
+    <string name="pre_rec_instructions">Tendrás que colocar tu inhalador de acuerdo con el contorno de color. Las dosis restantes serán detectadas usando la cámara.</string>
+    <string name="retry_text">Reiniciar</string>
+    <string name="start_button_text">Inicio</string>
+    <string name="success_message">¡Detectado correctamente!</string>
+    <string name="title_activity_main">InspirerMundi</string>
+</resources>

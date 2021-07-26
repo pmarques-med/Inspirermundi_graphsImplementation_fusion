@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/activity_vertical_margin_mult_2"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingTop="5dp"
+    android:gravity="bottom|left">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/default_avatar" />
+
+        <com.bloomidea.inspirers.customViews.ProgressBar
+            android:id="@+id/avatar_progressbar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="-5dp"
+        app:srcCompat="@drawable/triangle_other_msg" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="1">
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:typeface="normal"
+            android:id="@+id/msg_text"
+            android:textSize="@dimen/morebiRounded_9pt"
+            android:textColor="@color/text_color_333333"
+            android:background="@drawable/item_other_msg_background"
+            android:text="Lorem ipsum a"/>
+    </LinearLayout>
+
+</LinearLayout>

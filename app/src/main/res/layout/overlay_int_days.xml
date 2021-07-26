@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin_x2"
+        android:layout_marginRight="@dimen/activity_horizontal_margin_x2"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_x3"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin_x3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:typeface="normal"
+            android:text="@string/overlay_int_days"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:textSize="@dimen/morebiRounded_10pt" />
+
+        <LinearLayout
+            android:padding="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/btn_days_less"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:maxLines="1"
+                android:textColor="#33cc99"
+                android:textSize="@dimen/morebiRounded_14pt"
+                android:text="-" />
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/text_int_days"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:typeface="normal"
+                android:text="a cada 5 dias"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:textSize="@dimen/morebiRounded_10pt" />
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/btn_days_more"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:textColor="#33cc99"
+                android:textSize="@dimen/morebiRounded_14pt"
+                android:text="+" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

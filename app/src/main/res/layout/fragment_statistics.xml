@@ -1,0 +1,380 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:background="#eeeeee"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    android:clipToPadding="false"
+    tools:context="com.bloomidea.inspirers.StatisticsFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--  original pie graphs      -->
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:background="#ffffff"-->
+        <!--            android:padding="@dimen/activity_horizontal_margin"-->
+        <!--            android:weightSum="3"-->
+        <!--            android:gravity="center_vertical">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1.25"-->
+        <!--                android:layout_marginRight="5dp"-->
+        <!--                android:orientation="vertical">-->
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:id="@+id/begin_textView"-->
+        <!--                    android:textSize="@dimen/morebiRounded_9pt"-->
+        <!--                    android:text="@string/stats_beginning_text1"/>-->
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:id="@+id/begin_textView2"-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    android:includeFontPadding="false"-->
+        <!--                    android:textSize="@dimen/morebiRounded_9pt"-->
+        <!--                    android:text="@string/stats_beginning_text2"/>-->
+
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:id="@+id/init_date_textView"-->
+        <!--                    android:textSize="@dimen/morebiRounded_7pt"-->
+        <!--                    android:layout_marginTop="10dp"-->
+        <!--                    android:text="@string/stats_started_in"/>-->
+        <!--            </LinearLayout>-->
+
+        <!--            <RelativeLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1.75"-->
+        <!--                android:layout_marginLeft="5dp">-->
+        <!--                <com.bloomidea.inspirers.customViews.SquareDonutProgress-->
+        <!--                    android:id="@+id/stats_begining_donut_progress"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:rotation="270"-->
+        <!--                    android:layout_alignParentLeft="true"-->
+        <!--                    android:layout_alignParentTop="true"-->
+        <!--                    custom:donut_finished_color="#eeeeee"-->
+        <!--                    custom:donut_finished_stroke_width="15dp"-->
+        <!--                    custom:donut_max="100"-->
+        <!--                    custom:donut_progress="25"-->
+        <!--                    custom:donut_text_size="0sp"-->
+        <!--                    custom:donut_unfinished_color="@color/colorPrimary"-->
+        <!--                    custom:donut_unfinished_stroke_width="15dp" />-->
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:orientation="horizontal"-->
+        <!--                    android:layout_centerInParent="true">-->
+        <!--                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:textSize="@dimen/morebiRounded_21pt"-->
+        <!--                        android:typeface="normal"-->
+        <!--                        android:id="@+id/percent_beginning_textview"-->
+        <!--                        android:text="75"/>-->
+        <!--                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:typeface="normal"-->
+        <!--                        android:textSize="@dimen/morebiRounded_12pt"-->
+        <!--                        android:text="%"/>-->
+        <!--                </LinearLayout>-->
+        <!--            </RelativeLayout>-->
+        <!--        </LinearLayout>-->
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:background="#ffffff"-->
+        <!--            android:weightSum="3"-->
+        <!--            android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+        <!--            android:padding="@dimen/activity_horizontal_margin"-->
+        <!--            android:gravity="center_vertical">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1.25"-->
+        <!--                android:layout_marginRight="5dp"-->
+        <!--                android:orientation="vertical">-->
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:textSize="@dimen/morebiRounded_9pt"-->
+        <!--                    android:text="@string/stats_month_text1"/>-->
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    android:includeFontPadding="false"-->
+        <!--                    android:textSize="@dimen/morebiRounded_9pt"-->
+        <!--                    android:text="@string/stats_month_text2"/>-->
+        <!--            </LinearLayout>-->
+
+        <!--            <RelativeLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1.75"-->
+        <!--                android:layout_marginLeft="5dp">-->
+        <!--                <com.bloomidea.inspirers.customViews.SquareDonutProgress-->
+        <!--                    android:id="@+id/stats_month_donut_progress"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:layout_alignParentLeft="true"-->
+        <!--                    android:layout_alignParentTop="true"-->
+        <!--                    custom:donut_finished_color="#eeeeee"-->
+        <!--                    custom:donut_finished_stroke_width="15dp"-->
+        <!--                    custom:donut_max="100"-->
+        <!--                    android:rotation="270"-->
+        <!--                    custom:donut_progress="25"-->
+        <!--                    custom:donut_text_size="0sp"-->
+        <!--                    custom:donut_unfinished_color="@color/colorPrimary"-->
+        <!--                    custom:donut_unfinished_stroke_width="15dp" />-->
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:orientation="horizontal"-->
+        <!--                    android:layout_centerInParent="true">-->
+        <!--                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:textSize="@dimen/morebiRounded_21pt"-->
+        <!--                        android:typeface="normal"-->
+        <!--                        android:id="@+id/percent_month_textview"-->
+        <!--                        android:text="75"/>-->
+        <!--                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:typeface="normal"-->
+        <!--                        android:textSize="@dimen/morebiRounded_12pt"-->
+        <!--                        android:text="%"/>-->
+        <!--                </LinearLayout>-->
+        <!--            </RelativeLayout>-->
+        <!--        </LinearLayout>-->
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:background="#ffffff"-->
+        <!--            android:weightSum="3"-->
+        <!--            android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+        <!--            android:padding="@dimen/activity_horizontal_margin"-->
+        <!--            android:gravity="center_vertical">-->
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1.25"-->
+        <!--                android:layout_marginRight="5dp"-->
+        <!--                android:orientation="vertical">-->
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:textSize="@dimen/morebiRounded_9pt"-->
+        <!--                    android:text="@string/stats_month_text1"/>-->
+        <!--                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:typeface="normal"-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    android:includeFontPadding="false"-->
+        <!--                    android:textSize="@dimen/morebiRounded_9pt"-->
+        <!--                    android:text="@string/stats_7_days_text2"/>-->
+        <!--            </LinearLayout>-->
+
+        <!--            <RelativeLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_weight="1.75"-->
+        <!--                android:layout_marginLeft="5dp">-->
+        <!--                <com.bloomidea.inspirers.customViews.SquareDonutProgress-->
+        <!--                    android:id="@+id/stats_7_days_donut_progress"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:layout_alignParentLeft="true"-->
+        <!--                    android:layout_alignParentTop="true"-->
+        <!--                    custom:donut_finished_color="#eeeeee"-->
+        <!--                    custom:donut_finished_stroke_width="15dp"-->
+        <!--                    custom:donut_max="100"-->
+        <!--                    custom:donut_progress="25"-->
+        <!--                    android:rotation="270"-->
+        <!--                    custom:donut_text_size="0sp"-->
+        <!--                    custom:donut_unfinished_color="@color/colorPrimary"-->
+        <!--                    custom:donut_unfinished_stroke_width="15dp" />-->
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:orientation="horizontal"-->
+        <!--                    android:layout_centerInParent="true">-->
+        <!--                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:textSize="@dimen/morebiRounded_21pt"-->
+        <!--                        android:typeface="normal"-->
+        <!--                        android:id="@+id/percent_7_days_textview"-->
+        <!--                        android:text="75"/>-->
+        <!--                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:typeface="normal"-->
+        <!--                        android:textSize="@dimen/morebiRounded_12pt"-->
+        <!--                        android:text="%"/>-->
+        <!--                </LinearLayout>-->
+        <!--            </RelativeLayout>-->
+        <!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#ffffff"
+            android:weightSum="3"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/CARAT_T"
+                android:textColor="@color/text_color_333333"
+                android:textSize="@dimen/morebiRounded_9pt"
+                android:textStyle="bold" />
+
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/areaGraphCARATTotal"
+                android:layout_width="match_parent"
+                android:layout_height="435dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            android:weightSum="3"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/timeLineGraphAdherenceVSCARATTotal"
+                android:layout_width="370dp"
+                android:layout_height="435dp"
+                android:layout_marginTop="32dp" />
+
+            <TextView
+                android:id="@+id/textViewLeftAxisLabel"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-365dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:text="@string/adherence" />
+
+            <TextView
+                android:id="@+id/textViewRightAxisLabel"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:text="@string/CARAT_T" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="#ffffff"
+            android:orientation="horizontal"
+            android:paddingBottom="40dp"
+            android:weightSum="3">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieGraphAdherence"
+                android:layout_width="154dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="4dp"
+
+                />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieGraphCaratTotal"
+                android:layout_width="154dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieGraphSymptomsLeisure"
+                android:layout_width="154dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="-352dp"
+                android:layout_marginTop="144dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieGraphSymptomsWork"
+                android:layout_width="154dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="144dp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieGraphSymptomsHealth"
+                android:layout_width="154dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="-250dp"
+                android:layout_marginTop="282dp" />
+
+
+            <SeekBar
+                android:id="@+id/seekBarSummaryPieGraphsWeek"
+                android:layout_width="173dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="-160dp"
+                android:layout_marginTop="440dp" />
+
+            <TextView
+                android:id="@+id/textViewSummaryPieGraphsWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-160dp"
+                android:layout_marginTop="425dp"
+                android:text="@string/Week_default" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

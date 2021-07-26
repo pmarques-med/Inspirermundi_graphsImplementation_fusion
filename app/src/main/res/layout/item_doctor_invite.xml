@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_666666"
+            android:text="@string/doctor"
+            android:typeface="normal"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textSize="@dimen/morebiRounded_7pt"/>
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_666666"
+            android:typeface="normal"
+            android:text="@string/share_with_doctor_text"
+            android:gravity="center"
+            android:textSize="@dimen/morebiRounded_7pt"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#66cc99"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+        android:paddingLeft="@dimen/activity_vertical_margin_mult_2"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:id="@+id/share_doctor_btn"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/share_with_doctor_icon" />
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:typeface="normal"
+            android:text="@string/share_with_doctor_btn"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+            android:textSize="@dimen/morebiRounded_7pt"/>
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/arrow_right" />
+    </LinearLayout>
+</LinearLayout>

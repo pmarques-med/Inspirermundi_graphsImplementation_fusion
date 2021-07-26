@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black_overlay_tutorial">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_x2"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin_x3"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:cropToPadding="false"
+                    android:src="@drawable/asset45">
+
+                </ImageView>
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:id="@+id/tutorial_text"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:typeface="normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:text="@string/tutorial_text_one" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/tutorial_image"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:src="@drawable/asset46">
+
+            </ImageView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/tutorial_back"
+            android:background="@drawable/spinner_back_gray_no_line"
+            android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+            android:layout_weight="0.5"
+            android:typeface="normal"
+            android:gravity="center"
+            app:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/morebiRounded_14pt"
+            android:text="@string/tutorial_text_back" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/tutorial_next"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:layout_weight="0.5"
+            android:typeface="normal"
+            android:gravity="center"
+            app:textAllCaps="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/morebiRounded_14pt"
+            android:text="@string/tutorial_text_next" />
+
+    </LinearLayout>
+
+</LinearLayout>

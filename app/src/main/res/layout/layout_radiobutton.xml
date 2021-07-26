@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.bloomidea.inspirers.customViews.MorebiRoundedRadioButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:text="teste"
+    android:textSize="@dimen/morebiRounded_10pt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#333333"
+    android:layout_weight="1"
+    android:padding="5dp"
+    android:typeface="normal"
+    android:background="@android:color/transparent"
+    android:button="@drawable/checkbox"/>

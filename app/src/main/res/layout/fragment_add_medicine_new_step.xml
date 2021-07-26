@@ -1,0 +1,471 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    tools:context="com.bloomidea.inspirers.AddMedicineNewStep2">
+
+    <ScrollView
+        android:id="@+id/scrollViewStep"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:background="#eeeeee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/medicine_type_icon_imageView"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/medicine_green_back"
+                    android:src="@drawable/timeline_logo_pils"
+                    android:padding="12dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                        android:id="@+id/medicine_name_textView"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:textColor="@color/text_color_333333"
+                        android:textSize="@dimen/morebiRounded_14pt"
+                        android:text="Bilastina" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/view_remaining_doses"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp">
+
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:gravity="center_vertical"
+                        android:typeface="normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:textColor="@color/text_color_666666"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:text="@string/medicine_doses_hint" />
+
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                        android:background="@drawable/spinner_back_gray"
+                        android:id="@+id/medicine_total_dosage"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/text_color_666666"
+                        android:textColorHint="@color/text_color_999999"
+                        android:maxLines="1"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:typeface="normal"
+                        android:ems="10"
+                        android:inputType="number"
+                        android:text="1" />
+
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:id="@+id/btn_doses_less"
+                        android:background="@drawable/spinner_back_green"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:maxLines="1"
+                        android:textColor="#33cc99"
+                        android:textSize="@dimen/morebiRounded_14pt"
+                        android:text="-" />
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:id="@+id/btn_doses_more"
+                        android:background="@drawable/spinner_back_green"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:maxLines="1"
+                        android:textColor="#33cc99"
+                        android:textSize="@dimen/morebiRounded_14pt"
+                        android:text="+" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:gravity="center"
+                    android:typeface="normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    app:textAllCaps="true"
+                    android:maxLines="1"
+                    android:textColor="@color/text_color_666666"
+                    android:textSize="@dimen/morebiRounded_12pt"
+                    android:text="@string/new_step_plan" />
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/btn_schedule"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                            android:id="@+id/sche_textview"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:typeface="normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:maxLines="1"
+                            android:textColor="#33cc99"
+                            android:textSize="@dimen/morebiRounded_8pt"
+                            android:text="@string/new_step_scheduling" />
+
+                        <View
+                            android:id="@+id/sche_view_under"
+                            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="#33cc99"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_sos_extra"
+                        android:orientation="vertical"
+                        android:layout_weight="0.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                            android:id="@+id/sos_textview"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:typeface="normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:maxLines="1"
+                            android:textColor="@color/text_color_999999"
+                            android:textSize="@dimen/morebiRounded_8pt"
+                            android:text="@string/new_step_sos" />
+
+                        <View
+                            android:id="@+id/sos_view_under"
+                            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#cccccc"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/view_content_sche"
+                        android:visibility="visible"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/activity_horizontal_margin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eeeeee"
+                            android:orientation="vertical"
+                            android:id="@+id/times_list">
+
+                        </LinearLayout>
+
+                        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                            android:visibility="visible"
+                            android:id="@+id/btn_add_time"
+                            android:background="@drawable/spinner_back_green"
+                            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                            android:gravity="center"
+                            android:typeface="normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:textColor="#33cc99"
+                            android:textSize="@dimen/morebiRounded_12pt"
+                            android:text="@string/new_step_add_sche" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:background="@android:color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <LinearLayout
+                                android:padding="@dimen/activity_horizontal_margin_div_2"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/asset32"
+                                    android:padding="12dp"/>
+
+                                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                                    android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+                                    android:typeface="normal"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_color_666666"
+                                    android:textSize="@dimen/morebiRounded_10pt"
+                                    android:text="@string/new_step_start_date" />
+
+                                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                                    android:id="@+id/med_start_date"
+                                    android:layout_weight="1"
+                                    android:typeface="normal"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:textStyle="bold"
+                                    android:maxLines="1"
+                                    android:textColor="#33cc99"
+                                    android:textSize="@dimen/morebiRounded_10pt"
+                                    android:text="Hoje 18/09" />
+                            </LinearLayout>
+                            <View
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#cccccc"/>
+
+                            <LinearLayout
+                                android:paddingLeft="@dimen/activity_horizontal_margin_div_2"
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/asset33"
+                                    android:padding="12dp"/>
+
+                                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                                    android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+                                    android:typeface="normal"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_color_666666"
+                                    android:textSize="@dimen/morebiRounded_10pt"
+                                    android:text="@string/new_step_duration" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/select_continuous"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin_x3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/img_select_continuous"
+                                    android:padding="@dimen/activity_horizontal_margin_div_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/asset31"/>
+
+                                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                                    android:typeface="normal"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_color_666666"
+                                    android:textSize="@dimen/morebiRounded_10pt"
+                                    android:text="@string/new_step_continuous" />
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/select_number_days"
+                                android:orientation="horizontal"
+                                android:paddingBottom="@dimen/activity_horizontal_margin"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin_x3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/img_select_number_days"
+                                    android:padding="@dimen/activity_horizontal_margin_div_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/asset30"/>
+
+                                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                                    android:typeface="normal"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:maxLines="1"
+                                    android:textColor="@color/text_color_666666"
+                                    android:textSize="@dimen/morebiRounded_10pt"
+                                    android:text="@string/new_step_num_days" />
+
+                                <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                    android:enabled="false"
+                                    android:id="@+id/text_number_days"
+                                    android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+                                    android:layout_weight="1"
+                                    android:typeface="normal"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:maxLines="1"
+                                    android:textColor="#33cc99"
+                                    android:textSize="@dimen/morebiRounded_10pt"
+                                    android:inputType="number"
+                                    android:text="30" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/view_content_sos"
+                        android:visibility="gone"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                        android:padding="@dimen/activity_horizontal_margin"
+                        android:background="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                            android:background="@drawable/spinner_back_no_line"
+                            android:layout_weight="1"
+                            android:id="@+id/medicine_sos_posology"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#33cc99"
+                            android:textColorHint="@color/text_color_999999"
+                            android:gravity="left|center_vertical"
+                            android:maxLines="1"
+                            android:textSize="@dimen/morebiRounded_10pt"
+                            android:typeface="normal"
+                            android:ems="10"
+                            android:inputType="number"
+                            android:hint="@string/medicine_posology_hint"
+                            android:text="" />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:background="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:typeface="normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    app:textAllCaps="true"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/morebiRounded_10pt"
+                    android:text="@string/new_step_notes" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                    android:id="@+id/textview_notes"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:background="@drawable/spinner_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/text_color_666666"
+                    android:textColorHint="@color/text_color_999999"
+                    android:maxLines="1"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:typeface="normal"
+                    android:ems="10"
+                    android:text="" />
+
+            </LinearLayout>
+
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/proceed_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+                android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:typeface="normal"
+                android:textColor="#ffffff"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="@string/end"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

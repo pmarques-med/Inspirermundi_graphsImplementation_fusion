@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/normal_item_background"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_position_text"
+        android:typeface="normal"
+        android:textSize="@dimen/morebiRounded_8pt"
+        android:textColor="@color/text_color_333333"
+        />
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22.º"
+        android:id="@+id/my_position_textView"
+        android:layout_marginLeft="20dp"
+        android:typeface="normal"
+        android:textSize="@dimen/morebiRounded_24pt"
+        android:textColor="#33cc99"
+        />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/position_arrow" />
+</LinearLayout>

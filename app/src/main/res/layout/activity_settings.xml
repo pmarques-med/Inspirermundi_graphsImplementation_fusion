@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical"
+    tools:context="com.bloomidea.inspirers.SettingsActivity">
+
+    <include
+        layout="@layout/layout_top4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/top_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp">
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/def_notifications_icon" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumSwitch
+            android:id="@+id/notification_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:textAllCaps="true"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:text="@string/notifications"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:id="@+id/carat_box"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/def_carat_logo" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:textAllCaps="true"
+            android:text="@string/period_carat"
+            android:typeface="normal"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/carat_textview"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:text="4 em 4 semanas"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp"
+        android:id="@+id/export_box">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/def_export" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:typeface="normal"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/export_data"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp"
+        android:id="@+id/about_box">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/def_about" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/about"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp"
+        android:id="@+id/terms_and_conditions_box">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/def_about" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/terms_and_conditions"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp"
+        android:id="@+id/rules_box">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/def_game_rules" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:textAllCaps="true"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/game_rules"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:id="@+id/logout_box"
+        android:gravity="center"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="1dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/logout_icon" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:text="@string/logout"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt" />
+    </LinearLayout>
+
+</LinearLayout>

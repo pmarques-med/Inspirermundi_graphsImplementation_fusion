@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InspirerMundi</string>
+    <string name="pre_rec_instructions">Terás de colocar o teu inalador de acordo com o contorno colorido. As doses restantes seram detetados usando a câmara.</string>
+    <string name="start_button_text">Iniciar</string>
+    <string name="success_message">Deteção com sucesso!</string>
+    <string name="fail_message">Deteção terminada</string>
+    <string name="pre_rec_instruction_notemplate">Toca em iniciar e coloca a medicação dentro do quadrado colorido na vista de camera.</string>
+    <string name="permission_request_title">Pedido de permissões</string>
+    <string name="permission_request_text">Por favor dá permissão para aceder à câmara e ao cartão de memória, para guardarmos algumas fotos para análise</string>
+    <string name="permission_error_text">Precisas de dar ambas as permissões para avançar, por favor tenta de novo!</string>
+    <string name="ok_text">Prosseguir</string>
+    <string name="back_button_text">Voltar atrás</string>
+    <string name="permission_error_title">Erro</string>
+    <string name="title_activity_main">InspirerMundi</string>
+    <string name="capture_delta">InspirerMundi</string>
+    <string name="pre_rec_checkbox_instructions">Não voltar a mostrar esta mensagem</string>
+    <string name="continue_button_text">Continuar</string>
+    <string name="cancel_button_text">Cancelar</string>
+    <string name="detect_remanining_doses">Depois de fazeres as inalações, clica em iniciar para detetar as doses restantes.</string>
+    <string name="confirm_doses">Confirma as doses restantes no teu inalador</string>
+    <string name="retry_text">Reiniciar</string>
+</resources>

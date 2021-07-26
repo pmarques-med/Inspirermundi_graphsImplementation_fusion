@@ -1,0 +1,3 @@
+include ':app', ':ViewPagerIndicator', ':SwipeLayout', ':InhalerDetectionModule'
+
+include ':openCVLibrary330'

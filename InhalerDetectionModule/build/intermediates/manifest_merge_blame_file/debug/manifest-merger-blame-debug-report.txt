@@ -1,0 +1,113 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.medida.inhalerdetection"
+4    android:versionCode="301"
+5    android:versionName="3.01" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+10
+11    <supports-screens
+11-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:6:5-11:39
+12        android:anyDensity="true"
+12-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:7:9-34
+13        android:largeScreens="true"
+13-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:8:9-36
+14        android:normalScreens="true"
+14-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:9:9-37
+15        android:resizeable="true"
+15-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:10:9-34
+16        android:smallScreens="true" />
+16-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:11:9-36
+17
+18    <uses-permission android:name="android.permission.CAMERA" />
+18-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:13:5-65
+18-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:13:22-62
+19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+19-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:14:5-80
+19-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:14:22-77
+20    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+20-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:15:5-81
+20-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:15:22-78
+21
+22    <uses-feature
+22-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:17:5-19:36
+23        android:name="android.hardware.camera"
+23-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:18:9-47
+24        android:required="false" />
+24-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:19:9-33
+25    <uses-feature
+25-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:20:5-22:36
+26        android:name="android.hardware.camera.autofocus"
+26-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:21:9-57
+27        android:required="false" />
+27-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:22:9-33
+28    <uses-feature
+28-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:23:5-25:36
+29        android:name="android.hardware.camera.front"
+29-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:24:9-53
+30        android:required="false" />
+30-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:25:9-33
+31    <uses-feature
+31-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:26:5-28:36
+32        android:name="android.hardware.camera.front.autofocus"
+32-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:27:9-63
+33        android:required="false" />
+33-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:28:9-33
+34
+35    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+35-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:30:5-75
+35-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:30:22-72
+36
+37    <application android:label="@string/app_name" >
+37-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:32:5-61:19
+37-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:34:9-41
+38        <activity
+38-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:35:9-42:20
+39            android:name="org.medida.inhalerdetection.InhalerDetectionActivity"
+39-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:36:13-53
+40            android:configChanges="keyboardHidden|orientation"
+40-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:37:13-63
+41            android:label="@string/app_name"
+41-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:38:13-45
+42            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+42-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:39:13-71
+43        </activity>
+44        <activity
+44-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:43:9-53:20
+45            android:name="org.medida.inhalerdetection.ExampleMainActivity"
+45-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:44:13-48
+46            android:label="@string/title_activity_main" >
+46-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:45:13-56
+47
+48            <!--
+49            <intent-filter>
+50                <action android:name="android.intent.action.MAIN" />
+51                <category android:name="android.intent.category.LAUNCHER" />
+52            </intent-filter>
+53            -->
+54        </activity>
+55        <activity
+55-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:54:9-55:51
+56            android:name="org.medida.inhalerdetection.PreInstructionDetectionActivity"
+56-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:54:19-66
+57            android:screenOrientation="portrait" />
+57-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:55:13-49
+58        <activity
+58-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:56:9-57:51
+59            android:name="org.medida.inhalerdetection.PostDetectionActivity"
+59-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:56:19-56
+60            android:screenOrientation="portrait" />
+60-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:57:13-49
+61        <activity
+61-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:58:9-59:51
+62            android:name="org.medida.inhalerdetection.PreDetectionActivity"
+62-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:58:19-55
+63            android:screenOrientation="portrait" />
+63-->D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:59:13-49
+64    </application>
+65
+66</manifest>

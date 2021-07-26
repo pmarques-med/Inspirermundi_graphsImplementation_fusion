@@ -1,0 +1,422 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bloomidea.inspirers.AddMedicineStep1">
+
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:focusableInTouchMode="true"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:srcCompat="@drawable/btn_add_medicine" />
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/textView7"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="true"
+                android:textColor="@color/text_color_333333"
+                android:textSize="@dimen/morebiRounded_12pt"
+                android:text="@string/whats_the_medicine" />
+        </LinearLayout>
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:text="@string/medicine_type_hint"
+            android:textColor="@color/text_color_666666"
+            android:textSize="@dimen/morebiRounded_8pt"
+            android:typeface="normal" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/medicine_type_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:background="@drawable/spinner_back">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/medicine_type_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:typeface="normal"
+                android:textColor="@color/text_color_333333"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="@string/select_hint" />
+
+            <ImageView
+                android:id="@+id/teste2"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/arrow_spinner" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="110dp">
+
+            <LinearLayout
+                android:id="@+id/medicine_type_1"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginRight="4dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/type_medicine_selected">
+
+                <ImageView
+                    android:id="@+id/medicine_image_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/asset16" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:text="@string/medicine_type_1"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/morebiRounded_10pt"
+                    android:textAlignment="center"
+                    android:typeface="normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/medicine_type_2"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/type_medicine_unselected">
+
+                <ImageView
+                    android:id="@+id/medicine_image_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/asset14" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:text="@string/medicine_type_2"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/morebiRounded_10pt"
+                    android:textAlignment="center"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/medicine_type_3"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/type_medicine_unselected">
+
+                <ImageView
+                    android:id="@+id/medicine_image_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/asset15" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:text="@string/medicine_type_4"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/morebiRounded_10pt"
+                    android:textAlignment="center"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewInhalers"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/inhalerType"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:id="@+id/textInhalerType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                        android:text="@string/medicine_inhaler_hint"
+                        android:textColor="@color/text_color_666666"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:layout_weight="1"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/inhalerTypeArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/asset19" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mainInhalerList"
+                    android:layout_width="match_parent"
+                    android:layout_height="198dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:background="#cccccc"
+                    android:id="@+id/viewMore"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/activity_horizontal_margin_div_2"
+                        android:text="@string/view_more_no_underline"
+                        android:textColor="@color/text_color_666666"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        app:textAllCaps="true"
+                        android:layout_weight="1"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:id="@+id/moreTypeArrow"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:rotation="180"
+                        android:background="@drawable/asset19" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="gone"
+                    android:id="@+id/moreInhalerList"
+                    android:layout_width="match_parent"
+                    android:layout_height="198dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/medicine_box_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medicine_name_hint"
+                    android:textColor="@color/text_color_666666"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:typeface="normal" />
+
+                <LinearLayout
+                    android:id="@+id/dropBoxName"
+                    android:background="@drawable/spinner_back"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedAutoCompleteEditText
+                        android:layout_weight="1"
+                        android:id="@+id/medicine_name_editText"
+                        android:completionThreshold="1"
+                        android:layout_width="match_parent"
+                        android:background="@null"
+                        android:layout_height="match_parent"
+                        android:ellipsize="end"
+                        android:ems="10"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/text_color_333333"
+                        android:textColorHint="@color/text_color_999999"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:typeface="normal" />
+                    <ImageView
+                        android:id="@+id/dropBoxArrow"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:rotation="0"
+                        android:background="@drawable/asset44" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/medicine_dosage_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+                android:layout_weight="1">
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medicine_doses_hint"
+                    android:textColor="@color/text_color_666666"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:typeface="normal" />
+                <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                    android:background="@drawable/spinner_back"
+                    android:id="@+id/medicine_dosage_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                    android:textColor="@color/text_color_333333"
+                    android:textColorHint="@color/text_color_999999"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:typeface="normal"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/medicine_codebar_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:visibility="gone">
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/medicine_barcode_hint"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:typeface="normal" />
+            <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+                android:background="@drawable/spinner_back"
+                android:id="@+id/medicine_codebar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_333333"
+                android:textColorHint="@color/text_color_999999"
+                android:layout_weight="1"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:typeface="normal"
+                android:ems="10"
+                android:maxLines="1"
+                android:inputType="number"
+                android:text=""/>
+        </LinearLayout>
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/proceed_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+            android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:typeface="normal"
+            android:textColor="#ffffff"
+            android:textColorHint="@color/text_color_999999"
+            android:textSize="@dimen/morebiRounded_10pt"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:text="@string/proceed"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,813 @@
+﻿<resources>
+    // strings for statistics report
+    <string name="adherence">Adherence (%)</string>
+    <string name="CARAT_T">CARAT TOTAL (%)</string>
+    <string name="CARAT_Total">CARAT TOTAL</string>
+    <string name="Week">Week: </string>
+    <string name="Week_default">Day/Month - Day/Month</string>
+    <string name="No_data">No data</string>
+    <string name="No_CARAT_data_available">No CARAT answers</string>
+    <string name="No_CARAT_data_available_week">No CARAT answers in that week</string>
+    <string name="No_symptoms_data_available">No symptoms questionnaires answers</string>
+    <string name="Symptoms_Health">Symptoms - Health</string>
+    <string name="Symptoms_Leisure">Symptoms - Leisure</string>
+    <string name="Symptoms_WS">Symptoms - Work/School</string>
+
+    //strings for report sharing
+    <string name="data_sent">The following data will be sent:</string>
+    <string name="last_CARAT">Latest CARAT</string>
+    <string name="CARAT_Q1_short">Stuffy Nose</string>
+    <string name="CARAT_Q2_short">Sneezing</string>
+    <string name="CARAT_Q3_short">Itchy nose</string>
+    <string name="CARAT_Q4_short">Runny Nose</string>
+    <string name="CARAT_Q5_short">Dyspnea</string>
+    <string name="CARAT_Q6_short">Wheeze</string>
+    <string name="CARAT_Q7_short">Physical Effort</string>
+    <string name="CARAT_Q8_short">Tiredness</string>
+    <string name="CARAT_Q9_short">Waking up</string>
+    <string name="CARAT_Q10_short">Medication</string>
+    <string name="CARAT_Upper_Airways">CARAT Upper Airways</string>
+    <string name="CARAT_Lower_Airways">CARAT Lower Airways</string>
+    <string name="never">Never</string>
+    <string name="All_days">All days</string>
+    <string name="No_med">No</string>
+    <string name="more_than_2"> &gt; 2 days</string>
+    <string name="equal_orless_2"> &lt; = 2 days</string>
+    <string name="equal_ormore_than_7"> &gt; = 7 days</string>
+    <string name="less_than_7"> &lt; 7 days</string>
+    <string name="Latest_week_summary"> Latest week summary </string>
+    <string name="pdf_summary">  Report successfully generated! </string>
+
+    <string name="one_time_posology_are_nedded">You need to define at least 1 schedule and dose.</string>
+
+    <string name="facebook_app_id" translatable="false">1164307896982804</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1164307896982804</string>
+
+    <string name="rest_lang">/en</string>
+    <string name="push_lang">en</string>
+    <string name="user_lang">en</string>
+
+    <string name="app_name" translatable="false">InspirerMundi</string>
+
+    <string name="no_internet_msg">WHOOPS!!!\n\nIt looks like you\'re out of an internet connection.</string>
+    <string name="ok">OK</string>
+    <string name="login_text1">Play, encourage, inspire!</string>
+    <string name="login_text2">You\'ll have a real role to play in people\'s lives.</string>
+    <string name="login_facebook_btn">Continue with Facebook</string>
+    <string name="exit_question">Are you sure you want to leave?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="first_time_timeline">Add your medicines\nnow and start\nearning points!</string>
+    <string name="first_time_timeline1">Hi!</string>
+    <string name="login_error">Login error! Please try again later.</string>
+
+    <string name="level_text">Level %1$d</string>
+
+    <string name="badge_name_1">So It Begins</string>
+    <string name="badge_name_2">What\'s Up, Doc?</string>
+    <string name="badge_name_3">Perfect Week</string>
+    <string name="badge_name_4">Role Model</string>
+    <string name="badge_name_5">Big Influencer</string>
+    <string name="badge_name_6">On a Roll</string>
+    <string name="badge_name_7">Grandparenting</string>
+    <string name="badge_name_8">The Big 1K</string>
+    <string name="badge_name_9">That\'s a Lot of Points</string>
+    <string name="badge_name_10">I Already Lost Count</string>
+    <string name="badge_name_11">Millionaire</string>
+    <string name="badge_name_12">A Fresh Start</string>
+    <string name="badge_name_13">International Inspirer</string>
+
+    <string name="badge_desc_1">Add your first medication</string>
+    <string name="badge_desc_2">Your medication was validated by a doctor for the first time</string>
+    <string name="badge_desc_3">Take all medication without fail for a full week</string>
+    <string name="badge_desc_4">Get your first Warrior</string>
+    <string name="badge_desc_5">Get 5 Warriors for the first time</string>
+    <string name="badge_desc_6">Reach the maximum streak for the first time</string>
+    <string name="badge_desc_7">One of your Warriors gets his/her first Warrior</string>
+    <string name="badge_desc_8">Reach 1,000 points</string>
+    <string name="badge_desc_9">Reach 10,000 points</string>
+    <string name="badge_desc_10">Reach 100,000 points</string>
+    <string name="badge_desc_11">Reach 1,000,000 points</string>
+    <string name="badge_desc_12">Accept the Super Inspirer challenge on level 50</string>
+    <string name="badge_desc_13">Get Warriors from 2 different countries</string>
+    <string name="achievement">Achievement</string>
+    <string name="close">Close</string>
+    <string name="add_medicine">Add medication</string>
+    <string name="add_sos">Take extra</string>
+    <string name="add_medicine_step1"><![CDATA[Choose the type of medication you have to take, as well as its name.]]></string>
+    <string name="add_medicine_step2"><![CDATA[<b>Awesome!!!</b><br /><br />You\'ve picked your medication.<br /><br />Proceed?]]></string>
+    <string name="add_medicine_step3"><![CDATA[Define how long your treatment will last and when it starts]]></string>
+    <string name="add_medicine_step4"><![CDATA[Define the time(s) of day to take your medication and the respective dosage.]]></string>
+    <string name="add_medicine_step5"><![CDATA[Almost there!<br />If you want, write a note you need about the medication you registered.]]></string>
+    <string name="whats_the_medicine">1. Which Medication?</string>
+    <string name="add_medicine_title">New Medication</string>
+    <string name="medicine_type_hint">Medicine type*</string>
+    <string name="medicine_name_hint">Medication name*</string>
+    <string name="medicine_barcode_hint">Barcode number of the inhaler</string>
+    <string name="proceed">Proceed</string>
+    <string name="medicine_doses_hint">Remaining doses*</string>
+    <string name="fultiform_dialog_text">Tell us how many doses remain in your inhaler.(You can check the number in your inhaler\'s visor).</string>
+    <string name="medicine_type_1">Inhaling</string>
+    <string name="medicine_type_2">Pill</string>
+    <string name="medicine_type_3">Inhaling/nostril</string>
+    <string name="medicine_type_4">Others</string>
+    <string name="medicine_empty_error">Fill all required fields</string>
+    <string name="change_medicine">Change Medication</string>
+    <string name="share_with_doctor">Shareable with your doctor</string>
+    <string name="medicine_time">3. Time</string>
+    <string name="medicine_total_days_hint">Treatment duration* (days)</string>
+    <string name="medicine_start_date_hint">When does it start?*</string>
+    <string name="medicine_day_times">4. Daily schedule</string>
+    <string name="add_more_times">|+| add another schedule</string>
+    <string name="medicine_day_fase_hint">Time of day*</string>
+    <string name="medicine_posology_hint">Dosage*</string>
+    <string name="one_time_is_needed">You need to define at least 1 schedule.</string>
+    <string name="medicine_notes">5. Notes</string>
+    <string name="end">Finish</string>
+    <string name="medicine_notes_hint">Note</string>
+    <string name="add_new_medicine">|+| add another Medication</string>
+    <string name="error_create_medicine">We encountered a problem creating the medication. Please try again later.</string>
+    <string name="ok_create_medicine">Created successfully</string>
+    <string name="medicine_sos_when">3. When?</string>
+    <string name="sos_date_hint">Day*</string>
+    <string name="sos_time_hint">Hour*</string>
+    <string name="add_sos_medicine_step3">Record when you took the emergency medication and its dosage.</string>
+    <string name="medicine_sos_episode_type">4. type of episode/attack</string>
+    <string name="severity">Severity*</string>
+    <string name="mild">light</string>
+    <string name="severe">severe</string>
+    <string name="sos_trigger_hint">Trigger</string>
+    <string name="sos_obs_hint">Observations</string>
+    <string name="sos_need_doctor_hint">Necessity to go to health services?*</string>
+    <string name="health_code_1">No</string>
+    <string name="health_code_2">Doctor</string>
+    <string name="health_code_3">Urgency</string>
+    <string name="health_code_4">Internment</string>
+    <string name="see_all">See all</string>
+    <string name="medication_programed">programmed\nmedications</string>
+    <string name="points_won">earned\npoints</string>
+    <string name="week_dates">Week from %1$s to %2$s</string>
+    <string name="total_ok_meds">taken correctly (%1$s)</string>
+    <string name="total_late_meds">taken late (%1$s)</string>
+    <string name="total_failed_meds">failed (%1$s)</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="medicine_late_msg">Taken late</string>
+    <string name="emergency">Emergency</string>
+    <string name="at_time">at %1$s</string>
+    <string name="failed_medicine_text">Failed Medication</string>
+    <string name="take_late_medicine">Take Late Medication</string>
+    <string name="time_interval">%1$s - %2$s</string>
+    <string name="problem_takin_med">Problem registering information.</string>
+    <string name="medicine_days_error">The number cannot exceed 1 year.</string>
+    <string name="medication_notes">Medication notes</string>
+    <string name="take_notes">Take notes</string>
+    <string name="no_note">No notes</string>
+    <string name="add_note">Add note</string>
+    <string name="add_note_message">Add note</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="error_adding_note">We encountered a problem saving the note. Please try again later.</string>
+    <string name="stats_beginning_text1">Your therapeutic\nadhesion.</string>
+    <string name="stats_beginning_text2">since the start.</string>
+    <string name="stats_month_text1">Your therapeutic\nadhesion in the</string>
+    <string name="stats_month_text2">last 30 days.</string>
+    <string name="stats_7_days_text2">last 7 days.</string>
+    <string name="stats_started_in">started at %1$s</string>
+    <string name="load_map_info_error">We encountered a problem loading the information. Please try again later.</string>
+    <string name="your_empire">My Empire</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="my_empire">%1$s Warriors\nin %2$s countries</string>
+    <string name="my_empire_initial">0 Warriors\nin 0 countries</string>
+    <string name="error_getting_info">We encountered a problem loading the information. Please try again later.</string>
+    <string name="your_position_text">Your rank\nin the network is:</string>
+    <string name="points">points -</string>
+    <string name="default_country_name">Portugal</string>
+    <string name="user_profile">User Profile</string>
+    <string name="my_profile">Your profile</string>
+    <string name="average_ever_percent">Accomplishing</string>
+    <string name="my_average_ever_percent">Accomplishing</string>
+    <string name="messages">Messages</string>
+    <string name="my_social">My network</string>
+    <string name="evaluations_with_total">Reviews (%1$s)</string>
+    <string name="evaluations_with_name">Rate and gain</string>
+    <string name="win_x_points">+ 10 points</string>
+    <string name="statistics">Stats</string>
+    <string name="connection_needed">You need to be connected to the user to do the operation</string>
+    <string name="number_of_warriors">Number of Warriors</string>
+    <string name="languages_spoken">Spoken languages</string>
+    <string name="badges_won">Conquests</string>
+    <string name="interests">Hobbies</string>
+    <string name="view_more"><u>view more</u></string>
+    <string name="view_less"><u>view less</u></string>
+    <string name="add_warrior">Recruit Warriors</string>
+    <string name="your_simptoms">Your Symptom registry</string>
+    <string name="your_pools">CARAT Polls</string>
+    <string name="my_meds">My medications</string>
+    <string name="report">Report</string>
+    <string name="report_profile_question">Do you wish to report this profile?</string>
+    <string name="no_email_client">There are no email clients installed.</string>
+    <string name="send_email">Send mail...</string>
+    <string name="report_profile_subject">Report profile of %1$s</string>
+    <string name="review">Evaluate</string>
+    <string name="review_hint">Give your review and write your opinion here</string>
+    <string name="send">Send</string>
+    <string name="review_empty">review required.</string>
+    <string name="rating_empty">Opinion required.</string>
+    <string name="problem_send_to_server">We encountered a problem sending to server.</string>
+    <string name="order_warrior_error">Your level doesn\'t allow you to make requests, raise your level to %1$s!</string>
+    <string name="order_warrior_error2">Your level doesn\'t allow you to accept requests, raise your level to %1$s!</string>
+    <string name="collect_warriors">Collect warriors</string>
+    <string name="warriors_list_title">Warriors suggested for you</string>
+    <string name="ask">ask</string>
+    <string name="title_warriors_to_answer">PEOPLE THAT OFFERED TO BE YOUR WARRIOR</string>
+    <string name="title_warriors_to_ask">WARRIORS SUGGESTED FOR YOU</string>
+    <string name="title_warriors_asked">PEOPLE YOU\'VE ASKED TO BE YOUR WARRIORS</string>
+    <string name="alert_request_full_w">You have reached your maximum requests for Warriors, to make a new request you must remove an existing request by sliding it to the left and select "remove".</string>
+    <string name="ends_in">ends in</string>
+    <string name="request">Request</string>
+    <string name="remove">remove</string>
+    <string name="doctor">Doctor</string>
+    <string name="share_with_doctor_text">the information inserted</string>
+    <string name="share_with_doctor_btn">SHARE WITH YOUR DOCTOR</string>
+    <string name="inspier">Inspirer</string>
+    <string name="search_inspirer_text">Haven\'t chosen an Inspirer yet? Having an Inspirer will help you play the game</string>
+    <string name="search_inspirer_hint">Search for someone to ask to be your Inspirer</string>
+    <string name="title_godfather_to_answer">PEOPLE WHO HAVE OFFERED TO BE YOUR INSPIRER</string>
+    <string name="title_godfather_asked">PEOPLE YOU HAVE ASKED TO BE YOUR INSPIRER</string>
+    <string name="title_godfather_to_ask">SUGGESTED INSPIRERS FOR YOU</string>
+    <string name="title_godfather">YOUR INSPIRER</string>
+    <string name="title_my_team">YOUR WARRIOR TEAM</string>
+    <string name="problem_communicating_with_server">Problem communicating with server.</string>
+    <string name="alert_request_full">You have used your request, to make a new request you must eliminate your existing request by sliding it to the left and select "remove".</string>
+    <string name="delete_godfather_question">Are you sure you want to remove your Inspirer?</string>
+    <string name="share_with_doctor_desc"><![CDATA[Only good things come if your doctor accompanies your state.]]></string>
+    <string name="doctor_email_text_hint">Hi, I\'m your patient %1$s, here goes the report the App InspirerMundi. \n\nBest regards,\n%2$s</string>
+    <string name="doctor_email_hint">Your Doctor\'s email address</string>
+    <string name="share_all_medicine_doctor">Share all medications</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="date_init_text">-- / -- / ----</string>
+    <string name="doctor_email_empty_error">Email address required</string>
+    <string name="doctor_email_invalid">Invalid email address</string>
+    <string name="doctor_dates_empty_error">You must indicate the dates</string>
+    <string name="noting_to_share">Nothing to share</string>
+    <string name="message_hint">Write a message</string>
+    <string name="csv_all_file_name">CSVFullData</string>
+    <string name="csv_time_interval_file_name">CSVDataInterval</string>
+    <string name="share_with_doctor_email_subject">CSV data of the InspirerMundi application</string>
+    <string name="csv_file_header">Intake Date,Intake Hour,Medication name,Dosage,Intake Type,SOS Intake?,Late Intake?,Defined time of day,Treatment time,Intake start date</string>
+    <string name="edit_profile">Edit your profile</string>
+    <string name="edit_profile_picture">Edit profile picture</string>
+    <string name="user_name_hint">Username*</string>
+    <string name="user_id_hint">User ID</string>
+    <string name="country_hint">Select country</string>
+    <string name="choose_img">Choose image</string>
+    <string name="photo_source_camera">Camera</string>
+    <string name="photo_source_galery">Gallery</string>
+    <string name="language_hint">ADD MORE LANGUAGES</string>
+    <string name="view_more_no_underline">View more</string>
+    <string name="view_less_no_underline">View less</string>
+    <string name="hobbies_hint">ADD MORE HOBBIES</string>
+    <string name="save">Save</string>
+    <string name="name_empty">Username required</string>
+    <string name="delete_medicine">Are you sure you wish to delete this medication?</string>
+    <string name="settings">Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="period_carat">Periodicity of\nCARAT poll</string>
+    <string name="logout">Logout</string>
+    <string name="export_data">Export navigation data</string>
+    <string name="medicine_to_take">Time to take your medicine</string>
+    <string name="message_medicine_to_take">It\'s time for your medication</string>
+    <string name="open">Open</string>
+    <string name="message_recived">New message received</string>
+    <string name="search">Search</string>
+    <string name="search_results">Search results</string>
+    <string name="carat_text1">Control of Allergic Rhinitis\nand Asthma Test</string>
+    <string name="carat_text2">During the last 4 weeks, because of your asthma/rhinitist/allergy how many times, on average, did you experience:</string>
+    <string name="total_score">Total score:</string>
+    <string name="total_score_sub_text">Scores higher than 24 indicate\ngood disease control</string>
+    <string name="score_upper">Score of the upper\nairway (item 1-4):</string>
+    <string name="score_upper_sub_text"><![CDATA[Controlled if score is >8]]></string>
+    <string name="score_lower">Score of the lower\nairway (item 5-10):</string>
+    <string name="score_lower_sub_text">Controlled if score is ≥16</string>
+    <string name="view_answer"><u>view your answers</u></string>
+    <string name="commnets_hint">Comments</string>
+    <string name="submit">Submit</string>
+    <string name="tanks">Thank you</string>
+    <string name="continue_text">Continue</string>
+    <string name="carat_poll">CARAT Poll</string>
+    <string name="daily">daily</string>
+    <string name="weekly">weekly</string>
+    <string name="simptoms_poll">Symptom Registration</string>
+    <string name="carat_option_weakly">Weekly</string>
+    <string name="carat_option_2_on_2">Every 2 weeks</string>
+    <string name="carat_option_4_on_4">Every 4 weeks</string>
+    <string name="min">min</string>
+    <string name="max">max</string>
+    <string name="polls">Polls</string>
+    <string name="medicine_failed_msg">Taken out of hours</string>
+    <string name="add_medicine_sos_step1"><![CDATA[Choose the type of medication you have to take, as well as its name.]]></string>
+    <string name="add_medicine_sos_step2"><![CDATA[<b>Awesome!!!</b><br /><br />You chose your medication.<br /><br />Proceed?]]></string>
+    <string name="add_medicine_sos_step3"><![CDATA[Define the time you took the emergency medication and its dosage.]]></string>
+    <string name="add_medicine_sos_step4"><![CDATA[Almost there!<br />If you want, write a note you need about the medication you registered.]]></string>
+    <string name="medicine_type_title">Medicine type</string>
+    <string name="medicine_day_fase_title">Time of day</string>
+    <string name="sos_need_doctor_title">Need to go to health services</string>
+    <string name="no_reviews">No reviews yet</string>
+    <string name="no_results">No results</string>
+    <string name="no_pools">You haven\'t answered any polls yet</string>
+    <string name="points_main">points</string>
+
+    <plurals name="evaluation_text">
+        <item quantity="one">%d rating</item>
+        <item quantity="other">%d ratings</item>
+    </plurals>
+
+    <plurals name="medicine_type_inal">
+        <item quantity="one">%d inhaling</item>
+        <item quantity="other">%d inhalings</item>
+    </plurals>
+
+    <plurals name="medicine_type_inal_nar">
+        <item quantity="one">%d inhaling/nostril</item>
+        <item quantity="other">%d inhalings/nostril</item>
+    </plurals>
+
+    <plurals name="medicine_type_pil">
+        <item quantity="one">%d pill</item>
+        <item quantity="other">%d pills</item>
+    </plurals>
+
+    <plurals name="duration_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+
+    <!-- LOG REPORT -->
+    <string name="avaliation_view">Acesso à vista de avaliações</string>
+    <string name="carat_form_view">Acesso à vista do questionário Carat</string>
+    <string name="edit_perfil_view">Acesso ao editar perfil</string>
+    <string name="create_med">Acesso à vista de adicionar medicamento</string>
+    <string name="invite_doctor_view">Acesso à vista convidar doutor</string>
+    <string name="leaderboard_view">Acesso à vista LeaderBoard</string>
+    <string name="mensage_view">Acesso à vista das mensagens</string>
+    <string name="perfil_view">Acesso ao perfil</string>
+    <string name="search_view">Acesso à vista de procura Inspirer</string>
+    <string name="create_sos">Acesso à vista de adicionar medicamento SOS</string>
+    <string name="settings_view">Acesso à vista definições</string>
+    <string name="sint_form_view">Acesso à vista de registo de sintomas</string>
+    <string name="user_statics_view">Acesso estatísticas de um utilizador</string>
+    <string name="submit_varat_view">Acesso à vista pontuação Carat</string>
+    <string name="list_carat">Acesso à lista de questionários Carat respondidos</string>
+    <string name="list_sint">Acesso à lista de registo de sintomas efetuados</string>
+    <string name="request_godchild">Acesso à vista angariar Warriors</string>
+    <string name="map_view">Acesso à vista do mapa</string>
+    <string name="people_view">Acesso à vista de Inspirer/Warrior</string>
+    <string name="timeline_view">Acesso à timeline</string>
+    <string name="statics_view">Acesso à vista das estatísticas</string>
+    <string name="create_med_action">Adicionou um novo medicamento</string>
+    <string name="create_sos_action">Adicionou um novo medicamento SOS</string>
+    <string name="anwser_carat">Respondeu a um questionário Carat</string>
+    <string name="send_report_doctor">Enviou dados para um doutor</string>
+    <string name="login_action">Ação Login</string>
+    <string name="send_request_inspirer">Enviou pedido de Inspirer</string>
+    <string name="send_buzz">Enviou buzz para Warrior</string>
+    <string name="send_evaluation">Avaliou o perfil de um utilizador</string>
+    <string name="answer_sint">Respondeu a um questionário registo de sintomas</string>
+    <string name="report_perfil">Reportou perfil de um utilizador</string>
+    <string name="send_request_warrior">Enviou pedido de Warrior</string>
+    <string name="take_med">Tomou um medicamento</string>
+    <string name="take_med_late">Tomou um medicamento atrasado</string>
+    <string name="change_perfil_action">Alterou informação perfil</string>
+
+    <string name="csv_navigation_data">CSVIntervaloDados.csv</string>
+    <string name="email_csv_navigation">inspirermundi@gmail.com</string>
+    <string name="export_navigation_data_subject">Dados navegação da aplicação InspirerMundi</string>
+    <string name="csv_nav_file_header1">User,Dispositivo,ID</string>
+    <string name="csv_nav_file_header2">Tipo,Descrição,Hora de entrada,Hora de saida</string>
+    <!-- LOG REPORT -->
+
+    <string name="not_all_answered">You didn\'t answer all the questions</string>
+    <string name="error_update_medicine">We encountered a problem updating the medication. Please try again later.</string>
+    <string name="select_hint">Select</string>
+    <string name="order_warrior_no_more">Maximum number of warriors reached.</string>
+    <string name="carat_text2_last_question">In the last 4 weeks, because of your asthma/rhinitis/allergy, how often did you have to:</string>
+
+    <string name="default_ct_name">United Kingdom</string>
+    <string name="default_ct_iso">GB</string>
+    <string name="default_ct_flag_url">http://bloom-professor-frink.bitnamiapp.com/staging/inspirer/sites/all/modules/contrib/countryicons_shiny/images/gb.png</string>
+    <string name="create_sos_medicine_question">There is no SOS medication registered in the last 24h. Would you like to register now?</string>
+    <string name="no_medicines">You haven\'t added medication yet.</string>
+    <string name="your_pools_general">My questionnaires</string>
+    <string name="carat">CARAT</string>
+    <string name="email">Email*</string>
+    <string name="password">Password*</string>
+    <string name="login">Login</string>
+    <string name="or">Or</string>
+    <string name="signup">Register</string>
+    <string name="recover_password">Recover password</string>
+    <string name="insert_email">Insert your email</string>
+    <string name="error_email_empty">Empty email</string>
+    <string name="error_email_invalid">Invalid email</string>
+    <string name="password_recover_error_dont_exist">Email doesn\'t exist</string>
+    <string name="password_recover_ok">Recovery email successfully sent.</string>
+    <string name="empty_email">Email is mandatory</string>
+    <string name="empty_password">Password is mandatory</string>
+    <string name="invalid_email">Invalid mail</string>
+    <string name="error_password_email">Wrong username or password.</string>
+    <string name="insert_img">Add profile picture</string>
+    <string name="conf_password_hint">Confirm password*</string>
+    <string name="empty_name">Name is mandatory</string>
+    <string name="conf_password_no_match">Password and pasword confirmation don\'t match</string>
+    <string name="name_hint">Name*</string>
+    <string name="email_already_registered">Email already registered.</string>
+    <string name="error_delete_medicine">Problemas deleting medication.</string>
+    <string name="gps_network_not_enabled">Please enable your location services.</string>
+    <string name="open_location_settings">Open location settings.</string>
+    <string name="location_access_title">Location access</string>
+    <string name="location_access_explanation"></string>
+    <string name="device_msg">This account is already associated with another device. You must log out before migrating to this device. Do you wish to continue?</string>
+    <string name="last_buzz_less_24_hours">You can only send a buzz per day</string>
+    <string name="blocked_temporararily">Account is temporarily blocked. Try again in 30 minutes.</string>
+    <string name="one_posology_is_needed">You must indicate the dosage.</string>
+    <string name="study_id">Study ID</string>
+    <string name="study_id_text">If you are participating in a study and you\'ve been given an ID number, please fill it in bellow; otherwise, leave it blank.</string>
+    <string name="password_recover_error_send_email">Problems sending email</string>
+    <string name="disagree">Disagree</string>
+    <string name="agree">Agree</string>
+    <string name="terms_and_conditions">Terms and Conditions of Use</string>
+    <string name="slide_text1">The InspirerMundi is a game with a strong social component which is oriented to patients diagnosed with asthma.</string>
+    <string name="slide_text2">The game has the aim of converting the medication intake in a positive experience. It\'s a multilevel game and it is constituted by inspirers (the gamers in advanced levels) and the warriors (the gamers who have an inspirer).</string>
+    <string name="slide_text3">By register your medication you are already winning points.\n\nThe best way to win points is to take the medication on a daily basis, and you win a bonus if you take it right on time.</string>
+    <string name="slide_text4">When you answer weekly and daily surveys you are winning points.</string>
+    <string name="slide_text5">The evaluation that you do to inspirerers and warriors also allow you to increase your score.</string>
+    <string name="about">About</string>
+
+
+    <string name="terms_and_conditions_text"><![CDATA[
+    <b>PRIVACY POLICY MEDIDA</b>
+<br>
+<b>(VERSION 30/01/2018)</b>
+<br>
+MEDIDA takes your privacy very seriously. That is why we have this Privacy Policy, which discloses the information gathering and dissemination practices through the InspirerMundi app. By using InspirerMundi app software and accepting the Terms of Use you also agree to this Privacy Policy. This Privacy Policy explains why we collect certain personal information and how we protect your personal information that you provide to us. We also inform you about your rights and the conditions under which we provide information to you and to others. By using this app, you consent to the placing of temporary cookies. MEDIDA (a Portuguese company specialized in the development, evaluation and distribution of products and services for people with chronic diseases, especially for respiratory and allergic patients) is responsible for the processing of your personal data.
+<br>
+<br>
+If you have any questions regarding this Privacy Policy, please send an email to <a href="mailto:geral@medidasaude.pt ">geral@medidasaude.pt </a>. Please state the word \'Privacy\' in the header.
+<br>
+<br>
+<b><u>What is "personal information"?</u></b>
+<br>
+"Personal information" means information that identifies you or could reasonably be used to identify you or another person and which is submitted to and/or collected by the app and maintained by MEDIDA in an accessible form. Examples of personal information include your name and your e-mail address.
+<br>
+<br>
+<b><u>What information do we collect and how is the information used?</u></b>
+<br>
+While using the app you may be asked to provide certain details, including sex, year of birth, country of residence, spoken languages, interests, and also images of your inhaler after each drug intake. You are never obliged to enter your contact details. However, to make use of some of our services and products, it is necessary to provide a limited amount of personal information. The personal information you provide to us by using the app will be used for the execution of the agreement(s) with you, maintaining contacts with you, conduct market research, creation of- and automatic statistical analysis of profiles of app users in order to have a quantitative idea of who need a better treatment, to react to certain environmental conditions, to determine which are the most common symptoms and reactions and to inform you about new developments within our company and our (new) products and services that fall within your area of interest. The information we collect about you may include information relating to your health, namely regarding symptoms and treatments. Health related information that may be designated as "sensitive" under data privacy laws in some jurisdictions, may only be collected where you explicitly consent to this. MEDIDA shall adopt additional measures as required by local law for the processing of such information. We use this information to help us to improve the design of the application and other products, to communicate with you, to improve our marketing and research activities, and to facilitate other business. The data collected will be stored for a maximum period of 15 years or for longer periods as allowed by local law to the initial date of collection.
+<br>
+<br>
+InspirerMundi app can also determine, upon your consent, your current location information (so-called Geolocation).
+<br>
+<br>
+<b><u>Transfer of personal information to different jurisdictions</u></b>
+<br>
+MEDIDA stores the data on secured servers and suitable for the protection of personal data.
+<br>
+<br>
+<b><u>Your rights</u></b>
+<br>
+In accordance with local law, you may at any time request access to the information we collect about you. You may also request that we amend, correct or delete your personal information. To do this please contact us (MEDIDA) using the contact details below. If you request us to delete your personal information, the result may be that we can no longer provide our services to you.
+<br>
+<br>
+<b><u>Privacy of children</u></b>
+<br>
+The InspirerMundi app was designed to be used by teenagers from 13 years of age. MEDIDA does not knowingly collect or use any personal information from children (being minors younger than 18). We do not knowingly allow children to communicate with us or use any of our services.
+<br>
+<br>
+If you are a parent and become aware that your child has provided us with information, please contact us using one of the methods specified below, and we will work with you to address this issue.
+<br>
+<br>
+<b><u>Property rights</u></b>
+<br>
+Unless otherwise stated, all rights, including copyrights and other intellectual property rights in the app, the underlying databases and the information you provide to us, rest with MEDIDA.
+<br>
+<br>
+MEDIDA authorizes you to consult the app and the information contained therein and make copies of such data for your personal use, for example by printing (print screen) or storing such information. Any other use of the app or the information, for example the storage or reproduction of (a part of) the app in any external website or the creation of links, hyperlinks or deeplinks between the app and any other website, is prohibited without the explicit written permission of MEDIDA.
+<br>
+<br>
+<b><u>Unsolicited ideas</u></b>
+<br>
+If you send to unsolicited ideas and/or materials, including but not limited to, text, images, sounds, software or information (the "Materials") to MEDIDA via e-mail or otherwise, MEDIDA is entitled to use, copy and/or commercially exploit such materials to the fullest extent without having to pay. MEDIDA will not be bound to secrecy regarding these Materials.
+<br>
+<br>
+You hereby indemnify MEDIDA against all damages and costs that MEDIDA incurs with respect to any claims made by third parties regarding the use and / or exploitation of the Materials that infringes (intellectual) property rights of third parties or is otherwise unlawful towards a third party.
+<br>
+<br>
+<b><u>Business continuity</u></b>
+<br>
+You agree that database rights subsisting in the personal information collected from you by MEDIDA is the property of MEDIDA and the database is currently under the responsibility of MEDIDA.
+<br>
+<br>
+In the event that MEDIDA becomes the object of an acquisition, merger, sale or other transaction and the database, or the company that owns the database, is acquired by a third party, you agree in advance with the disclosure of your personal information to its advisers and the acquiring third party, both during and after the transaction, with a view to facilitating and closing of the transaction. When the transaction is closed, you will be informed about the transaction and the ownership and control over the database and your personal information that you provided to MEDIDA. The personal information will be transferred to the third party, in accordance with the provisions and limitations of this privacy policy. If the transaction is not closed, MEDIDA will have the third party to agree that it ceases using your personal information.
+<br>
+<br>
+<b><u>Cookies</u></b>
+<br>
+This app does not use cookies to obtain information about your use of the app. Only a temporary cookie or so-called \'session\' cookie will be placed for connectivity. When you installed the app you gave your consent for the placing of these temporary cookies.
+<br>
+<br>
+Session cookies are temporary bits of information that are erased once you turn your device off.
+<br>
+<br>
+The use of cookies is safe. Personal information such as a phone number or an email address, cannot be traced by placing session cookies. As a result, cookies cannot be used for e-mail and telemarketing purposes. You can find more information about cookies at
+<br>
+<a href="www.allaboutcookies.org">www.allaboutcookies.org</a>.
+<br>
+<br>
+<b><u>Links in the app</u></b>
+<br>
+This app may directly or indirectly provide links to other information, such as information on websites maintained by third parties over whom MEDIDA has no control. MEDIDA is not liable for the use or content of this information.
+<br>
+<br>
+<b><u>Updates</u></b>
+<br>
+MEDIDA reserves the right to make changes and/or updates with respect to the information, products and services referred to in this app at any time without notice.
+<br>
+<br>
+<b><u>Security</u></b>
+<br>
+Protecting your privacy is important to you and to us. That is why our systems and programs are adequately protected. We use management procedures to keep the information accurate, up-to-date and complete and to prevent access to your personal information by unauthorized persons from inside and outside our organization. This includes also - but is not limited to - encryption of connections and content.
+<br>
+<br>
+Although MEDIDA secures all personal information, we urge you to exercise caution when transmitting personal information over the Internet, especially personal information related to your health.
+<br>
+<br>
+In addition, the app covered by this Privacy Policy may contain links to websites that are not controlled by MEDIDA or subject to MEDIDA\'s Privacy policy; you should check the policies of such third-party websites before submitting personal data.
+<br>
+<br>
+<b><u>Service updates and other information</u></b>
+<br>
+If you are a customer, we may send you information - or contact you otherwise - regarding new services, features and other announcements, in the form of a newsletter or otherwise. It is possible to unsubscribe from these communications. However, in that case you may not be aware of important information about MEDIDA software and the services you use.
+<br>
+<br>
+<b><u>Nullification of terms</u></b>
+<br>
+In the event that the terms of this Privacy Policy are declared partially invalid, parties remain bound to the remaining part. The parties shall replace the invalid parts by provisions that, given the content and purpose of these terms, are valid and have a legal effect similar or as close as possible to that of the invalid part.
+<br>
+<br>
+<b><u>Governing law and competent court</u></b>
+<br>
+Without prejudice to the local law that is imperatively applicable, these terms are exclusively subject to the Portuguese law in force. All disputes arising from these terms must be submitted to a court having jurisdiction in Portugal.
+<br>
+<br>
+<b><u>Changes to Privacy Policy</u></b>
+<br>
+MEDIDA reserves the right to make changes and / or updates to this Privacy Policy to reflect technological advancements, legal and regulatory changes and good business practices.
+<br>
+<br>
+If MEDIDA changes its privacy or changes its technical practices (such as cookie practices), an updated version will reflect those changes and we will notify you of such changes by updating the effective date at the top of this Privacy Policy.
+<br>
+<br>
+<b><u>How can I contact MEDIDA?</u></b>
+<br>
+If you have questions about the use, amendment, access to or deletion of personal information that you have provided to us, or if you would like to opt out of future communications from MEDIDA, please contact us by e-mailing us at (<a href="mailto:geral@medidasaude.pt ">geral@medidasaude.pt </a>). Alternatively, you may send a letter to the following address:
+<br>
+<br>
+(Rua Dr. Manuel Laranjeira nº 55 3ºD, 4200-386 Porto, Portugal)
+<br>
+<br>
+In all communications to MEDIDA please include your e-mail address and a detailed explanation of your request. If you would like to delete, amend or correct your personal information and are contacting us by e-mail, please put "Deletion Request" or "Amendment/Correction Request", as applicable, in the subject line of the e-mail. We will do our best to respond to all reasonable requests in a timely manner.
+<br>
+<br>
+<b><u>Consent to the collection, processing and use of personal data</u></b>
+<br>
+I agree that the above data (sex, year of birth and country of residence, spoken languages, interests, inhaler images collected), including sensitive data (health data: reported symptoms and treatment), as well as data generated in the use of these data can be processed and used to the extent described above (execution of the contract, statistical analysis, information on new products or services and conducting market research), can be sold - once anonymized - to pharmaceutical companies for commercial purposes, can be sold to academic institutions for the purpose of research. I also agree with the transfer of data to different jurisdictions, including outside the EU, in line with EU data protection standards
+<br>
+<br>
+<br>
+<br>
+<b>TERMS OF USE INSPIRERMUNDI APP</b>
+<br>
+By installing and using InspirerMundi application (app) you agree to the applicability of these Terms of Use (and to the privacy policy below). If you do not agree to these Terms of Use, you must not download or use this app, copyright of which is protected.
+<br>
+<br>
+\u0009 \u0009 1. InspirerMundi application allows you to register your adherence to asthma medication. The application informs you of the medication time, through a configurable alarm, and allows you to view your adherence statistics and also share this information with your doctor. It also enables the recording of your symptoms related to asthma. The application has a gamification component, through a system of points and badges, where the main objective is to fulfil the therapeutic plan, and a social component, to share experiences with other users.
+<br>
+<br>
+\u0009 \u0009 2. This application is intended to make process of adherence to treatment into a positive experience and must not be used as a substitute for any kind of professional and/or medical advice.
+<br>
+<br>
+\u0009 \u0009 3. MEDIDA will be held harmless for any inappropriate use of this application.
+<br>
+<br>
+\u0009 \u0009 4. This app is provided to you for your personal use and you must not use it to process the personal information of any other person.
+<br>
+<br>
+\u0009 \u0009 5. This app, and the information contained in it, is provided to you "as is", for informational purposes only, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including but not limited to warranties of performance, merchantability and fitness for a particular purpose.
+<br>
+<br>
+\u0009 \u0009 6. You recognise that the app functionality may be affected by changes in the operating system of your device. It is your responsibility to check for updates in order to determine if you have the most current version of the app, to ensure that it is working properly.
+<br>
+<br>
+\u0009 \u0009 7. MEDIDA is not liable for any damages, including, and without limitation, direct, indirect, consequential or incidental damages resulting from or in connection with any information, materials, qualifications or recommendations related to this app.
+<br>
+<br>
+\u0009 \u0009 8. MEDIDA is not liable for any damages resulting from the use of (or inability to use) this app, including damages caused by viruses or any incorrectness or incompleteness of the Information. MEDIDA is also not liable for damages resulting from the use of electronic devices for communication with this app, including - but not limited to - damages resulting from failure or delay in delivery of electronic messages, interception or manipulation of electronic messages by third parties or by software / hardware used for electronic communications and transmission of viruses.
+<br>
+<br>
+\u0009 \u0009 9. If this app directly or indirectly provides links to other information, such as information on websites maintained by third parties over whom MEDIDA has no control, MEDIDA is not liable for the use or content of this information.
+<br>
+<br>
+\u0009 \u0009 10. MEDIDA reserves the right to change the InspirerMundi App Terms of Use at any time and without notice.
+<br>
+<br>
+\u0009 \u0009 11. These Terms of Use shall be governed by and construed in accordance with the Portuguese law. The competent court in Portugal shall settle all disputes arising in connection with these terms.
+<br>
+\u0009 \u0009 12. InspirerMundi app is a software exclusively owned by MEDIDA - SERVIÇOS EM MEDICINA, EDUCAÇÃO, INVESTIGAÇÃO, DESENVOLVIMENTO E AVALIAÇÃO, LDA.
+<br>
+<br>
+<b>Contact information</b>
+<br>
+MEDIDA may be contacted via:
+<br>
+Address: Rua Dr. Manuel Laranjeira nº 55 3ºD, 4200-386 Porto
+<br>
+Country: Portugal
+<br>
+Phone: <a href="tel:+351914767661">+351 914 767 661</a>
+<br>
+E-mail: <a href="mailto:geral@medidasaude.pt ">geral@medidasaude.pt </a>
+<br>
+Tax Identification Number: 508 186 005
+<br>
+<br>
+Note: This app is in beta version and may contain errors. Please send email to the following email: <a href="mailto:inspirermundi@gmail.com ">inspirermundi@gmail.com</a>
+]]></string>
+
+    <string name="about_title">About</string>
+    <string name="about_text"><![CDATA[
+    InspirerMundi 2.0.02
+        The application InspirerMundi is the result from a partnership among MEDIDA, CINTESIS and BLOOMIDEA.
+<br>
+<br>
+MEDIDA is a Portuguese company specialized in health and Research and Development (R&D) services for allergic diseases and respiratory pathophysiology. Its acronym reflects its main areas of practice: Medicine, Education, Research, Development and Evaluation. Its main objectives are to increase the quality of life of people with chronic diseases, providing health services and technological solutions that are customized and continuously improved through Research, Development and Innovation.
+<br>
+<br>
+<b>CINTESIS - Center for Research in Health Technologies and Services</b> is a R&amp;D Unit, whose mission is to find answers and solutions, in the short term, for specific health problems, without losing sight of the cost/efficiency relation.
+<br>
+Hosted by the Faculty of Medicine of University of Porto, CINTESIS is proud of its multicentric, decentralized and flexible nature involving 8 higher education institutions. It also cooperates with 18 polytechnic institutes.
+<br>
+<br>
+<b>Bloomidea</b> has been making businesses bloom online since 2006. Ideas that turned into projects and that are now references in their industry.
+<br>
+An experienced and dedicated team consisting of web and mobile developers, digital marketing specialists, copywriters, designers and managers, is currently leading projects totalling more than 30 million page views per month.
+<br>
+<br>
+To know more, click on the addresses below:
+<br>
+<a href="http://www.medidasaude.net/">http://www.medidasaude.net/</a>
+<br>
+<a href="http://cintesis.eu/">http://cintesis.eu/</a>
+<br>
+<a href="https://bloomidea.com/">https://bloomidea.com/</a>
+<br>
+<br>
+The promotion and distribution of InspirerMundi app in Portugal is the responsibility of Mundipharma Portugal.
+<br>
+If you want to clarify any doubts, contact us via email:
+<br>
+<a href="mailto:geral@medidasaude.pt">geral@medidasaude.pt</a>
+    ]]></string>
+    <string name="report_email">inspirermundi@gmail.com</string>
+    <string name="game_rules">Game rules</string>
+    <string name="no_more_terms">Do not show this message again</string>
+    <string name="hobbies_none">No hobbies selected</string>
+
+
+    <string name="active_med_bar">ACTIVE MEDICATION</string>
+    <string name="not_active_med_bar">NON-ACTIVE MEDICATION</string>
+    <string name="find_search_warriors">Find out more and search Warriors for your network</string>
+
+    <string name="otions_menu_extra">Take extra</string>
+    <string name="otions_menu_edit">Edit</string>
+    <string name="otions_menu_disable">Disable</string>
+    <string name="otions_menu_activate">Activate</string>
+
+    <string name="social_media">SOCIAL NETWORK</string>
+    <string name="medicine_inhaler_hint">Inhaler Type*</string>
+
+    <string name="overlay_disable_text">Are you sure you want to disable this shot?</string>
+    <string name="overlay_active_text">Are you sure you want to enable this shot?</string>
+    <string name="overlay_days_text">choose the days</string>
+    <string name="overlay_med_create">create</string>
+    <string name="overlay_med_name">Medication name</string>
+    <string name="overlay_med_name_hint">Write the name of the medicine</string>
+    <string name="new_step_plan">therapeutic plan</string>
+    <string name="new_step_notes">notes</string>
+    <string name="new_step_scheduling">Scheduling</string>
+    <string name="new_step_sos">SOS (Take extra)</string>
+    <string name="new_step_add_sche">Add time for different days</string>
+    <string name="new_step_start_date">Start date:</string>
+    <string name="new_step_duration">Duration</string>
+    <string name="new_step_continuous">Continuous</string>
+    <string name="new_step_num_days">Number of days:</string>
+    <string name="new_step_days">Days</string>
+    <string name="new_step_all_days">Every day</string>
+    <string name="new_step_scpec_days">Specific days of the week:</string>
+    <string name="new_step_int_days">Days range</string>
+    <string name="new_step_schedule">Schedule</string>
+    <string name="overlay_take_date"><b>Scheduled for</b> today at %1$s!</string>
+    <string name="overlay_last_date">Last taken, today at 14:18</string>
+    <string name="overlay_take_dont">Do not\ntake</string>
+    <string name="overlay_take_now">Take\nnow</string>
+    <string name="overlay_take_reschedule">Reschedule</string>
+    <string name="overlay_take_med">See medicine</string>
+    <string name="overlay_miss_text">Indicate why you do not take this dose:</string>
+    <string name="overlay_take_tut">Hi,\nit\'s time for your\nmedication at</string>
+    <string name="overlay_freq_text">Frequency</string>
+    <string name="overlay_int_text">Breaks</string>
+
+    <string name="day_sunday">Sunday</string>
+    <string name="day_monday">Monday</string>
+    <string name="day_tuesday">Tuesday</string>
+    <string name="day_wednesday">Wednesday</string>
+    <string name="day_thursday">Thursday</string>
+    <string name="day_friday">Friday</string>
+    <string name="day_saturday">Saturday</string>
+
+    <string name="one_a_day">Once a day</string>
+    <string name="two_a_day">Twice a day</string>
+    <string name="three_a_day">3 times a day</string>
+    <string name="four_a_day">4 times a day</string>
+    <string name="five_a_day">5 times a day</string>
+    <string name="six_a_day">6 times a day</string>
+    <string name="seven_a_day">7 times a day</string>
+    <string name="eight_a_day">8 times a day</string>
+    <string name="nine_a_day">9 times a day</string>
+    <string name="ten_a_day">10 times a day</string>
+    <string name="eleven_a_day">11 times a day</string>
+    <string name="twelve_a_day">12 times a day</string>
+
+
+    <string name="one_to_one">Per hour</string>
+    <string name="two_to_two">Every 2 hours</string>
+    <string name="three_to_three">Every 3 hours</string>
+    <string name="four_to_four">Every 4 hours</string>
+    <string name="six_to_six">Every 6 hours</string>
+    <string name="eight_to_eight">Every 8 hours</string>
+    <string name="twelve_to_twelve">Every 12 hours</string>
+
+    <string name="overlay_int_days">Ajuste o intervalo de dias</string>
+    <string name="text_int_days">every %1$d days</string>
+    <string name="text_total_days">%1$d days</string>
+
+    <string name="overlay_put_off">Put off</string>
+
+    <string name="start_date_sos">Extra daate taken:</string>
+
+    <string name="miss_option_one">The medicine is not near me</string>
+    <string name="miss_option_two">I forgot / busy / sleeping</string>
+    <string name="miss_option_three">The medicine is gone</string>
+    <string name="miss_option_four">I do not need to take this dose</string>
+    <string name="miss_option_five">Side Effects / Other Health Issues</string>
+    <string name="miss_option_six">I worry about the cost</string>
+    <string name="miss_option_seven">The therapeutic plan was changed</string>
+    <string name="miss_option_eight">Others</string>
+
+    <string name="select_option">Select one of the options</string>
+
+    <string name="medicine_exists">There is already such a medicine. Want to edit the medicine or continue to create a new one?</string>
+    <string name="edit_medicine">Edit</string>
+    <string name="create_new_medicine">Create</string>
+
+    <string name="tutorial_text_one">Selects the type of medicine - inhalation by mouth, tablets or others (vaccine, nasal instillation, cream, etc.)</string>
+    <string name="tutorial_text_two">Select your inhaler. If it is not one of the 4 shown, click on “See more”</string>
+    <string name="tutorial_text_three">Choose the name of the inhaler from the list provided or enter the name of the medicine in all other cases.</string>
+    <string name="tutorial_text_four">Remaining doses indicated on the dose counter of your inhaler.</string>
+    <string name="tutorial_text_five">Indicates the frequency per day, time, number of doses (days) and days. Use the “Add time for different days” button for further customization. It also indicates the day treatment begins and the duration.</string>
+    <string name="tutorial_text_six">Enter the number of doses in SOS indicated by your doctor.</string>
+
+    <string name="tutorial_text_next">next</string>
+    <string name="tutorial_text_back">back</string>
+
+    // MEDICINE INHALER NAMES
+
+    <string name="med_diskus">Diskus/Accuhaler</string>
+    <string name="med_easyhaler">Easyhaler</string>
+    <string name="med_ellipta">Ellipta</string>
+    <string name="med_flutiform">Flutiform</string>
+    <string name="med_kHaller">K-haller</string>
+    <string name="med_turbohaler">Turbohaler/Turbuhaler</string>
+    <string name="med_MDS3M">mdi-3M</string>
+    <string name="med_seretide">Seretide/Seretaide</string>
+    <string name="med_nextHaler">Nexthaler</string>
+    <string name="med_spiromax">Spiromax</string>
+    <string name="med_twisthaler">Twisthaler</string>
+    <string name="med_novolizer">Novolizer</string>
+    <string name="med_symbicort">mdi-Symbicort</string>
+    <string name="med_other">Other</string>
+
+
+</resources>

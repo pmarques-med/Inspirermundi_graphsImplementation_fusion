@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InspirerMundi</string>
+    <string name="title_activity_main">InspirerMundi</string>
+    <string name="capture_delta">InspirerMundi</string>
+    <string name="pre_rec_instructions">You will need to place your inhaler according to the colored outline. The remaining doses will be detected using the camera.</string>
+    <string name="pre_rec_checkbox_instructions">Do not show this message again</string>
+    <string name="detect_remanining_doses">After doing the inhalations, click on start to detect the remaining doses.</string>
+    <string name="confirm_doses">Confirm the remaining doses in your inhaler</string>
+    <string name="start_button_text">Start</string>
+    <string name="continue_button_text">Continue</string>
+    <string name="success_message">Successful detection!</string>
+    <string name="fail_message">Detection period ended</string>
+    <string name="pre_rec_instruction_notemplate">Press Start and put the medication inside the colored square location</string>
+    <string name="permission_request_text">Please permit the app to access the camera and SD card, so we can save some photos for analysis</string>
+    <string name="permission_request_title">Permission request</string>
+    <string name="permission_error_text">You need to provide both permission to advance, please try again!</string>
+    <string name="ok_text">Ok</string>
+    <string name="retry_text">Retry</string>
+    <string name="back_button_text">Back</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="permission_error_title">Error</string>
+</resources>

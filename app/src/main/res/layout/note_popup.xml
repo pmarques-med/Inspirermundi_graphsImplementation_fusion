@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/popup_weight"
+    android:orientation="vertical"
+    android:elevation="5dp"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="15dp"
+        android:rotation="180"
+        android:visibility="gone"
+        android:id="@+id/top_triangle"
+        android:background="@drawable/triangle"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notes_background"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/medicine_notes">
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:text="@string/medication_notes"
+                android:textColor="@color/text_color_333333"
+                android:gravity="center"
+                android:textSize="@dimen/morebiRounded_12pt"
+                android:textStyle="bold"
+                android:layout_height="wrap_content">
+            </com.bloomidea.inspirers.customViews.MorebiRoundedTextView>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:text="@string/medication_notes"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/text_color_333333"
+                android:gravity="center"
+                android:id="@+id/medicine_note_textview"
+                android:textSize="@dimen/morebiRounded_12pt"
+                android:layout_height="wrap_content">
+            </com.bloomidea.inspirers.customViews.MorebiRoundedTextView>
+        </LinearLayout>
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:layout_width="match_parent"
+            android:text="@string/take_notes"
+            android:textColor="@color/text_color_333333"
+            android:gravity="center"
+            android:textSize="@dimen/morebiRounded_12pt"
+            android:textStyle="bold"
+            android:layout_height="wrap_content">
+        </com.bloomidea.inspirers.customViews.MorebiRoundedTextView>
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:layout_width="match_parent"
+            android:text="@string/medication_notes"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/text_color_333333"
+            android:gravity="center"
+            android:textSize="@dimen/morebiRounded_12pt"
+            android:id="@+id/take_note_textview"
+            android:layout_height="wrap_content">
+        </com.bloomidea.inspirers.customViews.MorebiRoundedTextView>
+    </LinearLayout>
+    <View
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/down_triangle"
+        android:background="@drawable/triangle"/>
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/medicine_time_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/spinner_back">
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/medicine_time_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:typeface="normal"
+            android:textColor="@color/text_color_333333"
+            android:textColorHint="@color/text_color_999999"
+            android:textSize="@dimen/morebiRounded_8pt"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="@string/select_hint" />
+
+        <ImageView
+            android:id="@+id/teste2"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/arrow_spinner" />
+
+    </LinearLayout>
+    <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+        android:background="@drawable/spinner_back"
+        android:layout_weight="1"
+        android:id="@+id/medicine_posology_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_333333"
+        android:textColorHint="@color/text_color_999999"
+        android:layout_marginLeft="2dp"
+        android:maxLines="1"
+        android:textSize="@dimen/morebiRounded_8pt"
+        android:typeface="normal"
+        android:ems="10"
+        android:inputType="number"
+        android:text="" />
+    <ImageView
+        android:id="@+id/delete_item_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:src="@drawable/delete_medicine"
+        android:visibility="gone"/>
+</LinearLayout>

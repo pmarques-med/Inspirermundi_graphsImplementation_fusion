@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="languages_names">
+        <item>Afrikaans</item>
+        <item>Albanês</item>
+        <item>Amárico</item>
+        <item>Árabe</item>
+        <item>Arménio</item>
+        <item>Assamês</item>
+        <item>Azerbaijanês (latim)</item>
+        <item>Bangla (Bangladeche)</item>
+        <item>Bangla (Índia)</item>
+        <item>Basco (Basco)</item>
+        <item>Bielorrusso</item>
+        <item>Bósnio (latim)</item>
+        <item>Búlgaro</item>
+        <item>Catalão</item>
+        <item>Curdo central (árabe)</item>
+        <item>Cheroqui (Cheroqui)</item>
+        <item>Chinês simplificado</item>
+        <item>Chinês tradicional</item>
+        <item>Croata</item>
+        <item>Checo</item>
+        <item>Dinamarquês</item>
+        <item>Dari</item>
+        <item>Neerlandês</item>
+        <item>Inglês</item>
+        <item>Estónio</item>
+        <item>Filipino</item>
+        <item>Finlandês</item>
+        <item>Francês</item>
+        <item>Galego</item>
+        <item>Georgiano</item>
+        <item>Alemão</item>
+        <item>Grego</item>
+        <item>Guzarate</item>
+        <item>Haúça (latim)</item>
+        <item>Hebraico</item>
+        <item>Hindi</item>
+        <item>Húngaro</item>
+        <item>Islandês</item>
+        <item>Igbo</item>
+        <item>Indonésio</item>
+        <item>Irlandês</item>
+        <item>IsiXhosa</item>
+        <item>IsiZulu</item>
+        <item>Italiano</item>
+        <item>Japonês</item>
+        <item>Canarim</item>
+        <item>Cazaquistanês</item>
+        <item>Khmer</item>
+        <item>K\'iche\'</item>
+        <item>Kinyarwanda</item>
+        <item>Kiswahili</item>
+        <item>Concani</item>
+        <item>Coreano</item>
+        <item>Quirguize</item>
+        <item>Letão</item>
+        <item>Lituano</item>
+        <item>Luxemburguês</item>
+        <item>Macedónio</item>
+        <item>Malaio (Malásia, Brunei e Singapura)</item>
+        <item>Malayalam</item>
+        <item>Maltês</item>
+        <item>Maori</item>
+        <item>Marati</item>
+        <item>Mongol (cirílico)</item>
+        <item>Nepalês</item>
+        <item>Norueguês (Bokmål)</item>
+        <item>Norueguês (Nynorsk)</item>
+        <item>Odia</item>
+        <item>Persa</item>
+        <item>Polaco</item>
+        <item>Português (Brasil)</item>
+        <item>Português (Portugal)</item>
+        <item>Punjabi</item>
+        <item>Punjabi (árabe)</item>
+        <item>Quechua</item>
+        <item>Romeno</item>
+        <item>Russo</item>
+        <item>Gaélico escocês</item>
+        <item>Sérvio (cirílico, Bósnia e Herzegovina)</item>
+        <item>Sérvio (cirílico, Sérvia)</item>
+        <item>Sérvio (latim)</item>
+        <item>Sesotho sa Leboa</item>
+        <item>Setswana (África do Sul e Botsuana)</item>
+        <item>Sindhi (árabe)</item>
+        <item>Sinhala</item>
+        <item>Eslovaco</item>
+        <item>Esloveno</item>
+        <item>Espanhol</item>
+        <item>Sueco</item>
+        <item>Tajique (cirílico)</item>
+        <item>Tamil (Índia e Sri Lanca)</item>
+        <item>Tatar</item>
+        <item>Télego</item>
+        <item>Tailandês</item>
+        <item>Tigrínia (Etiópia)</item>
+        <item>Turco</item>
+        <item>Turcomeno</item>
+        <item>Ucraniano</item>
+        <item>Urdu</item>
+        <item>Uyghur</item>
+        <item>Usbeque (latim)</item>
+        <item>Valenciano</item>
+        <item>Vietnamita</item>
+        <item>Galês</item>
+        <item>Wolof</item>
+        <item>Yoruba</item>
+    </array>
+</resources>

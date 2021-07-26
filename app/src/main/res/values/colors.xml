@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#33cc99</color>
+    <color name="colorPrimaryDark">#33cc99</color>
+    <color name="colorAccent">#33cc99</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="black_overlay_tutorial">#E6000000</color>
+    <color name="text_color_333333">#333333</color>
+    <color name="facebook_color">#3b5998</color>
+    <color name="text_color_3399ff">#3399ff</color>
+    <color name="text_color_999999">#999999</color>
+    <color name="text_color_666666">#666666</color>
+    <color name="medicine_failed">#ff6666</color>
+    <color name="text_color_ffcc00">#ffcc00</color>
+    <color name="medicine_late">#ffcc00</color>
+    <color name="medicine_normal">#ffffff</color>
+    <color name="medicine_normal_text_colro">#3ff098</color>
+    <color name="text_color_3ff098">#3ff098</color>
+    <color name="central_line">#dddddd</color>
+    <color name="sos_text_color">#cc3333</color>
+    <color name="medicine_normal_grey">#dddddd</color>
+    <color name="white">#ffffff</color>
+    <color name="medicine_future">#dddddd</color>
+    <color name="medicine_actual">#999999</color>
+    <color name="medicine_timer">#00ff00</color>
+    <color name="normal_item_background">#eeeeee</color>
+    <color name="connected_item_background">#ffffff</color>
+    <color name="general_poll">#ca6fe4</color>
+    <color name="carat_poll">#33b8cc</color>
+</resources>

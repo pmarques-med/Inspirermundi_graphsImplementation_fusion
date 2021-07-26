@@ -1,0 +1,25 @@
+[
+{
+  "directory": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/release/x86_64",
+  "command": "D:\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnew_template_props_EXPORTS -I../../../../../../../OpenCV-android-sdk/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -std=gnu++11 -o CMakeFiles\\new_template_props.dir\\src\\main\\cpp\\templateProps.cpp.o -c \"D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\cpp\\templateProps.cpp\"",
+  "file": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/src/main/cpp/templateProps.cpp"
+},
+
+{
+  "directory": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/release/x86_64",
+  "command": "D:\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnew_utils_EXPORTS -I../../../../../../../OpenCV-android-sdk/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -std=gnu++11 -o CMakeFiles\\new_utils.dir\\src\\main\\cpp\\utils.cpp.o -c \"D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\cpp\\utils.cpp\"",
+  "file": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/src/main/cpp/utils.cpp"
+},
+
+{
+  "directory": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/release/x86_64",
+  "command": "D:\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dframe_analyser_take1_EXPORTS -I../../../../../../../OpenCV-android-sdk/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -std=gnu++11 -o CMakeFiles\\frame_analyser_take1.dir\\src\\main\\cpp\\mainsubs.cpp.o -c \"D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\cpp\\mainsubs.cpp\"",
+  "file": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/src/main/cpp/mainsubs.cpp"
+},
+
+{
+  "directory": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/release/x86_64",
+  "command": "D:\\Android\\Sdk\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/Android/Sdk/ndk/21.4.7075529/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Djni_wrapper_EXPORTS -I../../../../../../../OpenCV-android-sdk/sdk/native/jni/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O2 -DNDEBUG  -fPIC   -std=gnu++11 -o CMakeFiles\\jni_wrapper.dir\\src\\main\\cpp\\jniWrapper.cpp.o -c \"D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\cpp\\jniWrapper.cpp\"",
+  "file": "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/src/main/cpp/jniWrapper.cpp"
+}
+]

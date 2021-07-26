@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:background="#eeeeee">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp">
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/date_textview"
+                android:text="20/03/2017 12:12"
+                android:typeface="normal"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:textColor="@color/text_color_999999"/>
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mundial 2020  Mundial 2020  Mundial "
+                android:textSize="@dimen/morebiRounded_12pt"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:id="@+id/name_textView"
+                android:ellipsize="end"
+                android:typeface="normal"
+                android:textColor="@color/text_color_333333"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/rigth_green_arrow" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:background="#cccccc"/>
+</LinearLayout>

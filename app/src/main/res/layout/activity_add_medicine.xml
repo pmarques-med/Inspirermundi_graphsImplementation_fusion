@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bloomidea.inspirers.AddMedicineActivity">
+
+    <FrameLayout
+        android:id="@+id/add_medicine_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#eeeeee"
+        app:layout_constraintBottom_toTopOf="@+id/white_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/man"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="248:659"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <LinearLayout
+        android:id="@+id/creating_linearlayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black_overlay"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/level_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:max="100"
+        android:progress="19"
+        android:progressDrawable="@drawable/progress_bar_aux"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/top_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+
+    <View
+        android:id="@+id/white_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintGuide_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintGuide_percent="0.4"
+        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintGuide_percent="0.6"
+        app:layout_constraintStart_toEndOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.8"
+        app:layout_constraintStart_toEndOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="@+id/top_bar"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="1"
+        app:layout_constraintStart_toStartOf="@+id/add_medicine_container"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/step_message_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/add_medicine_step1"
+        android:textColor="@color/text_color_333333"
+        android:textSize="@dimen/morebiRounded_9pt"
+        android:typeface="normal"
+        app:layout_constraintLeft_toRightOf="@+id/imageView10"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/white_view" />
+
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/add_new_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:background="#ffcc33"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+        android:text="@string/add_new_medicine"
+        android:textAllCaps="true"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/morebiRounded_10pt"
+        android:typeface="normal"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step_message_textView" />
+
+    <include
+        android:id="@+id/top_bar"
+        layout="@layout/layout_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="659dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <include
+        android:id="@+id/overlay_other_med_name"
+        layout="@layout/overlay_med_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/white_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_add_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/level_progress_bar"
+        app:layout_constraintRight_toLeftOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/level_progress_bar" />
+
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/layout_add_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/level_progress_bar"
+        app:layout_constraintRight_toLeftOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/level_progress_bar" />
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/layout_add_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/level_progress_bar"
+        app:layout_constraintRight_toLeftOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="@+id/level_progress_bar" />
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/layout_add_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/level_progress_bar"
+        app:layout_constraintRight_toLeftOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="@+id/level_progress_bar" />
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/layout_add_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/level_progress_bar"
+        app:layout_constraintRight_toRightOf="@+id/level_progress_bar"
+        app:layout_constraintTop_toTopOf="@+id/level_progress_bar" />
+
+
+    <include
+        android:id="@+id/freq_int_med"
+        layout="@layout/overlay_freq_int_med"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/overlay_tutorial"
+        layout="@layout/overlay_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

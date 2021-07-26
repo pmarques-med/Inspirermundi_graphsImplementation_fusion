@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/medicine_time_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+            android:id="@+id/teste2"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/asset27" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/time_dosage_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:textColor="#33cc99"
+            android:text="08:00"
+            android:textSize="@dimen/morebiRounded_10pt"
+            android:gravity="center_vertical" />
+
+    </LinearLayout>
+    <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+        android:layout_weight="1"
+        android:id="@+id/medicine_posology_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#33cc99"
+        android:textColorHint="@color/text_color_999999"
+        android:layout_marginLeft="2dp"
+        android:gravity="right|center_vertical"
+        android:maxLines="1"
+        android:textSize="@dimen/morebiRounded_10pt"
+        android:typeface="normal"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="@string/medicine_posology_hint"
+        android:text="" />
+</LinearLayout>

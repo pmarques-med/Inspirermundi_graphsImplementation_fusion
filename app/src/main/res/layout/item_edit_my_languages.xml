@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/languages_icon" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/languages_spoken"
+                    android:textAllCaps="true"
+                    android:textColor="@color/text_color_333333"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:textStyle="bold"
+                    android:typeface="normal" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.bloomidea.inspirers.customViews.MyExpandableLayout
+                    android:id="@+id/expandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="500"
+                    app:el_parallax="0"
+                    app:el_expanded="false">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/languages_recyclerview"
+                        />
+                </com.bloomidea.inspirers.customViews.MyExpandableLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Nenhum idioma escolhido"
+                    android:gravity="center"
+                    android:id="@+id/no_languages"/>
+            </RelativeLayout>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimary"
+                android:text="@string/view_more_no_underline"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/languages_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:background="@drawable/spinner_back_no_line">
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:id="@+id/language_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:maxLines="1"
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:typeface="normal"
+                    android:textColor="@color/text_color_333333"
+                    android:textColorHint="@color/text_color_999999"
+                    android:textSize="@dimen/morebiRounded_8pt"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/language_hint" />
+
+                <ImageView
+                    android:id="@+id/teste1"
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/arrow_spinner" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cccccc"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"/>
+</LinearLayout>

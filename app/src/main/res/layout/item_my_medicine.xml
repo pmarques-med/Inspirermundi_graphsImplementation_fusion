@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+    android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/medicine_imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="6dp"
+            android:background="@drawable/medicine_gray_back"
+            app:srcCompat="@drawable/timeline_logo_pils"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/title_textView"
+            android:layout_toStartOf="@+id/title_textView" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2 afilhados"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:id="@+id/medicine_text_textView"
+                android:typeface="normal"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_12pt"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 vez por dia | Todos os dias"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:id="@+id/medicine_text_timedays"
+                android:typeface="normal"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_7pt"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tratamento continua"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:id="@+id/medicine_text_type"
+                android:typeface="normal"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_7pt"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/edit_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/icon_edit_medicine"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingRight="5dp"/>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/delete_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:srcCompat="@drawable/icon_delete_medicine" />
+        <ImageView
+            android:id="@+id/menu_med"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            app:srcCompat="@drawable/asset12" />
+    </LinearLayout>
+</LinearLayout>

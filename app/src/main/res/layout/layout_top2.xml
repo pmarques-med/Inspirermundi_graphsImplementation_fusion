@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_bar"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/back_btn_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="10dp"
+        android:src="@drawable/back_arrow"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
+        <ImageView
+            android:id="@+id/icon_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/leader_icon2"
+            android:layout_centerVertical="true" />
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/morebiRounded_8pt"
+            android:textAllCaps="true"
+            android:typeface="normal"
+            android:layout_centerInParent="true"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/options_btn_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingLeft="10dp"
+        android:src="@drawable/options_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/edit_btn_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:src="@drawable/edit_icon"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

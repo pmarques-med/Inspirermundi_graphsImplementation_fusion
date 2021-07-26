@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/item_medicine_normal_btn_back">
+<com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+    android:layout_width="@dimen/marker_w_h"
+    android:layout_height="@dimen/marker_w_h"
+    android:layout_margin="2dp"
+    android:typeface="normal"
+    android:gravity="center"
+    android:maxLines="1"
+    android:id="@+id/total_textView"
+    android:includeFontPadding="false"
+    android:background="@drawable/marker_circle"
+    android:textSize="@dimen/morebiRounded_10pt"
+    android:textColor="#ffffff"
+    android:textStyle="bold"
+    android:text="99+"
+    />
+</LinearLayout>

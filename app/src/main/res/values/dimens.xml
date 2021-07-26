@@ -1,0 +1,56 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="activity_horizontal_margin_div_8">2dp</dimen>
+    <dimen name="activity_horizontal_margin_div_4">4dp</dimen>
+    <dimen name="activity_horizontal_margin_div_2">8dp</dimen>
+    <dimen name="activity_vertical_margin_mult_2">32dp</dimen>
+    <dimen name="morebiRounded_24pt">38sp</dimen>
+    <dimen name="morebiRounded_21pt">34sp</dimen>
+    <dimen name="morebiRounded_20pt">30sp</dimen>
+    <dimen name="morebiRounded_18pt">28sp</dimen>
+    <dimen name="morebiRounded_14pt">22sp</dimen>
+    <dimen name="morebiRounded_12pt">18sp</dimen>
+    <dimen name="morebiRounded_11pt">17sp</dimen>
+    <dimen name="morebiRounded_10pt">16sp</dimen>
+    <dimen name="morebiRounded_9pt">15sp</dimen>
+    <dimen name="morebiRounded_8pt">14sp</dimen>
+    <dimen name="morebiRounded_7pt">12sp</dimen>
+    <dimen name="morebiRounded_6pt">11sp</dimen>
+    <dimen name="morebiRounded_5pt">10sp</dimen>
+    <dimen name="main_top_bar_h">72dp</dimen>
+    <dimen name="avatar_and_progress_w_h">64dp</dimen>
+    <dimen name="main_menu_h">64dp</dimen>
+    <dimen name="avatar_w_h">56dp</dimen>
+    <dimen name="line_h">1dp</dimen>
+    <dimen name="notif_red_circle_radius">30dp</dimen>
+    <dimen name="main_menu_item_padding">12dp</dimen>
+    <dimen name="main_menu_notif_w_h">22dp</dimen>
+    <dimen name="points_padding">2dp</dimen>
+    <dimen name="points_padding_top_extra">1dp</dimen>
+    <dimen name="points_padding_top">3dp</dimen> <!-- 2dp + extra 1dp-->
+
+
+    <dimen name="conffety_velocity_slow">50dp</dimen>
+    <dimen name="conffety_velocity_normal">100dp</dimen>
+    <dimen name="btn_add_medicine_w_h">40dp</dimen>
+    <dimen name="central_line_w">2dp</dimen>
+    <dimen name="central_line_h">15dp</dimen>
+    <dimen name="tendp">10dp</dimen>
+    <dimen name="popup_weight">300dp</dimen>
+    <dimen name="marker_w_h">40dp</dimen>
+    <dimen name="string_item_h">30dp</dimen>
+    <dimen name="string_item_spacing">10dp</dimen>
+    <dimen name="space_pages">10dp</dimen>
+    <dimen name="space_pages_x_2">30dp</dimen>
+    <dimen name="half_32">32dp</dimen>
+    <dimen name="bottom_stats_padding">80dp</dimen>
+    <dimen name="index_bar_h">20dp</dimen>
+    <dimen name="activity_horizontal_margin_x2">32dp</dimen>
+    <dimen name="activity_horizontal_margin_x3">42dp</dimen>
+
+    <dimen name="item_height_inhaler">80dp</dimen>
+    <dimen name="tab_indicator_h">4dp</dimen>
+</resources>

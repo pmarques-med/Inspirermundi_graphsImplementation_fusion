@@ -1,0 +1,6 @@
+D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
+D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86_64/CMakeFiles/new_template_props.dir
+D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86_64/CMakeFiles/new_utils.dir
+D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86_64/CMakeFiles/frame_analyser_take1.dir
+D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86_64/CMakeFiles/jni_wrapper.dir
+D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir

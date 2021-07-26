@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/index_bar_h"
+    android:gravity="center">
+        <com.bloomidea.inspirers.customViews.MorebiRoundedCheckBox
+            android:id="@+id/language_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:typeface="normal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+            android:text="Portugal"
+            android:textAllCaps="true"
+            android:textColor="@color/text_color_333333"
+            android:textSize="@dimen/morebiRounded_10pt"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical" />
+</LinearLayout>

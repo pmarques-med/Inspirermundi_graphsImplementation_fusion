@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin_x2"
+        android:layout_marginRight="@dimen/activity_horizontal_margin_x2"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_x3"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin_x3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="normal"
+                android:text="@string/overlay_freq_text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:textSize="@dimen/morebiRounded_10pt" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/freqList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="normal"
+                android:text="@string/overlay_int_text"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:textSize="@dimen/morebiRounded_10pt" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/intervalList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

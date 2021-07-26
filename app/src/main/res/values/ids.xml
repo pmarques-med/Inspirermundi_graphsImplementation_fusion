@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tag_item_code" type="id" />
+    <item name="tag_selected_fase_time" type="id" />
+    <item name="tag_selected_times" type="id" />
+    <item name="tag_selected_schedule_code" type="id" />
+    <item name="tag_selected_days" type="id" />
+    <item name="tag_textView" type="id" />
+    <item name="tag_textView_poso" type="id" />
+    <item name="tag_posology_total" type="id" />
+    <item name="tag_position" type="id" />
+    <item name="tag_animating" type="id" />
+    <item name="tag_is_active" type="id" />
+    <item name="tag_viewholder" type="id" />
+    <item name="tag_user_profile" type="id" />
+</resources>

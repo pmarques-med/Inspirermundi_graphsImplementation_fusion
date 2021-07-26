@@ -1,0 +1,9 @@
+ninja: Entering directory `D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\.cxx\cmake\debug\armeabi-v7a'
+[1/8] Building CXX object CMakeFiles/new_template_props.dir/src/main/cpp/templateProps.cpp.o
+[2/8] Building CXX object CMakeFiles/jni_wrapper.dir/src/main/cpp/jniWrapper.cpp.o
+[3/8] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libnew_template_props.so
+[4/8] Building CXX object CMakeFiles/new_utils.dir/src/main/cpp/utils.cpp.o
+[5/8] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libnew_utils.so
+[6/8] Building CXX object CMakeFiles/frame_analyser_take1.dir/src/main/cpp/mainsubs.cpp.o
+[7/8] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libframe_analyser_take1.so
+[8/8] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\armeabi-v7a\libjni_wrapper.so

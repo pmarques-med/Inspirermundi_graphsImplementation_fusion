@@ -1,0 +1,83 @@
+{
+  "buildFiles": [
+    "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+      "-C",
+      "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\.cxx\\cmake\\release\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+    "-C",
+    "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\.cxx\\cmake\\release\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "frame_analyser_take1-Release-arm64-v8a": {
+      "artifactName": "frame_analyser_take1",
+      "buildCommandComponents": [
+        "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\.cxx\\cmake\\release\\arm64-v8a",
+        "frame_analyser_take1"
+      ],
+      "abi": "arm64-v8a",
+      "output": "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libframe_analyser_take1.so",
+      "runtimeFiles": [
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_utils.so",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_template_props.so",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\jniLibs\\arm64-v8a\\libopencv_java3.so"
+      ]
+    },
+    "new_template_props-Release-arm64-v8a": {
+      "artifactName": "new_template_props",
+      "buildCommandComponents": [
+        "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\.cxx\\cmake\\release\\arm64-v8a",
+        "new_template_props"
+      ],
+      "abi": "arm64-v8a",
+      "output": "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_template_props.so",
+      "runtimeFiles": [
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\jniLibs\\arm64-v8a\\libopencv_java3.so"
+      ]
+    },
+    "new_utils-Release-arm64-v8a": {
+      "artifactName": "new_utils",
+      "buildCommandComponents": [
+        "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\.cxx\\cmake\\release\\arm64-v8a",
+        "new_utils"
+      ],
+      "abi": "arm64-v8a",
+      "output": "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_utils.so",
+      "runtimeFiles": [
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_template_props.so",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\jniLibs\\arm64-v8a\\libopencv_java3.so"
+      ]
+    },
+    "jni_wrapper-Release-arm64-v8a": {
+      "artifactName": "jni_wrapper",
+      "buildCommandComponents": [
+        "D:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe",
+        "-C",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\.cxx\\cmake\\release\\arm64-v8a",
+        "jni_wrapper"
+      ],
+      "abi": "arm64-v8a",
+      "output": "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libjni_wrapper.so",
+      "runtimeFiles": [
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libframe_analyser_take1.so",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_utils.so",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\obj\\arm64-v8a\\libnew_template_props.so",
+        "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\src\\main\\jniLibs\\arm64-v8a\\libopencv_java3.so"
+      ]
+    }
+  }
+}

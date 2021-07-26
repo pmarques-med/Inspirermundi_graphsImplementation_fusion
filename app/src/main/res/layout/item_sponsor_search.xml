@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+        <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_666666"
+            android:text="@string/inspier"
+            android:typeface="normal"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textSize="@dimen/morebiRounded_7pt"/>
+        <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_666666"
+            android:typeface="normal"
+            android:text="@string/search_inspirer_text"
+            android:gravity="center"
+            android:textSize="@dimen/morebiRounded_7pt"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:id="@+id/share_doctor_btn"
+        android:orientation="horizontal"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <com.bloomidea.inspirers.customViews.MorebiRoundedEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:padding="@dimen/activity_horizontal_margin_div_2"
+            android:textColor="@color/text_color_333333"
+            android:textColorHint="#999999"
+            android:typeface="normal"
+            android:text=""
+            android:maxLines="1"
+            android:inputType="textPersonName"
+            android:hint="@string/search_inspirer_hint"
+            android:layout_weight="1"
+            android:id="@+id/search_editText"
+            android:textSize="@dimen/morebiRounded_7pt"/>
+
+        <ImageView
+            android:id="@+id/search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/search_icon"
+            android:paddingRight="@dimen/activity_horizontal_margin_div_2"
+            android:paddingLeft="@dimen/activity_horizontal_margin_div_2"/>
+    </LinearLayout>
+</LinearLayout>

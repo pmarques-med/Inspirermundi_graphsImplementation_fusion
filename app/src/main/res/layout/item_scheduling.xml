@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:background="@android:color/white"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/medicine_time_box"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:background="@drawable/spinner_back">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/medicine_time_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:typeface="normal"
+                android:textColor="@color/text_color_333333"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:background="@android:color/transparent"
+                android:gravity="center_vertical"
+                android:hint="@string/select_hint" />
+
+            <ImageView
+                android:id="@+id/teste2"
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/asset29" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/times_list">
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/info_days"
+            android:paddingLeft="@dimen/activity_horizontal_margin_div_4"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/asset33"
+                android:padding="12dp"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_marginRight="@dimen/activity_horizontal_margin_div_2"
+                android:typeface="normal"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:text="@string/new_step_days" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/select_every_day"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_x3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_every_day"
+                android:padding="@dimen/activity_horizontal_margin_div_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/asset31"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:typeface="normal"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:text="@string/new_step_all_days" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/select_week_day"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_x3"
+            android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_week_day"
+                android:padding="@dimen/activity_horizontal_margin_div_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/asset30"/>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_weight="1"
+                    android:typeface="normal"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:textColor="@color/text_color_666666"
+                    android:textSize="@dimen/morebiRounded_10pt"
+                    android:text="@string/new_step_scpec_days" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:id="@+id/week_days_selected"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:typeface="normal"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textStyle="normal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="#33cc99"
+                    android:textSize="@dimen/morebiRounded_10pt"
+                    android:text="" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/select_range_day"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_x3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_range_day"
+                android:padding="@dimen/activity_horizontal_margin_div_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/asset30"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:typeface="normal"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:text="@string/new_step_int_days" />
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+                android:id="@+id/text_days_range"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:typeface="normal"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textStyle="normal"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="#33cc99"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:text="a cada 2 dias" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

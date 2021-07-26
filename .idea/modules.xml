@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Inspirermundi_graphsImplementation_-_fusion.iml" filepath="$PROJECT_DIR$/.idea/modules/Inspirermundi_graphsImplementation_-_fusion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/InhalerDetectionModule/Inspirermundi_graphsImplementation_-_fusion.InhalerDetectionModule.iml" filepath="$PROJECT_DIR$/.idea/modules/InhalerDetectionModule/Inspirermundi_graphsImplementation_-_fusion.InhalerDetectionModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SwipeLayout/Inspirermundi_graphsImplementation_-_fusion.SwipeLayout.iml" filepath="$PROJECT_DIR$/.idea/modules/SwipeLayout/Inspirermundi_graphsImplementation_-_fusion.SwipeLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ViewPagerIndicator/Inspirermundi_graphsImplementation_-_fusion.ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/.idea/modules/ViewPagerIndicator/Inspirermundi_graphsImplementation_-_fusion.ViewPagerIndicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Inspirermundi_graphsImplementation_-_fusion.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Inspirermundi_graphsImplementation_-_fusion.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/openCVLibrary330/Inspirermundi_graphsImplementation_-_fusion.openCVLibrary330.iml" filepath="$PROJECT_DIR$/.idea/modules/openCVLibrary330/Inspirermundi_graphsImplementation_-_fusion.openCVLibrary330.iml" />
+    </modules>
+  </component>
+</project>

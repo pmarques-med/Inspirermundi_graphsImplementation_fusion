@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:id="@+id/item_box"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+    android:paddingBottom="@dimen/activity_horizontal_margin_div_2">
+    <include
+        layout="@layout/layout_user_info"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+        android:id="@+id/ask_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+        android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:maxLines="1"
+        android:layout_marginLeft="10dp"
+        android:typeface="normal"
+        android:textColor="#ffffff"
+        android:textColorHint="@color/text_color_999999"
+        android:textSize="@dimen/morebiRounded_10pt"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:text="@string/ask"/>
+</LinearLayout>

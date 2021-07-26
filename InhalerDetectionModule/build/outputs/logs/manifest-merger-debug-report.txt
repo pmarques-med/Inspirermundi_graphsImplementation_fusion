@@ -1,0 +1,119 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:2:1-63:12
+	package
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+		INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:5:5-31
+	xmlns:android
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:4:5-30
+supports-screens
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:6:5-11:39
+	android:largeScreens
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:8:9-36
+	android:smallScreens
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:11:9-36
+	android:normalScreens
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:9:9-37
+	android:resizeable
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:10:9-34
+	android:anyDensity
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:7:9-34
+uses-permission#android.permission.CAMERA
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:13:5-65
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:13:22-62
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:14:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:15:22-78
+uses-feature#android.hardware.camera
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:17:5-19:36
+	android:required
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:19:9-33
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:18:9-47
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:20:5-22:36
+	android:required
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:22:9-33
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:21:9-57
+uses-feature#android.hardware.camera.front
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:23:5-25:36
+	android:required
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:25:9-33
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:24:9-53
+uses-feature#android.hardware.camera.front.autofocus
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:26:5-28:36
+	android:required
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:28:9-33
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:27:9-63
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:30:5-75
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:30:22-72
+application
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:32:5-61:19
+	android:label
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:34:9-41
+activity#org.medida.inhalerdetection.InhalerDetectionActivity
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:35:9-42:20
+	android:label
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:38:13-45
+	android:configChanges
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:37:13-63
+	android:theme
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:39:13-71
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:36:13-53
+activity#org.medida.inhalerdetection.ExampleMainActivity
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:43:9-53:20
+	android:label
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:45:13-56
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:44:13-48
+activity#org.medida.inhalerdetection.PreInstructionDetectionActivity
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:54:9-55:51
+	android:screenOrientation
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:55:13-49
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:54:19-66
+activity#org.medida.inhalerdetection.PostDetectionActivity
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:56:9-57:51
+	android:screenOrientation
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:57:13-49
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:56:19-56
+activity#org.medida.inhalerdetection.PreDetectionActivity
+ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:58:9-59:51
+	android:screenOrientation
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:59:13-49
+	android:name
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml:58:19-55
+uses-sdk
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+		INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+		ADDED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml
+		INJECTED from D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\src\main\AndroidManifest.xml

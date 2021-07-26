@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bloomidea.inspirers.LoginActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                app:layout_constraintDimensionRatio="h,1080:770"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/login_img2" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:background="#000000"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin_div_2"
+            android:orientation="vertical">
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedBlackTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/login_text1"
+                android:textColor="@color/text_color_333333"
+                android:typeface="normal"
+                android:textSize="@dimen/morebiRounded_10pt"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/login_text2"
+                android:textColor="@color/text_color_333333"
+                android:typeface="normal"
+                android:textSize="@dimen/morebiRounded_10pt"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/facebook_color"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+                android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+                android:paddingLeft="@dimen/activity_vertical_margin_mult_2"
+                android:paddingRight="@dimen/activity_vertical_margin_mult_2"
+                android:gravity="center"
+                android:id="@+id/btn_login_facebook">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/facebook_icon" />
+
+                <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin_div_2"
+                    android:textAllCaps="true"
+                    android:text="@string/login_facebook_btn"
+                    android:textColor="#ffffff"
+                    android:typeface="normal"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/morebiRounded_8pt"/>
+            </LinearLayout>
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:typeface="normal" />
+            <com.bloomidea.inspirers.customViews.MorebiRoundedAutoCompleteEditText
+                android:id="@+id/email_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_back"
+                android:ellipsize="end"
+                android:ems="10"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:text=""
+                android:hint="@string/email"
+                android:textColor="@color/text_color_333333"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:typeface="normal" />
+            <com.bloomidea.inspirers.customViews.MorebiRoundedAutoCompleteEditText
+                android:id="@+id/password_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_back"
+                android:ellipsize="end"
+                android:ems="10"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text=""
+                android:hint="@string/password"
+                android:textColor="@color/text_color_333333"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:typeface="normal" />
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+                android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+                android:maxLines="1"
+                android:typeface="normal"
+                android:textColor="#ffffff"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="@string/login"/>
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/recover_password"
+                android:gravity="center"
+                android:id="@+id/recover_password_btn"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:paddingTop="@dimen/activity_horizontal_margin"
+                android:paddingBottom="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textColor="@color/text_color_666666"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:typeface="normal" />
+
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:id="@+id/signup_btn"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/activity_horizontal_margin_div_2"
+                android:paddingTop="@dimen/activity_horizontal_margin_div_2"
+                android:paddingBottom="@dimen/activity_horizontal_margin_div_2"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:maxLines="1"
+                android:typeface="normal"
+                android:textColor="#ffffff"
+                android:textColorHint="@color/text_color_999999"
+                android:textSize="@dimen/morebiRounded_10pt"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="@string/signup"/>
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

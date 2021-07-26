@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1">
+
+        <View
+            android:layout_width="@dimen/central_line_w"
+            android:layout_height="@dimen/central_line_h"
+            android:id="@+id/top_line_view"
+            android:background="@color/central_line"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/layout_date_box">
+            <include
+                layout="@layout/layout_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="@dimen/central_line_w"
+                android:layout_height="@dimen/central_line_h"
+                android:background="@color/central_line"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="0dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/item_medicine_background"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="2dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/note_icon"
+                android:visibility="invisible"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:id="@+id/poll_textView"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/morebiRounded_12pt"
+                        android:textColor="@color/text_color_333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/carat_poll" />
+
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                        android:id="@+id/poll_type_textView"
+                        android:typeface="normal"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:textColor="@color/text_color_333333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Flutiform" />
+                </LinearLayout>
+                <com.bloomidea.inspirers.customViews.MorebiRoundedBlackTextView
+                    android:id="@+id/multiplier_textView"
+                    android:typeface="normal"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/morebiRounded_12pt"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:text="x1"
+                    android:visibility="invisible"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:id="@+id/points_without_background_box">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/check_green_icon"/>
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedBlackTextView
+                        android:id="@+id/points_without_background_textView"
+                        android:typeface="normal"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:gravity="center"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:textColor="@color/text_color_3ff098"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:id="@+id/points_with_backgorund_box">
+                    <com.bloomidea.inspirers.customViews.MorebiRoundedBlackSquareTextView
+                        android:id="@+id/points_with_background_textView"
+                        android:typeface="normal"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:includeFontPadding="false"
+                        android:gravity="center"
+                        android:textSize="@dimen/morebiRounded_8pt"
+                        android:textColor="@color/text_color_ffcc00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="@+id/back_btn_view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout3"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <LinearLayout
+            android:id="@+id/medicine_back_linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/item_medicine_normal"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:gravity="center_vertical">
+            <com.bloomidea.inspirers.customViews.MorebiRoundedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:typeface="normal"
+                android:textColor="@color/text_color_333333"
+                android:textSize="@dimen/morebiRounded_7pt"
+                android:id="@+id/time_textView"
+                android:layout_marginLeft="10dp"
+                android:text="às 14:08"/>
+            <com.bloomidea.inspirers.customViews.MorebiRoundedMediumTimerTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+                android:typeface="normal"
+                android:textColor="@color/medicine_timer"
+                android:textSize="@dimen/morebiRounded_8pt"
+                android:id="@+id/timer_text_textView"
+                android:layout_marginLeft="8dp"
+                android:text="00:05"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_trans"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/back_btn_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/item_medicine_normal_btn_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5"
+        tools:layout_constraintBottom_creator="1">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:background="@drawable/white_circle"
+            android:padding="12dp"
+            android:src="@drawable/timeline_logo_pils" />
+
+    </RelativeLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:background="#ffffff"
+        app:layout_constraintLeft_toLeftOf="@+id/linearLayout5"
+        app:layout_constraintRight_toRightOf="@+id/linearLayout5"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5" />
+
+    <ImageView
+        android:id="@+id/medicine_btn_imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/item_medicine_failed_btn_back"
+        android:padding="12dp"
+        android:src="@drawable/poll_timeline_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout5"
+        tools:layout_constraintBottom_creator="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

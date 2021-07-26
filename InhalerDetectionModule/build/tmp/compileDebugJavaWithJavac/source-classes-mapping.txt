@@ -1,0 +1,52 @@
+org/medida/inhalerdetection/ImageParser.java
+ org.medida.inhalerdetection.ImageParser
+org/medida/inhalerdetection/OpenCVCameraListener.java
+ org.medida.inhalerdetection.OpenCVCameraListener
+ org.medida.inhalerdetection.OpenCVCameraListener$1
+org/medida/inhalerdetection/DetectionActivity.java
+ org.medida.inhalerdetection.DetectionActivity
+org/medida/inhalerdetection/BuildConfig.java
+ org.medida.inhalerdetection.BuildConfig
+org/medida/inhalerdetection/ExampleMainActivity.java
+ org.medida.inhalerdetection.ExampleMainActivity
+ org.medida.inhalerdetection.ExampleMainActivity$1
+ org.medida.inhalerdetection.ExampleMainActivity$2
+ org.medida.inhalerdetection.ExampleMainActivity$3
+ org.medida.inhalerdetection.ExampleMainActivity$4
+ org.medida.inhalerdetection.ExampleMainActivity$5
+ org.medida.inhalerdetection.ExampleMainActivity$6
+ org.medida.inhalerdetection.ExampleMainActivity$7
+org/medida/inhalerdetection/PreInstructionDetectionActivity.java
+ org.medida.inhalerdetection.PreInstructionDetectionActivity
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$1
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$2
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$3
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$4
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$4$1
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$4$2
+ org.medida.inhalerdetection.PreInstructionDetectionActivity$5
+org/medida/inhalerdetection/InhalerDetectionActivity.java
+ org.medida.inhalerdetection.InhalerDetectionActivity
+ org.medida.inhalerdetection.InhalerDetectionActivity$1
+ org.medida.inhalerdetection.InhalerDetectionActivity$2
+ org.medida.inhalerdetection.InhalerDetectionActivity$3
+ org.medida.inhalerdetection.InhalerDetectionActivity$InhalerType
+org/medida/inhalerdetection/PreDetectionActivity.java
+ org.medida.inhalerdetection.PreDetectionActivity
+ org.medida.inhalerdetection.PreDetectionActivity$1
+ org.medida.inhalerdetection.PreDetectionActivity$2
+ org.medida.inhalerdetection.PreDetectionActivity$3
+ org.medida.inhalerdetection.PreDetectionActivity$3$1
+ org.medida.inhalerdetection.PreDetectionActivity$4
+ org.medida.inhalerdetection.PreDetectionActivity$5
+ org.medida.inhalerdetection.PreDetectionActivity$5$1
+ org.medida.inhalerdetection.PreDetectionActivity$5$2
+org/medida/inhalerdetection/PostDetectionActivity.java
+ org.medida.inhalerdetection.PostDetectionActivity
+ org.medida.inhalerdetection.PostDetectionActivity$1
+ org.medida.inhalerdetection.PostDetectionActivity$2
+ org.medida.inhalerdetection.PostDetectionActivity$3
+ org.medida.inhalerdetection.PostDetectionActivity$4
+ org.medida.inhalerdetection.PostDetectionActivity$5
+ org.medida.inhalerdetection.PostDetectionActivity$6
+ org.medida.inhalerdetection.PostDetectionActivity$7
