@@ -23,6 +23,7 @@ drawable ellipta9_canny_cleanedrotcropcoarse
 drawable flutiform1024
 drawable flutiform1024_overlay
 drawable icon
+drawable imagem_teste
 drawable khaler1024
 drawable khaler1024_overlay
 drawable khaler_big

@@ -882,6 +882,7 @@ int drawable flutiform1024_overlay 0x0
 int drawable googleg_disabled_color_18 0x0
 int drawable googleg_standard_color_18 0x0
 int drawable icon 0x0
+int drawable imagem_teste 0x0
 int drawable khaler1024 0x0
 int drawable khaler1024_overlay 0x0
 int drawable khaler_big 0x0

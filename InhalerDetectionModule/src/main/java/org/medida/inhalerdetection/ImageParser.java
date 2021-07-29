@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
 
+import androidx.core.content.ContextCompat;
+
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.CvException;
@@ -19,7 +21,7 @@ import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * Created by backup on 22/08/2017.
+ * Alberga uma Frame adquirida e processa-a
  */
 
 public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
@@ -44,9 +46,9 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
             throw new RuntimeException("the image parser async task doesnt have opencv loader initialized.. something's messed up badly");
         } else {
             //System.loadLibrary("native-lib");
-            //Log.d(TAG, "Native Lib loaded!");
 
             System.loadLibrary("jni_wrapper");
+            Log.d(TAG, "Native Lib loaded!");
 
         }
     }
@@ -62,7 +64,12 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
             Mat clone = image[0];   //testing cloning on main thread to ensure clean image
             //output = InhalerDetection(clone.getNativeObjAddr());
 
+            /**
+             * Calling the frame parset
+             */
             ParseFrame(clone.getNativeObjAddr());
+
+            // Apenas processa 1 em cada 3 frames
 
             if(frameCounterJava == 3)
             {
@@ -71,14 +78,14 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
                 frameCounterJava = 0;
                 DidInhalerDetection =  true;
 
-                Log.d(TAG, "************ DEBUG: " + debug);
+                Log.d(TAG, "************ Entering if Frame Counter =3 : " + debug);
 
                 //if(result)      //DEBUG, JUST FOR TEXAS
                 //SaveImage(clone);
             }
 
             frameCounterJava++;
-
+            Log.d(TAG, "************ Frame Counter : " + frameCounterJava);
             //result = false;
             //----------
 
@@ -104,14 +111,16 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
         Log.d(TAG, "Inhaler detected: " + result);
     }
 
-    public static void SaveImage(Mat image, String name)
+    public static void SaveImage(Mat image, String name, File path )
     {
-        if (mkFolder(foldername) <= 0) {
+        String aa = path.getAbsolutePath() + foldername;
+
+        int a = mkFolder(path.getAbsolutePath()+foldername);
+
+        if (a <= 0) {
             Log.d(TAG, "Problem creating folder! Image will not be saved");
             return;
         }
-
-
 
         //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
         //simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
@@ -132,8 +141,9 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
         FileOutputStream out = null;
 
-        File dest = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + foldername, filename);
 
+
+        File dest = new File(path.getAbsolutePath() + foldername, filename);
 
         try {
             dest.createNewFile();

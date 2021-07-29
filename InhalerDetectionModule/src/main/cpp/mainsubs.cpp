@@ -38,6 +38,8 @@ void UpdateOverlay(cv::Mat& imagePtr, bool photoTaken, bool successfulDetection)
 
     //edgesMeanLQ.copyTo(imagePtr);
     //showColoredOverlayPts(imagePtr, overlayPtsHQ, 0, 1, 1); //red vs green overlay
+
+
 }
 
 
@@ -286,7 +288,9 @@ int PrepareTemplate(cv::Mat& origImgPtr)
 
 
 //------------------------------------------------------------------------------
-/**/
+/**
+ * FRAME PRE PROCESSING
+ * */
 void ParseFrame(cv::Mat& imagePtr){
 
     //Pre-Setup
@@ -412,10 +416,11 @@ bool inhalerDetection(cv::Mat& origImgPtr){
     return (locDiffTpl <= MAX_PIX_DIST_MATCH) && (locDiffExptd <= MAX_PIX_DIST_MATCH); //detected
 }
 
-// Bernardo's legacy code
+// Entry point for Template Matching
 std::string InhalerDetectionStr()
 {
     cv::Mat mat;
+    // Template Detectation PHASE
     bool detected = inhalerDetection(mat);
 
     std::ostringstream oss;

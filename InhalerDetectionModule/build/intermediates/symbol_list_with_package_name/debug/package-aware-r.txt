@@ -883,6 +883,7 @@ drawable flutiform1024_overlay
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable icon
+drawable imagem_teste
 drawable khaler1024
 drawable khaler1024_overlay
 drawable khaler_big

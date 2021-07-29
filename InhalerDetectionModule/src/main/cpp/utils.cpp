@@ -196,4 +196,19 @@ void showColoredOverlayPts(cv::Mat& image, std::vector<cv::Point> teplimgOverPts
 }
 
 
+void rot90(cv::Mat &matImage, int rotflag){
+    //1=CW, 2=CCW, 3=180
+    if (rotflag == 1){
+        transpose(matImage, matImage);
+        flip(matImage, matImage,1); //transpose+flip(1)=CW
+    } else if (rotflag == 2) {
+        transpose(matImage, matImage);
+        flip(matImage, matImage,0); //transpose+flip(0)=CCW
+    } else if (rotflag ==3){
+        flip(matImage, matImage,-1);    //flip(-1)=180
+    } else if (rotflag != 0){ //if not 0,1,2,3:
+        //std::cout  << "Unknown rotation flag(" << rotflag << ")" << "\n";
+    }
+}
+
 #endif

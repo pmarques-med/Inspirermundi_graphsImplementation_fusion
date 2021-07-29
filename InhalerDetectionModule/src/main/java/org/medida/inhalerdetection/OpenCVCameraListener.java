@@ -17,6 +17,7 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -25,6 +26,8 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
     private final static String TAG = "OpenCVCameraListener";
 
     private Activity activity;
+
+    private File path;
 
     private int frameCounter;
 
@@ -66,9 +69,10 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
 
     //
 
-    OpenCVCameraListener(Activity activity, InhalerDetectionActivity.InhalerType inhalerType) {
+    OpenCVCameraListener(Activity activity, InhalerDetectionActivity.InhalerType inhalerType, File path) {
         this.activity = activity;
         this.inhalerType = inhalerType;
+        this.path=path;
         frameCounter= 0;
     }
 
@@ -207,6 +211,9 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
 
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         mRgba = inputFrame.rgba();
+
+
+
         if (frameCounter == 0) InitialSetup();
         ParseFrame();
         ParseThreadQueue();
@@ -214,7 +221,7 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
         if(finished == 1){
             DetectionActivity activity = (DetectionActivity) this.activity;
             String imageName = activity.getActivityTimeStamp()+ "_" + templateString  + "_success_" + successTimeStamp + "_" + attemptDuration + "_user" + activity.getPatientId();
-            ImageParser.SaveImage(SuccessImage, imageName);
+            ImageParser.SaveImage(SuccessImage, imageName,this.path);
             SuccessImage.release();
             activity.AdvanceToPostDetectionActivity(imageName);
             finished++;
@@ -259,8 +266,10 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
         boolean didInhalerDetection = false;
         ImageParser parser = imageParserQueue.peek();
         if (parser != null && parser.HasFinished()) {
+
             if(parser.DidInhalerDetection)
             {
+                Log.i(TAG,"DETECTEI UMA FRAME");
                 didInhalerDetection = true;
                 successResult = parser.IsSuccessful();
                 successCounter += successResult ? 1 : 0;

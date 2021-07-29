@@ -1,6 +1,7 @@
 package org.medida.inhalerdetection;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.Editable;
@@ -35,6 +37,8 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import static org.medida.inhalerdetection.ExampleMainActivity.INHALER_DETECTION_REQUEST;
@@ -44,6 +48,7 @@ import static org.medida.inhalerdetection.InhalerDetectionActivity.EXTRA_RESULT_
 public class PostDetectionActivity extends Activity {
 
     int dosage_count;
+    private AsyncTask mMyTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,54 +61,29 @@ public class PostDetectionActivity extends Activity {
         String imageName = receivedIntent.getStringExtra(EXTRA_IMAGE_NAME);
         //final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/frames/"+receivedIntent.getStringExtra(EXTRA_IMAGE_NAME));
         final File file = new File(getExternalFilesDir(null).getAbsolutePath()+"/frames/"+receivedIntent.getStringExtra(EXTRA_IMAGE_NAME));
+        int imageResource = getResources().getIdentifier("imagem_teste", "drawable", getPackageName());
 
-
+        runTextRecognition();
 
         if(imageName != null && !imageName.isEmpty()){
+
             ImageView imageResult = findViewById(R.id.imageResult);
-            Bitmap bmp = BitmapFactory.decodeFile(file.getAbsolutePath());
+            //Bitmap bmp = BitmapFactory.decodeFile(file.getAbsolutePath());
             Matrix matrix = new Matrix();
+
             //matrix.postRotate(90);
             //Bitmap rotated = Bitmap.createBitmap(bmp, 0, 0, bmp.getWidth(), bmp.getHeight(), matrix, true);
-            //imageResult.setImageBitmap(rotated);
-
-            //PedroimageResult.setVisibility(View.VISIBLE);
 
             int rotationDegree =90;
 
-            try {
-                BufferedInputStream bufferedInputStream;
-                InputStream is = (InputStream) new URL("https://users.med.up.pt/~pmarques/validaimagens/1576084148017_spiromax_detected_@1_@3.0@_@12.0@_1576084152747_40_user1.png").getContent();
-                bufferedInputStream = new BufferedInputStream(is);
+            //imageResult.setImageBitmap(imageResource);
+            imageResult.setImageResource(imageResource);
 
-                bmp = BitmapFactory.decodeStream(bufferedInputStream);
-                imageResult.setImageBitmap(bmp);
-                InputImage image = InputImage.fromBitmap(bmp, rotationDegree);
+            /*Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
+            InputImage image = InputImage.fromBitmap(bmp, rotationDegree);
+            */
 
-                TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
-
-                Task<Text> result =
-                        recognizer.process(image)
-                                .addOnSuccessListener(new OnSuccessListener<Text>() {
-                                    @Override
-                                    public void onSuccess(Text visionText) {
-                                        // Task completed successfully
-                                        // ...
-                                    }
-                                })
-                                .addOnFailureListener(
-                                        new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                // Task failed with an exception
-                                                // ...
-                                            }
-                                        });
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+            imageResult.setVisibility(View.VISIBLE);
 
         }
 
@@ -111,8 +91,13 @@ public class PostDetectionActivity extends Activity {
         TextView resultText = findViewById(R.id.resultTextView);
         TextView resultSymbol = findViewById(R.id.resultSymbol);
         boolean success = receivedIntent.getBooleanExtra(InhalerDetectionActivity.EXTRA_RESULT_SUCCESS, false);
+
+        //String aaa = result.getResult().getText();
+
+        //resultText.setText(aaa);
+        
         if(success){
-            resultText.setText(getString(R.string.success_message));
+            //resultText.setText(getString(R.string.success_message));
             resultSymbol.setText("✔");
             resultSymbol.setTextColor(Color.parseColor("#00FF00"));
             TextView instructionTextView = findViewById(R.id.instructionTextView);
@@ -228,5 +213,155 @@ public class PostDetectionActivity extends Activity {
     public void onBackPressed() {
     }
 
+    // Custom method to convert string to url
+    protected URL stringToURL(String urlString){
+        try{
+            URL url = new URL(urlString);
+            return url;
+        }catch(MalformedURLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
+    private void runTextRecognition() {
+        int rotationDegree =90;
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
+        InputImage image = InputImage.fromBitmap(bmp, rotationDegree);
+
+        TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
+
+        Task<Text> result =
+                recognizer.process(image)
+                        .addOnSuccessListener(new OnSuccessListener<Text>() {
+                            @Override
+                            public void onSuccess(Text visionText) {
+                                // Task completed successfully
+                                // ...
+                                for (Text.TextBlock block : visionText.getTextBlocks()) {
+                                    //Rect boundingBox = block.getBoundingBox();
+                                    //Point[] cornerPoints = block.getCornerPoints();
+                                    String text = block.getText();
+
+                                    for (Text.Line line: block.getLines()) {
+                                        // ...
+                                        for (Text.Element element: line.getElements()) {
+                                            TextView resultText = findViewById(R.id.resultTextView);
+                                            resultText.append(element.getText());
+                                        }
+                                    }
+                                }
+                            }
+                        })
+                        .addOnFailureListener(
+                                new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Task failed with an exception
+                                        // ...
+                                    }
+                                });
+
+
+
+
+    }
+
+
+
+    private class DownloadTask extends AsyncTask<URL,Void,Bitmap> {
+
+        ImageView aaa;
+
+        public DownloadTask(ImageView imageResult) {
+            aaa=imageResult;
+        }
+
+        // Before the tasks execution
+        protected void onPreExecute(){
+            // Display the progress dialog on async task start
+            //mProgressDialog.show();
+        }
+
+        // Do the task in background/non UI thread
+        protected Bitmap doInBackground(URL...urls){
+            URL url = urls[0];
+            HttpURLConnection connection = null;
+
+            try{
+                // Initialize a new http url connection
+                connection = (HttpURLConnection) url.openConnection();
+
+                // Connect the http url connection
+                connection.connect();
+
+                // Get the input stream from http url connection
+                InputStream inputStream = connection.getInputStream();
+
+                /*
+                    BufferedInputStream
+                        A BufferedInputStream adds functionality to another input stream-namely,
+                        the ability to buffer the input and to support the mark and reset methods.
+                */
+                /*
+                    BufferedInputStream(InputStream in)
+                        Creates a BufferedInputStream and saves its argument,
+                        the input stream in, for later use.
+                */
+                // Initialize a new BufferedInputStream from InputStream
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+
+                /*
+                    decodeStream
+                        Bitmap decodeStream (InputStream is)
+                            Decode an input stream into a bitmap. If the input stream is null, or
+                            cannot be used to decode a bitmap, the function returns null. The stream's
+                            position will be where ever it was after the encoded data was read.
+
+                        Parameters
+                            is InputStream : The input stream that holds the raw data
+                                              to be decoded into a bitmap.
+                        Returns
+                            Bitmap : The decoded bitmap, or null if the image data could not be decoded.
+                */
+                // Convert BufferedInputStream to Bitmap object
+                Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+
+                // Return the downloaded bitmap
+                return bmp;
+
+            }catch(IOException e){
+                e.printStackTrace();
+            }finally{
+                // Disconnect the http url connection
+                connection.disconnect();
+            }
+            return null;
+        }
+
+        // When all async task done
+        protected void onPostExecute(Bitmap result){
+            // Hide the progress dialog
+            //mProgressDialog.dismiss();
+            aaa.setImageBitmap(result);
+
+            if(result!=null){
+
+
+                // Display the downloaded image into ImageView
+                //mImageView.setImageBitmap(result);
+
+                // Save bitmap to internal storage
+                //Uri imageInternalUri = saveImageToInternalStorage(result);
+                // Set the ImageView image from internal storage
+                //mImageViewInternal.setImageURI(imageInternalUri);
+            }else {
+                // Notify user that an error occurred while downloading image
+                //Snackbar.make(mCLayout,"Error",Snackbar.LENGTH_LONG).show();
+            }
+        }
+
+
+
+    }
 }

@@ -193,7 +193,7 @@ public class PreDetectionActivity extends Activity implements DetectionActivity 
     private void InitView()
     {
         mOpenCvCameraView = findViewById(R.id.openCVvCamera);
-        mOpenCvCameraView.setCvCameraViewListener(new OpenCVCameraListener(this, inhalerType));
+        mOpenCvCameraView.setCvCameraViewListener(new OpenCVCameraListener(this, inhalerType, getExternalFilesDir(null)));
         mOpenCvCameraView.enableView();
     }
 

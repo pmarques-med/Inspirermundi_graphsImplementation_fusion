@@ -5,13 +5,9 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
 
         <org.opencv.android.JavaCameraView
@@ -19,12 +15,12 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:visibility="visible"
+            app:camera_id="back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            opencv:camera_id="back"
-            opencv:show_fps="false" />
+            app:show_fps="false" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

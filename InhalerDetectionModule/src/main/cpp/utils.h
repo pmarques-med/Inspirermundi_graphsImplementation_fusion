@@ -38,5 +38,6 @@ void showColoredOverlay(cv::Mat& image, cv::Mat& teplimgOver, char b, char g, ch
 void showColoredOverlayPts(cv::Mat& image, std::vector<cv::Point> teplimgOverPts, char b, char g, char r);
 void showColoredOverlayPts(cv::Mat& image, std::vector<cv::Point> teplimgOverPts, int b, int g, int r);
 
+void rot90(cv::Mat &matImage, int rotflag);
 
 #endif 

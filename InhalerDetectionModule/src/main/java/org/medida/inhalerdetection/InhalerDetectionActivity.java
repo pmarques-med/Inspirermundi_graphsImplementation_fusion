@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -17,6 +19,18 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import com.google.mlkit.vision.common.InputImage;
+import com.google.mlkit.vision.text.Text;
+import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.mlkit.vision.text.TextRecognizerOptions;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -30,6 +44,8 @@ import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /*
@@ -37,6 +53,12 @@ The activity returns RESULT_OK in the following scenarios:
 - User was able to successfully perform the required inhaler detections
 - User was not able to successfully perform the required inhaler detections, but stayed until the end of the timer
 - User did n
+ */
+
+/**
+ *
+ * Used this reference to rotate https://heartbeat.fritz.ai/working-with-the-opencv-camera-for-android-rotating-orienting-and-scaling-c7006c3e1916
+ *
  */
 
 public class InhalerDetectionActivity extends Activity implements CvCameraViewListener2 {
@@ -88,7 +110,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
     private final int resultMarkerHisteresis = 5;
     private int resultMarkerCount = 0;
-    private String lastImagePath = "";
+    private String lastImageName = "";
 
 
     public static final String EXTRA_RESULT_SUCCESS = "result";
@@ -111,7 +133,6 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         Diskus,
         Novoziler,
         Ellipta,
-
         NextHaler,
         KHaller,
         Easyhaler,
@@ -119,7 +140,6 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         Seretide,
         Symbicort,
         MDS3M,
-
         Unknown
     }
 
@@ -157,7 +177,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         intent.putExtra(EXTRA_RESULT_DETECTION_COUNT_INT, successCount);
         intent.putExtra(EXTRA_RESULT_DOSAGE_COUNT_INT, dosageCount);
         intent.putExtra(EXTRA_RESULT_SUCCESS, success);
-        intent.putExtra(EXTRA_IMAGE_NAME, lastImagePath);
+        intent.putExtra(EXTRA_IMAGE_NAME, lastImageName);
         int msgId = 0;
         if(success)
             msgId = R.string.success_message;
@@ -346,7 +366,6 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
             if (frameCounter == 0) //initial setup
                 InitialSetup();
-
             else   //mRgba will be changed here, through pointers
                 TryParseFrame();
 
@@ -537,7 +556,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
             imageParserQueue.add(imageParser);
             imageParser.execute(mRgba.clone());
 
-            Log.d(TAG, "Thread started");
+            Log.d(TAG, "Parsing a Frame - Thread started");
             lastFrameTime = currentFrameTime;
 
             wasPhotoTaken = true;
@@ -553,6 +572,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
     private void CheckFinishActivity()
     {
+
         if (allowParsing &&
             (progressBar.getProgress() == progressBar.getMax() || (successCounterTarget == 0 && successCounter > 0) || successCounter >= successCounterTarget))
         {
@@ -566,7 +586,10 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
             SaveImagesToDisk();
 
-            int dosageCounter = 0;  //go get this from cpp later on
+            int dosageCounter = -99999;  //go get this from cpp later on
+
+
+
             Intent intent = IntentPrepareIntentOutput(successCounter, dosageCounter, successCounter >= successCounterTarget);
             startActivityForResult(intent, POST_DETECTION_CODE);
 
@@ -659,6 +682,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         }
     }
 
+
     private boolean ShouldParseFrame(long lastDelta) {
         return imageParserQueue.size() == 0 && inhalerType != InhalerType.Unknown;
     }
@@ -671,29 +695,35 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     }
 
     private void SaveImagesToDisk() {
-        String path = "";
+        String imageName = "";
         //<detection start timestamp>_<inhaler type>_<success/quart/half>_<picture timestamp>_<maximum detection duration>_user<patientId>
         if(FailImage50 != null)
         {
-            path = activityTimeStamp + "_" + templateString  + "_half_" + activityTimeStamp + (attemptDuration * 750) + "_" + attemptDuration + "_user" + patientId;
-            ImageParser.SaveImage(FailImage50 , path);
+            imageName = activityTimeStamp + "_" + templateString  + "_half_" + activityTimeStamp + (attemptDuration * 750) + "_" + attemptDuration + "_user" + patientId;
+            ImageParser.SaveImage(FailImage50 , imageName, getFilesDir());
             FailImage50.release();
         }
         if(FailImage75 != null)
         {
-            path = activityTimeStamp + "_" + templateString  + "_quart_" + activityTimeStamp + (attemptDuration * 500) + "_" + attemptDuration + "_user" + patientId;
-            ImageParser.SaveImage(FailImage75 , path);
+            imageName = activityTimeStamp + "_" + templateString  + "_quart_" + activityTimeStamp + (attemptDuration * 500) + "_" + attemptDuration + "_user" + patientId;
+            ImageParser.SaveImage(FailImage75 , imageName, getFilesDir());
             FailImage75.release();
         }
 
         if(SuccessImage != null)
         {
-            path = activityTimeStamp + "_" + templateString  + "_success_" + successTimeStamp + "_" + attemptDuration + "_user" + patientId;
-            ImageParser.SaveImage(SuccessImage, path);
+            imageName = activityTimeStamp + "_" + templateString  + "_success_" + successTimeStamp + "_" + attemptDuration + "_user" + patientId;
+            ImageParser.SaveImage(SuccessImage, imageName, getFilesDir());
             SuccessImage.release();
         }
-        lastImagePath = path;
+        lastImageName = imageName;
     }
+
+
+
+
+
+
 
     /*
     private void CreateEndDialog() {

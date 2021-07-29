@@ -92,10 +92,7 @@
     "soFolder": "D:\\ProjetoInspirers\\Inspirermundi_graphsImplementation - fusion\\InhalerDetectionModule\\build\\intermediates\\cmake\\release\\lib",
     "isDebuggableEnabled": false,
     "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
+      "ARM64_V8A"
     ],
     "buildTargetSet": [],
     "implicitBuildTargetSet": [],
@@ -199,6 +196,7 @@
         "sdkFolder": "D:\\Android\\Sdk",
         "isNativeCompilerSettingsCacheEnabled": false,
         "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "arm64-v8a,armeabi-v7a,armeabi",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false,
         "isV2NativeModelEnabled": true
