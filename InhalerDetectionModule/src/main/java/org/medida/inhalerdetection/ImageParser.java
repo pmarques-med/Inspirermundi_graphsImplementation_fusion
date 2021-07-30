@@ -71,10 +71,11 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
             // Apenas processa 1 em cada 3 frames
 
-            if(frameCounterJava == 3)
+            if(frameCounterJava == 2)
             {
                 String debug = InhalerDetectionStr();
                 result = debug.charAt(0) == '1' ? true: false;
+                Log.d(TAG, "************ Data from detection : " + debug);
                 frameCounterJava = 0;
                 DidInhalerDetection =  true;
 

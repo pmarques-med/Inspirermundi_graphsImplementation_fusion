@@ -36,3 +36,9 @@
 3302	3459	649176799	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnew_utils.so	f9f5c8a15b81b3cd
 3459	3587	649176799	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libframe_analyser_take1.so	e5d00553e3e59707
 3587	3698	649176799	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libjni_wrapper.so	331af0923c0264af
+58	3738	649275887	CMakeFiles/jni_wrapper.dir/src/main/cpp/jniWrapper.cpp.o	27ec43bcea1e271c
+54	3812	649275887	CMakeFiles/new_utils.dir/src/main/cpp/utils.cpp.o	42de1a7c1850d0e7
+57	3869	649275887	CMakeFiles/frame_analyser_take1.dir/src/main/cpp/mainsubs.cpp.o	6b39119a0e8bb1df
+3812	4221	649275888	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnew_utils.so	f9f5c8a15b81b3cd
+4221	4369	649275888	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libframe_analyser_take1.so	e5d00553e3e59707
+4369	4503	649275888	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libjni_wrapper.so	331af0923c0264af
