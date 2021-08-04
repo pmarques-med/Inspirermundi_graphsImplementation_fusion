@@ -359,7 +359,7 @@ void reDrawOvrlp(cv::Mat& overlp, cv::Mat& teplimg, cv::Mat& teplimg2, cv::Point
             if ( Mi2[j] > 0) //Detected Position Template2 (elipse)
                 overlp.at<cv::Vec3b>(i+max_loc2.y, j+max_loc2.x)[2] = 255;
 
-            if ( ( locD < MAX_PIX_DIST_MATCH ) && ( ( Mi2[j] > 0 ) || ( Mi[j] > 0 ) ) ) //5 pixels of distance threshold
+            if ( ( locD < MAX_PIX_DIST_MATCH_a ) && ( ( Mi2[j] > 0 ) || ( Mi[j] > 0 ) ) ) //5 pixels of distance threshold
             {
                 if(detected)
                     overlp.at<cv::Vec3b>(i+max_loc2.y, j+max_loc2.x)[1] = 255;

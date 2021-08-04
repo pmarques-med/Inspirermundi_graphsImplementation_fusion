@@ -932,6 +932,8 @@ int drawable tooltip_frame_dark 0x0
 int drawable tooltip_frame_light 0x0
 int drawable turbohaler1024 0x0
 int drawable turbohaler1024_overlay 0x0
+int drawable turbohaler_edge 0x0
+int drawable turbohaler_edge_detail 0x0
 int drawable turbohalertemplate1_canny_cropbb 0x0
 int drawable turbohalertemplate_canny_crop2 0x0
 int drawable twisthaler1024 0x0

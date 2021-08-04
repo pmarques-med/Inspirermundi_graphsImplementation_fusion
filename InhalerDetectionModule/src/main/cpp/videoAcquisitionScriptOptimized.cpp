@@ -264,7 +264,7 @@ bool InhalerDetection(Mat *imagePtr)
         return 0;
 
 
-    int detectionInt = (locDPost <= MAX_PIX_DIST_MATCH) && (locDcPost <= MAX_PIX_DIST_MATCH);
+    int detectionInt = (locDPost <= MAX_PIX_DIST_MATCH_a) && (locDcPost <= MAX_PIX_DIST_MATCH_b);
 
     bool detection = detectionInt;
 
@@ -289,7 +289,7 @@ string InhalerDetectionStr(Mat *imagePtr)
 
     ostringstream oss;
     oss << result << "\r\n";
-    oss << "locBetweenTemps: " <<  locD << "\tlocDisplay: " << locDc << "\tout of: "<<  MAX_PIX_DIST_MATCH << "\r\n";
-    oss << "locBetweenTemps: " <<  locDPost << "\tlocDisplay: " << locDcPost << "\tout of: "<<  MAX_PIX_DIST_MATCH << "\r\n\r\n";
+    oss << "locBetweenTemps: " <<  locD << "\tlocDisplay: " << locDc << "\tout of: "<<  MAX_PIX_DIST_MATCH_a << "\r\n";
+    oss << "locBetweenTemps: " <<  locDPost << "\tlocDisplay: " << locDcPost << "\tout of: "<<  MAX_PIX_DIST_MATCH_b << "\r\n\r\n";
     return oss.str();
 }

@@ -21,7 +21,8 @@
 
 #define SIGNOF(x) ( ( (x) > 0.0 ) ? 1 : -1)
 
-#define MAX_PIX_DIST_MATCH  100
+#define MAX_PIX_DIST_MATCH_a  50
+#define MAX_PIX_DIST_MATCH_b  150
 
 //typedef std::vector <std::string> DirListing_t;
 

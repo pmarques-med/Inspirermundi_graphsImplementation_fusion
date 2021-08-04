@@ -2,16 +2,30 @@ package org.medida.inhalerdetection;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.mlkit.vision.common.InputImage;
+import com.google.mlkit.vision.text.Text;
+import com.google.mlkit.vision.text.TextRecognition;
+import com.google.mlkit.vision.text.TextRecognizer;
+import com.google.mlkit.vision.text.TextRecognizerOptions;
 
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.CvException;
 import org.opencv.core.Mat;
+import org.opencv.core.Rect;
+import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,12 +48,16 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
     private static final String    TAG = "OCVSample::Activity";
     private static int frameCounterJava = 0;
+    private int frameID = -9999;
 
     public final long timestamp = System.currentTimeMillis();   //timestamp for this image
 
     public Mat originalImage;
+    public Mat croppedImage;
 
-    public boolean DidInhalerDetection = false;
+    public String extratedText = "";
+
+    public boolean didInhalerDetection = false;
 
     static {
         if(!OpenCVLoader.initDebug()){
@@ -53,6 +71,10 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
         }
     }
 
+    public ImageParser(int frameID) {
+        this.frameID=frameID;
+    }
+
 
     @Override
     protected Boolean doInBackground(Mat... image) {
@@ -61,38 +83,45 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
             //Mat clone = image[0].clone();
             originalImage = image[0].clone();
+
+
             Mat clone = image[0];   //testing cloning on main thread to ensure clean image
             //output = InhalerDetection(clone.getNativeObjAddr());
 
+            Rect roi = new Rect(0, 0, 200, 200);
+            croppedImage = new Mat(clone, roi);
+
+            croppedImage = image[0].clone();
+
             /**
-             * Calling the frame parset
+             * Calling the frame parse - Peeprocessing of Frame fro Template Detection ?
              */
             ParseFrame(clone.getNativeObjAddr());
 
-            // Apenas processa 1 em cada 3 frames
 
-            if(frameCounterJava == 2)
+            if(frameCounterJava > 0)
             {
                 String debug = InhalerDetectionStr();
                 result = debug.charAt(0) == '1' ? true: false;
-                Log.d(TAG, "************ Data from detection : " + debug);
-                frameCounterJava = 0;
-                DidInhalerDetection =  true;
+                Log.d(TAG, "InhalerDetection - ** Frame ID " + frameID + " ** Data from detection: " + debug);
 
-                Log.d(TAG, "************ Entering if Frame Counter =3 : " + debug);
+                frameCounterJava = 0;
+                didInhalerDetection =  true;
 
                 //if(result)      //DEBUG, JUST FOR TEXAS
                 //SaveImage(clone);
+
             }
 
             frameCounterJava++;
-            Log.d(TAG, "************ Frame Counter : " + frameCounterJava);
+
             //result = false;
             //----------
 
             finished = true;
             clone.release();
 
+            // ATIVAR O ML KIT SE o INALDADOR FOR DETECTADO COM SUCESSO
             return output;
         }
         catch(Exception e)
@@ -143,10 +172,10 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
         FileOutputStream out = null;
 
 
-
+        try {
         File dest = new File(path.getAbsolutePath() + foldername, filename);
 
-        try {
+
             dest.createNewFile();
             out = new FileOutputStream(dest);
             bmp.compress(Bitmap.CompressFormat.PNG, 100, out); // bmp is your Bitmap instance
@@ -168,6 +197,8 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
         }
     }
+
+
 
 
     private static int mkFolder(String folderName){
@@ -214,10 +245,36 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
         return result;
     }
 
+    public Bitmap getCroppedImage() {
+
+        Bitmap bmp = null;
+
+        try {
+
+            bmp = Bitmap.createBitmap(croppedImage.cols(), croppedImage.rows(), Bitmap.Config.ARGB_8888);
+            Utils.matToBitmap(croppedImage, bmp);
+        }
+        catch (CvException e){Log.d("Exception ",e.getMessage());}
+
+        return bmp;
+    }
+
+
+    /*** NATIVE METHODS ***/
+    /**
+     *
+     * @param imageAddr
+     */
     public native void ParseFrame(long imageAddr);
+
+    /**
+     * Template Detection
+     * @return
+     */
     public native String InhalerDetectionStr();
-    public native boolean InhalerDetection(long imageAddr);
+    // public native boolean InhalerDetection(long imageAddr);
     public static native void ResizeImage(long imageAddr);
+
 
 
 }

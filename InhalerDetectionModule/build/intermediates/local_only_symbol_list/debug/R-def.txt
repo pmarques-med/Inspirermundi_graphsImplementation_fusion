@@ -59,6 +59,8 @@ drawable templateplusbdedges2cropelipsebb11
 drawable templateplusbdedges2cropnomouthbb
 drawable turbohaler1024
 drawable turbohaler1024_overlay
+drawable turbohaler_edge
+drawable turbohaler_edge_detail
 drawable turbohalertemplate1_canny_cropbb
 drawable turbohalertemplate_canny_crop2
 drawable twisthaler1024

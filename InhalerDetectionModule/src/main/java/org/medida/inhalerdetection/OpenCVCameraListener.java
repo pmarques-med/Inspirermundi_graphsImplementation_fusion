@@ -61,7 +61,7 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
 
     private boolean successResult;
     private int successCounter = 0;
-    private int successCounterTarget = 3;
+    private int successCounterTarget = 5;
     private boolean allowParsing = true;
 
 
@@ -215,7 +215,7 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
 
 
         if (frameCounter == 0) InitialSetup();
-        ParseFrame();
+        ParseFrame(frameCounter);
         ParseThreadQueue();
         UpdateOverlay(mRgba.getNativeObjAddr(), successResult,successResult);
         if(finished == 1){
@@ -240,7 +240,7 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
     }
 
     //returns true if the thread attempted inhaler detection
-    private boolean ParseFrame() {
+    private boolean ParseFrame(int frameID) {
         if(!allowParsing) return false;
         boolean wasPhotoTaken = false;
         long currentFrameTime = SystemClock.elapsedRealtime();
@@ -248,7 +248,7 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
         long totalDelta = currentFrameTime - firstFrameTime;
         if (ShouldParseFrame(lastDelta))
         {
-            ImageParser imageParser = new ImageParser();
+            ImageParser imageParser = new ImageParser(frameID);
             imageParserQueue.add(imageParser);
             imageParser.execute(mRgba.clone());
             Log.d(TAG, "Thread started");
@@ -267,7 +267,7 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
         ImageParser parser = imageParserQueue.peek();
         if (parser != null && parser.HasFinished()) {
 
-            if(parser.DidInhalerDetection)
+            if(parser.didInhalerDetection)
             {
                 Log.i(TAG,"DETECTEI UMA FRAME");
                 didInhalerDetection = true;

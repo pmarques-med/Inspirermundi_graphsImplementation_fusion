@@ -35,6 +35,8 @@ import com.google.mlkit.vision.text.TextRecognizerOptions;
 
 import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -50,6 +52,8 @@ public class PostDetectionActivity extends Activity {
     int dosage_count;
     private AsyncTask mMyTask;
 
+    private static final String    TAG = "OCVSample::Activity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +63,34 @@ public class PostDetectionActivity extends Activity {
         Intent receivedIntent = getIntent();
         dosage_count = receivedIntent.getIntExtra(EXTRA_RESULT_DOSAGE_COUNT_INT,0);
         String imageName = receivedIntent.getStringExtra(EXTRA_IMAGE_NAME);
-        //final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/frames/"+receivedIntent.getStringExtra(EXTRA_IMAGE_NAME));
-        final File file = new File(getExternalFilesDir(null).getAbsolutePath()+"/frames/"+receivedIntent.getStringExtra(EXTRA_IMAGE_NAME));
+        ImageView image = (ImageView) findViewById(R.id.imageResult);
+
         int imageResource = getResources().getIdentifier("imagem_teste", "drawable", getPackageName());
 
-        runTextRecognition();
+        Bitmap bmp = OpenBitmap("croppedFrame.jpg");
+        /*Bundle extras = receivedIntent.getExtras();
+        byte[] byteArray = extras.getByteArray("croppedimage");
+
+        Bitmap bmp = null;
+
+        if(byteArray!=null)
+            BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+*/
+
+        if(bmp!=null){
+            image.setImageBitmap(bmp);
+            //image.setImageResource(imageResource);
+            runTextRecognition(bmp);
+        }
+        else{
+            image.setImageResource(imageResource);
+        }
+
+
+        //final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/frames/"+receivedIntent.getStringExtra(EXTRA_IMAGE_NAME));
+        final File file = new File(getExternalFilesDir(null).getAbsolutePath()+"/frames/"+receivedIntent.getStringExtra(EXTRA_IMAGE_NAME));
+
+
 
         if(imageName != null && !imageName.isEmpty()){
 
@@ -77,7 +104,7 @@ public class PostDetectionActivity extends Activity {
             int rotationDegree =90;
 
             //imageResult.setImageBitmap(imageResource);
-            imageResult.setImageResource(imageResource);
+            //imageResult.setImageResource(imageResource);
 
             /*Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
             InputImage image = InputImage.fromBitmap(bmp, rotationDegree);
@@ -128,7 +155,7 @@ public class PostDetectionActivity extends Activity {
         resultText.setTypeface(font);
 
         final EditText dosesEditText = findViewById(R.id.dosesEditText);
-        dosesEditText.setText(""+dosage_count);
+        //dosesEditText.setText(""+dosage_count);
         dosesEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -191,10 +218,10 @@ public class PostDetectionActivity extends Activity {
         retryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent receivedIntent = getIntent();
+                /*Intent receivedIntent = getIntent();
                 Intent newIntent = new Intent(getBaseContext(), PreDetectionActivity.class);
                 newIntent.putExtras(receivedIntent);
-                startActivityForResult(newIntent,100);
+                startActivityForResult(newIntent,100);*/
             }
         });
 
@@ -213,6 +240,32 @@ public class PostDetectionActivity extends Activity {
     public void onBackPressed() {
     }
 
+    public Bitmap OpenBitmap(String name){
+        Bitmap bitmap = null;
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+            File file = new File(this.getApplicationContext().getFilesDir() +"/frames"+ "/" + name);
+            if(file.exists()) {
+                try {
+                    bitmap = BitmapFactory.decodeStream(new FileInputStream(this.getApplicationContext().getFilesDir() +"/frames"+ "/" + name), null, options);
+                    //bitmap = BitmapFactory.decodeFile(this.getApplicationContext().getFilesDir() +"frames"+ "/" + name, options);
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return bitmap;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     // Custom method to convert string to url
     protected URL stringToURL(String urlString){
         try{
@@ -224,12 +277,15 @@ public class PostDetectionActivity extends Activity {
         return null;
     }
 
-    private void runTextRecognition() {
-        int rotationDegree =90;
-        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
+    private void runTextRecognition(Bitmap bmp) {
+        int rotationDegree =0;
+        //Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
         InputImage image = InputImage.fromBitmap(bmp, rotationDegree);
 
         TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
+
+        TextView resultText = findViewById(R.id.dosesEditText);
+        resultText.setText("");
 
         Task<Text> result =
                 recognizer.process(image)
@@ -246,8 +302,10 @@ public class PostDetectionActivity extends Activity {
                                     for (Text.Line line: block.getLines()) {
                                         // ...
                                         for (Text.Element element: line.getElements()) {
-                                            TextView resultText = findViewById(R.id.resultTextView);
-                                            resultText.append(element.getText());
+                                            TextView resultText = findViewById(R.id.dosesEditText);
+                                            resultText.append("|"+element.getText());
+                                            Log.d(TAG, "InhalerDetection - " + ">"+element.getText()+"<");
+
                                         }
                                     }
                                 }

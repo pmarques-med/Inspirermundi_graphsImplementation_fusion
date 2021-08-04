@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -25,7 +24,6 @@ import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
@@ -43,9 +41,10 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /*
@@ -106,6 +105,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     private boolean finished = false;
     private InhalerType inhalerType;
 
+
     public long patientId;
 
     private final int resultMarkerHisteresis = 5;
@@ -123,6 +123,11 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     public static final String EXTRA_IMAGE_NAME = "imagePath";
 
     private String templateString;
+
+    private Bitmap parsedImageBMP = null;
+    Task<Text> result = null;
+    private LinkedBlockingQueue<Bitmap> imageTextParserQueue = new LinkedBlockingQueue<>();
+
 
     public static final String INHALER_DETECTION_PREFERENCES = "inhaler_detection_preferences";
 
@@ -171,13 +176,19 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         }
     }
 
-    private Intent IntentPrepareIntentOutput(int successCount, int dosageCount, boolean success)
+    private Intent IntentPrepareIntentOutput(int successCount, int dosageCount, boolean success,Bitmap parsedImage)
     {
         Intent intent = new Intent(getBaseContext(), PostDetectionActivity.class);
         intent.putExtra(EXTRA_RESULT_DETECTION_COUNT_INT, successCount);
         intent.putExtra(EXTRA_RESULT_DOSAGE_COUNT_INT, dosageCount);
         intent.putExtra(EXTRA_RESULT_SUCCESS, success);
         intent.putExtra(EXTRA_IMAGE_NAME, lastImageName);
+
+        if(parsedImage!=null){
+
+            SaveBitmap("croppedFrame",parsedImageBMP);
+        }
+
         int msgId = 0;
         if(success)
             msgId = R.string.success_message;
@@ -188,7 +199,10 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     }
 
 
+
+
     private void InitializeVariables() {
+
         frameCounter = successCounter = 0;
         lastFrameTime = firstFrameTime = 0;
         progressFloat = 0f;
@@ -198,7 +212,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
         Intent intent = getIntent();
         successCounterTarget = intent.getIntExtra(EXTRA_INPUT_DETECTION_COUNT_INT, 3);
-        attemptDuration = intent.getIntExtra(EXTRA_INPUT_DETECTION_MAX_TIME_INT, 15);
+        attemptDuration = intent.getIntExtra(EXTRA_INPUT_DETECTION_MAX_TIME_INT, 55);
         inhalerType = (InhalerType) intent.getSerializableExtra(EXTRA_INPUT_INHALER_TYPE_ENUM);
         patientId = intent.getLongExtra(EXTRA_INPUT_PATIENT_ID, 0);
 
@@ -356,6 +370,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     }
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
+        //Log.d(TAG, "InhalerDetection - Frame Acquired "+frameCounter);
         try {
             mRgba = inputFrame.rgba();
             
@@ -367,7 +382,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
             if (frameCounter == 0) //initial setup
                 InitialSetup();
             else   //mRgba will be changed here, through pointers
-                TryParseFrame();
+                TryParseFrame(frameCounter);
 
             //returns true if it performed inhaler detection and not just regular frame parse
             if(ParseThreadQueue())
@@ -453,9 +468,14 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
                     break;
 
                 case Turbohaler:
-                    template1 = Utils.loadResource(this, R.drawable.turbohalertemplate1_canny_cropbb, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    /*template1 = Utils.loadResource(this, R.drawable.turbohalertemplate1_canny_cropbb, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
                     template2 = Utils.loadResource(this, R.drawable.turbohalertemplate_canny_crop2, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
-                    template3 = Utils.loadResource(this, R.drawable.turbohalertemplate_canny_crop2, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    template3 = Utils.loadResource(this, R.drawable.turbohalertemplate_canny_crop2, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);*/
+
+                    template1 = Utils.loadResource(this, R.drawable.turbohaler_edge_detail, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    template2 = Utils.loadResource(this, R.drawable.turbohaler_edge, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    template3 = Utils.loadResource(this, R.drawable.turbohaler_edge, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+
 
                     templateString = "turbohaler";
                     break;
@@ -533,7 +553,10 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         firstFrameTime = lastFrameTime = SystemClock.elapsedRealtime();
     }
 
-    private boolean TryParseFrame() {
+    private boolean TryParseFrame(int frameCounter) {
+
+        //Log.d(TAG, "InhalerDetection - Trying to Parse Frame " + frameCounter);
+
         if(allowParsing == false)
             return false;
 
@@ -552,11 +575,11 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         if (ShouldParseFrame(lastDelta))
         {
             String a="";
-            ImageParser imageParser = new ImageParser();
+            ImageParser imageParser = new ImageParser(frameCounter);
             imageParserQueue.add(imageParser);
             imageParser.execute(mRgba.clone());
 
-            Log.d(TAG, "Parsing a Frame - Thread started");
+            Log.d(TAG, "InhalerDetection - Creating a new ImageParser for frame "+frameCounter+" - Thread started");
             lastFrameTime = currentFrameTime;
 
             wasPhotoTaken = true;
@@ -573,6 +596,9 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     private void CheckFinishActivity()
     {
 
+        Log.d(TAG, "InhalerDetection - Check Finished");
+
+
         if (allowParsing &&
             (progressBar.getProgress() == progressBar.getMax() || (successCounterTarget == 0 && successCounter > 0) || successCounter >= successCounterTarget))
         {
@@ -588,13 +614,30 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
             int dosageCounter = -99999;  //go get this from cpp later on
 
+            Log.d(TAG, "InhalerDetection - going for Pos DEtection");
 
 
-            Intent intent = IntentPrepareIntentOutput(successCounter, dosageCounter, successCounter >= successCounterTarget);
-            startActivityForResult(intent, POST_DETECTION_CODE);
+            //Intent intent = IntentPrepareIntentOutput(successCounter, Integer.parseInt(resultadoParsing), successCounter >= successCounterTarget,parsedImageBMP);
+            //startActivityForResult(intent, POST_DETECTION_CODE);
+
+            parsedImageBMP = processImageForParsing(parsedImageBMP);
+
+           /* if (mOpenCvCameraView != null)
+                mOpenCvCameraView.disableView();*/
+
+            runTextRecognition(parsedImageBMP);
+
 
             //CreateEndDialog();
         }
+    }
+
+    private Bitmap processImageForParsing(Bitmap bmp) {
+
+        Bitmap mRotatedImage = ImageUtils.rotateBitmap(bmp, 90);
+        Bitmap croppedBMP = Bitmap.createBitmap(mRotatedImage,390,350,140,160);
+        croppedBMP = ImageUtils.blackNwhite(ImageUtils.doSharpen(croppedBMP,this.getApplicationContext()));
+        return croppedBMP;
     }
 
     @Override
@@ -613,20 +656,33 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         ImageParser parser = imageParserQueue.peek();
         if (parser != null && parser.HasFinished()) {
 
-            if(parser.DidInhalerDetection)
+
+            Log.d(TAG, "InhalerDetection - Check if parser finished ::" + parser.didInhalerDetection);
+
+
+            if(parser.didInhalerDetection)
             {
                 didInhalerDetection = true;
                 successResult = parser.IsSuccessful();
                 successCounter += successResult ? 1 : 0;
 
-                if (successResult) {
+
+               //if (successResult) {  // PEDRO REPOR QUANDO O TEMPLATE ESTIVER A FUNCIONAR MELHOR
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             successCounterView.setText(String.valueOf(successCounter));
+                            //parser.runTextRecognition();
+                             parsedImageBMP = parser.getCroppedImage();
+                            try {
+                                imageTextParserQueue.put(parser.getCroppedImage());
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            // PEDRO  when sucess modify to bitmapArrayOfDetectedImages.add(parsedImageBMP);
                         }
                     });
-                }
+               // }
 
                 TryKeepImages(parser, successResult);
             }
@@ -684,6 +740,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
 
     private boolean ShouldParseFrame(long lastDelta) {
+        //return (inhalerType != InhalerType.Unknown);
         return imageParserQueue.size() == 0 && inhalerType != InhalerType.Unknown;
     }
 
@@ -700,20 +757,20 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         if(FailImage50 != null)
         {
             imageName = activityTimeStamp + "_" + templateString  + "_half_" + activityTimeStamp + (attemptDuration * 750) + "_" + attemptDuration + "_user" + patientId;
-            ImageParser.SaveImage(FailImage50 , imageName, getFilesDir());
+            ImageParser.SaveImage(FailImage50 , imageName, this.getApplicationContext().getFilesDir());
             FailImage50.release();
         }
         if(FailImage75 != null)
         {
             imageName = activityTimeStamp + "_" + templateString  + "_quart_" + activityTimeStamp + (attemptDuration * 500) + "_" + attemptDuration + "_user" + patientId;
-            ImageParser.SaveImage(FailImage75 , imageName, getFilesDir());
+            ImageParser.SaveImage(FailImage75 , imageName, this.getApplicationContext().getFilesDir());
             FailImage75.release();
         }
 
         if(SuccessImage != null)
         {
             imageName = activityTimeStamp + "_" + templateString  + "_success_" + successTimeStamp + "_" + attemptDuration + "_user" + patientId;
-            ImageParser.SaveImage(SuccessImage, imageName, getFilesDir());
+            ImageParser.SaveImage(SuccessImage, imageName, this.getApplicationContext().getFilesDir());
             SuccessImage.release();
         }
         lastImageName = imageName;
@@ -781,6 +838,105 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
             }
         });
     }*/
+
+
+    private void runTextRecognition(Bitmap imageToParse) {
+        int rotationDegree =0;
+        //Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
+        InputImage image = InputImage.fromBitmap(imageToParse, rotationDegree);
+
+        TextRecognizer recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS);
+
+
+        result =
+                recognizer.process(image)
+                        .addOnSuccessListener(new OnSuccessListener<Text>() {
+                            @Override
+                            public void onSuccess(Text visionText) {
+                                // Task completed successfully
+                                // ...
+                                String resultadoParsing = "";
+                                for (Text.TextBlock block : visionText.getTextBlocks()) {
+                                    //Rect boundingBox = block.getBoundingBox();
+                                    //Point[] cornerPoints = block.getCornerPoints();
+                                    String text = block.getText();
+
+                                    for (Text.Line line: block.getLines()) {
+                                        // ...
+                                        for (Text.Element element: line.getElements()) {
+                                            resultadoParsing = resultadoParsing + element.getText();
+                                            Log.d(TAG, "InhalerDetection - " + ">"+element.getText()+"<");
+
+                                        }
+                                    }
+                                }
+                                proceedToNextActivity(resultadoParsing);
+                            }
+                        })
+                        .addOnFailureListener(
+                                new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Task failed with an exception
+                                        // ...
+                                    }
+                                });
+
+
+
+
+    }
+
+    public void proceedToNextActivity(String resultadoParsing){
+
+        int a =0;
+        try{
+            a=Integer.parseInt(resultadoParsing);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        Intent intent = IntentPrepareIntentOutput(successCounter, a , successCounter >= successCounterTarget,parsedImageBMP);
+        startActivityForResult(intent, POST_DETECTION_CODE);
+
+    }
+
+    public void SaveBitmap(String fileName, Bitmap bmp){
+        try {
+
+            File file = new File(this.getApplicationContext().getFilesDir() +"/frames"+ "/" + fileName + ".jpg");
+            file.getParentFile().mkdirs();
+            if(file.canWrite()){
+                Log.d(TAG, "Can write");
+            }else{
+                Log.d(TAG, "Can not write");
+            }
+            /*if(file.exists()){
+                file.delete();
+            }else{
+                file.mkdirs();
+            }*/
+            FileOutputStream Filestream = new FileOutputStream(this.getApplicationContext().getFilesDir() +"/frames" + "/" + fileName+ ".jpg");
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+            Filestream.write(byteArray);
+            Filestream.close();
+            bmp.recycle();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,

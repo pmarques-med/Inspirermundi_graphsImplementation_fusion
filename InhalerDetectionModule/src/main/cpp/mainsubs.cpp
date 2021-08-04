@@ -146,6 +146,7 @@ int onCameraFrame(cv::VideoCapture cap)
         */
 
         PrepareTemplate(hqImage);//, template1, template2, template3
+        PrepareTemplate(hqImage);//, template1, template2, template3
 
         printf("Went to framecounter -1 value\n");
     }
@@ -344,7 +345,7 @@ void ParseFrame(cv::Mat& imagePtr){
         edgesMeanLQ = edgesMeanLQ + edges/4;
         //edgesMeanLQ = edgesMeanLQ/4 + edges*3/4; //alternate version B
 
-    frameCounter = (frameCounter+1)%4;
+    frameCounter = (frameCounter+1); // PEDRO %4;
 }
 
 
@@ -354,6 +355,7 @@ void ParseFrame(cv::Mat& imagePtr){
 double locDiffExptd= 0,locDiffTpl= 0;
 cv::Mat result0, result1;
 
+// Template detection
 bool inhalerDetection(cv::Mat& origImgPtr){
 
     int match_method = CV_TM_CCORR;
@@ -412,8 +414,8 @@ bool inhalerDetection(cv::Mat& origImgPtr){
      overlayPtsHQ = tplPts1hq;
      applyBias2PtList(max_loc/fx2LQ, overlayPtsHQ);
 
-
-    return (locDiffTpl <= MAX_PIX_DIST_MATCH) && (locDiffExptd <= MAX_PIX_DIST_MATCH); //detected
+    // IF WITHIN THRESHOLD RETURN TRUE
+    return (locDiffTpl <= MAX_PIX_DIST_MATCH_a) && (locDiffExptd <= MAX_PIX_DIST_MATCH_b); //detected
 }
 
 // Entry point for Template Matching
@@ -424,8 +426,7 @@ std::string InhalerDetectionStr()
     bool detected = inhalerDetection(mat);
 
     std::ostringstream oss;
-    oss << (detected ? "1" : "0") << "\r\n\r\n";
-    oss << "locDiffExptd: " <<  locDiffExptd << "\tlocDiffTpl: " << locDiffTpl << "\r\n\r\n";
+    oss << (detected ? "1" : "0") << "locDiffExptd: " <<  locDiffExptd << "\tlocDiffTpl: " << locDiffTpl << " MAX_PIX_DIST_MATCH_a: " << " MAX_PIX_DIST_MATCH_a " << " MAX_PIX_DIST_MATCH_b: " << MAX_PIX_DIST_MATCH_b; //<< "\r\n";
     //oss << "result0 size: " << result0.size << "\t cenas bias: " << astInhalCntrI.fullimgsize << "\r\n\r\n";
     return oss.str();
 }
