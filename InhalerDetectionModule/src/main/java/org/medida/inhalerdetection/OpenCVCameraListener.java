@@ -127,9 +127,16 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
                     break;
 
                 case Turbohaler:
-                    template1 = Utils.loadResource(activity, R.drawable.turbohalertemplate1_canny_cropbb, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    /*template1 = Utils.loadResource(activity, R.drawable.turbohalertemplate1_canny_cropbb, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
                     template2 = Utils.loadResource(activity, R.drawable.turbohalertemplate_canny_crop2, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
                     template3 = Utils.loadResource(activity, R.drawable.turbohalertemplate_canny_crop2, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    */
+
+                    template1 = Utils.loadResource(activity, R.drawable.turbohaler_edge_detail, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    template2 = Utils.loadResource(activity, R.drawable.turbohaler_edge, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    template3 = Utils.loadResource(activity, R.drawable.turbohaler_edge, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+
+
                     templateString = "turbohaler";
                     break;
 
@@ -211,8 +218,6 @@ public class OpenCVCameraListener implements JavaCameraView.CvCameraViewListener
 
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         mRgba = inputFrame.rgba();
-
-
 
         if (frameCounter == 0) InitialSetup();
         ParseFrame(frameCounter);

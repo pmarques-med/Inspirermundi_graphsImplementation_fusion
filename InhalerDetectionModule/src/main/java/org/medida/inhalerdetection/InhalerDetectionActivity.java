@@ -622,10 +622,9 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
             parsedImageBMP = processImageForParsing(parsedImageBMP);
 
-           /* if (mOpenCvCameraView != null)
-                mOpenCvCameraView.disableView();*/
-
             runTextRecognition(parsedImageBMP);
+
+            //TODO executar o runText para as vária imagens
 
 
             //CreateEndDialog();
@@ -741,7 +740,8 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
     private boolean ShouldParseFrame(long lastDelta) {
         //return (inhalerType != InhalerType.Unknown);
-        return imageParserQueue.size() == 0 && inhalerType != InhalerType.Unknown;
+        return imageParserQueue.size() <= 1
+                && inhalerType != InhalerType.Unknown;
     }
 
 
@@ -870,6 +870,8 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
                                         }
                                     }
                                 }
+                                //TODO if(nao existem mais imagens entao sai senao chama esta funçºao novamente com a imagem seguinte.)
+                                // O resultadoPArsing já devera ser o resultado final
                                 proceedToNextActivity(resultadoParsing);
                             }
                         })

@@ -290,7 +290,7 @@ int PrepareTemplate(cv::Mat& origImgPtr)
 
 //------------------------------------------------------------------------------
 /**
- * FRAME PRE PROCESSING
+ * TRYING TO PARSE TEXT
  * */
 void ParseFrame(cv::Mat& imagePtr){
 
@@ -326,8 +326,10 @@ void ParseFrame(cv::Mat& imagePtr){
     // Mild color (hue) thresholding
     cv::cvtColor(lqImage, hsvimg, cv::COLOR_BGR2HSV);
     cv::inRange(hsvimg, cv::Scalar(0, 0, 0), cv::Scalar(180, 138, 255), colorMask); //baseline values: Scalar(0, 0, 32)-Scalar(180, 64, 255)
-    cv::dilate(colorMask, colorMask, kernDisk);
-    cv::erode(colorMask, colorMask, kernDisk);
+
+    cv::dilate(colorMask, colorMask, kernDisk); // "Engorda" as linhas de outline https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html
+
+    cv::erode(colorMask, colorMask, kernDisk); // "Emagrece" as linhas do outline https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html
 
     cv::cvtColor(colorMask, colorMask, cv::COLOR_GRAY2BGR);
     cv::multiply(lqImage, colorMask/255, colorMasked);
@@ -355,7 +357,10 @@ void ParseFrame(cv::Mat& imagePtr){
 double locDiffExptd= 0,locDiffTpl= 0;
 cv::Mat result0, result1;
 
-// Template detection
+/**
+ * Template detection
+ */
+
 bool inhalerDetection(cv::Mat& origImgPtr){
 
     int match_method = CV_TM_CCORR;
