@@ -1,0 +1,10 @@
+Executable : D:\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
+arguments : 
+-C
+D:\ProjetoInspirers\Inspirermundi_graphsImplementation - fusion\InhalerDetectionModule\.cxx\cmake\release\arm64-v8a
+frame_analyser_take1
+jni_wrapper
+new_template_props
+new_utils
+jvmArgs : 
+
