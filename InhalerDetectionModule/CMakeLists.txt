@@ -2,15 +2,16 @@
 # documentation: https://d.android.com/studio/projects/add-native-code.html
 
 cmake_minimum_required(VERSION 3.4.1)
-set (CMAKE_CXX_STANDARD 11)
 
+include_directories(C:/Users/FERRAZ/Downloads/opencv-3.4.3-android-sdk/OpenCV-android-sdk/sdk/native/jni/include)
+add_library( lib_opencv SHARED IMPORTED )
+set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libopencv_java3.so)
+
+
+set (CMAKE_CXX_STANDARD 11)
 
 set(pathToOpenCv ../../../OpenCV-android-sdk)
 include_directories(${pathToOpenCv}/sdk/native/jni/include)
-
-add_library( lib_opencv SHARED IMPORTED )
-set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION
-                     ${CMAKE_SOURCE_DIR}/src/main/jniLibs/${ANDROID_ABI}/libopencv_java3.so)
 
 add_library(new_template_props SHARED src/main/cpp/templateProps.cpp)
 target_link_libraries(new_template_props lib_opencv)
@@ -22,7 +23,7 @@ add_library(frame_analyser_take1 SHARED src/main/cpp/mainsubs.cpp)
 target_link_libraries(frame_analyser_take1 new_utils)
 
 find_library( log-lib
-              log )
+        log )
 
 add_library( jni_wrapper SHARED src/main/cpp/jniWrapper.cpp)
 target_link_libraries(jni_wrapper log frame_analyser_take1)

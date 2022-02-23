@@ -163,7 +163,7 @@ public class MainActivity extends MyActiveActivity implements TimelineFragment.O
         findViewById(R.id.main_menu_stats_box).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               setFragment(StatisticsFragment.newInstance());
+                setFragment(StatisticsFragment.newInstance());
                 changeMenuVisualSelection(findViewById(R.id.stats_imageView));
             }
         });
@@ -381,25 +381,25 @@ public class MainActivity extends MyActiveActivity implements TimelineFragment.O
 
     private void configureEventListener() {
         AppController.getmInstance().getMyBus().toObserverable()
-            .subscribe(new Action1<Object>() {
-                @Override
-                public void call(Object event) {
+                .subscribe(new Action1<Object>() {
+                    @Override
+                    public void call(Object event) {
 
-                    if(event instanceof UserNewPoints || event instanceof UserStatsModifiedEvent) {
-                        loadUserPoints();
-                    }else if(event instanceof MedicineCreatedEvent){
-                        setUpActiveMedicine(true);
+                        if(event instanceof UserNewPoints || event instanceof UserStatsModifiedEvent) {
+                            loadUserPoints();
+                        }else if(event instanceof MedicineCreatedEvent){
+                            setUpActiveMedicine(true);
 
-                        //showHideAddMedicine(false);
-                    }else if(event instanceof UserInfoUpdated){
-                        configureHeaderView();
-                    }else if(event instanceof MedicinesChangedEvent){
-                        setUpActiveMedicine(true);
-                    }else if(event instanceof LogoutEvent){
-                        finish();
-                    }else if(event instanceof PollAnswered){
-                        setUpActiveMedicine(true);
-                    }
+                            //showHideAddMedicine(false);
+                        }else if(event instanceof UserInfoUpdated){
+                            configureHeaderView();
+                        }else if(event instanceof MedicinesChangedEvent){
+                            setUpActiveMedicine(true);
+                        }else if(event instanceof LogoutEvent){
+                            finish();
+                        }else if(event instanceof PollAnswered){
+                            setUpActiveMedicine(true);
+                        }
                     /*
                     * else if(event instanceof UserWonBadge){
                         UserWonBadge auxEvent = (UserWonBadge) event;
@@ -407,8 +407,8 @@ public class MainActivity extends MyActiveActivity implements TimelineFragment.O
                         Utils.showWinBadge(MainActivity.this, getSupportFragmentManager(), auxEvent.getBadgeWon().getBadge(),null);
                     }
                     * */
-                }
-            });
+                    }
+                });
     }
 
     private void showHideAddMedicine(boolean show) {
@@ -1127,14 +1127,16 @@ public class MainActivity extends MyActiveActivity implements TimelineFragment.O
             switch(resultCode) {
                 case RESULT_OK:
                     int detectionCount = data.getIntExtra(InhalerDetectionActivity.EXTRA_RESULT_DETECTION_COUNT_INT, 0);
+                    //vai buscar o "dosageCount" a data:
                     int dosageCount = data.getIntExtra(InhalerDetectionActivity.EXTRA_RESULT_DOSAGE_COUNT_INT, 0);
+
 
                     if (AppController.getmInstance().getInhalerDataSource().changeDosage(dosageCount, medicineCanTake.getMedicine().getInhalers().get(0).getId())){
 
                     }
 
                     //if(detectionCount >= AppController.INHALER_DETECTION_TOTAL){
-                        takeMedicine();
+                    takeMedicine();
                     //}else{
                     //    if(medicineCanTake!=null){
                     //        int failedTimes = medicineCanTake.getRecognitionFailedTimes()+1;

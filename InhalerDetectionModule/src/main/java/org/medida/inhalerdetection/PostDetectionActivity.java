@@ -42,6 +42,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.medida.inhalerdetection.ExampleMainActivity.INHALER_DETECTION_REQUEST;
 import static org.medida.inhalerdetection.InhalerDetectionActivity.EXTRA_IMAGE_NAME;
@@ -60,7 +63,9 @@ public class PostDetectionActivity extends Activity {
         setContentView(R.layout.activity_post_detection);
 
         Button retryButton = findViewById(R.id.retryButton);
+        //parses data from another activity:
         Intent receivedIntent = getIntent();
+        // vai buscar o valor sobre o nome "dosageCount" à receivedIntent:
         dosage_count = receivedIntent.getIntExtra(EXTRA_RESULT_DOSAGE_COUNT_INT,0);
         String imageName = receivedIntent.getStringExtra(EXTRA_IMAGE_NAME);
         ImageView image = (ImageView) findViewById(R.id.imageResult);
@@ -122,7 +127,7 @@ public class PostDetectionActivity extends Activity {
         //String aaa = result.getResult().getText();
 
         //resultText.setText(aaa);
-        
+
         if(success){
             //resultText.setText(getString(R.string.success_message));
             resultSymbol.setText("✔");
@@ -133,7 +138,7 @@ public class PostDetectionActivity extends Activity {
             findViewById(R.id.dosesLayout).setVisibility(View.VISIBLE);
         }
         else{
-         //   resultSymbol.setText("❌");
+            //   resultSymbol.setText("❌");
             resultSymbol.setText("!"); //Rute
             // resultSymbol.setTextColor(Color.parseColor("#FF0000"));
             resultSymbol.setTextColor(Color.parseColor("#0000FF")); // new color Rute
@@ -146,8 +151,6 @@ public class PostDetectionActivity extends Activity {
             findViewById(R.id.dosesLayout).setVisibility(View.VISIBLE);
         }
 
-
-
         View root = resultText.getRootView();
         root.setBackgroundColor(getResources().getColor(android.R.color.white));
 
@@ -159,7 +162,6 @@ public class PostDetectionActivity extends Activity {
         dosesEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -325,7 +327,24 @@ public class PostDetectionActivity extends Activity {
 
     }
 
+    //SOFIA:
+    public static <T> T mostCommon(List<T> list) {
+        Map<T, Integer> map = new HashMap<>();
 
+        for (T t : list) {
+            Integer val = map.get(t);
+            map.put(t, val == null ? 1 : val + 1);
+        }
+
+        Map.Entry<T, Integer> max = null;
+
+        for (Map.Entry<T, Integer> e : map.entrySet()) {
+            if (max == null || e.getValue() > max.getValue())
+                max = e;
+        }
+
+        return max.getKey();
+    }
 
     private class DownloadTask extends AsyncTask<URL,Void,Bitmap> {
 

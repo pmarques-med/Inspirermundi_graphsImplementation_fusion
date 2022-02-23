@@ -6,7 +6,11 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
+import android.util.Pair;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -50,6 +54,13 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
     private static int frameCounterJava = 0;
     private int frameID = -9999;
 
+    //SOFIA:
+    private ImageView mImageView;
+    // Max width (portrait mode)
+    private Integer mImageMaxWidth;
+    // Max height (portrait mode)
+    private Integer mImageMaxHeight;
+
     public final long timestamp = System.currentTimeMillis();   //timestamp for this image
 
     public Mat originalImage;
@@ -83,18 +94,38 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
             //Mat clone = image[0].clone();
             originalImage = image[0].clone();
-
-
             Mat clone = image[0];   //testing cloning on main thread to ensure clean image
             //output = InhalerDetection(clone.getNativeObjAddr());
 
+            //Área Fixa
             Rect roi = new Rect(0, 0, 200, 200);
+
+            //SOFIA:
+
+            //Rect roi = null;
+/*
+            if ("diskusButton".equals(inhalertype)) {
+                roi = new Rect(170, 240, 140, 100);
+            }else if("elliptaButton".equals(inhalertype)){
+                roi = new Rect(160, 370, 110, 80);
+            }else if("flutiformButton".equals(inhalertype)){
+                roi = new Rect(120, 200, 140, 130);
+            }else if("novolizerButton".equals(inhalertype)){
+                roi = new Rect(120, 100, 140, 80);
+            }else if("spiromaxButton".equals(inhalertype)){
+                roi = new Rect(140, 280, 140, 80);
+            }else if("turbohalerButton".equals(inhalertype)){
+                roi = new Rect(180, 220, 140, 80);
+            }
+*/
+
             croppedImage = new Mat(clone, roi);
 
             croppedImage = image[0].clone();
 
+
             /**
-             * Calling the frame parse - Peeprocessing of Frame fro Template Detection ?
+             * Calling the frame parse - Pre-processing of Frame for Template Detection ?
              */
             ParseFrame(clone.getNativeObjAddr());
 
@@ -135,6 +166,12 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
     }
 
+/*
+    @Override
+    protected Boolean doInBackground(Mat... mats) {
+        return null;
+    }*/
+
     @Override
     protected void onPostExecute(Boolean result)
     {
@@ -160,7 +197,7 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
         Bitmap bmp = null;
         try {
             ResizeImage(image.getNativeObjAddr());
-
+            //resize(bmp); //Non-static method 'resize(android.graphics.Bitmap)' cannot be referenced from a static context
             bmp = Bitmap.createBitmap(image.cols(), image.rows(), Bitmap.Config.ARGB_8888);
             Utils.matToBitmap(image, bmp);
         } catch (CvException e) {
@@ -173,7 +210,7 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
 
 
         try {
-        File dest = new File(path.getAbsolutePath() + foldername, filename);
+            File dest = new File(path.getAbsolutePath() + foldername, filename);
 
 
             dest.createNewFile();
@@ -245,20 +282,6 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
         return result;
     }
 
-    public Bitmap getCroppedImage() {
-
-        Bitmap bmp = null;
-
-        try {
-
-            bmp = Bitmap.createBitmap(croppedImage.cols(), croppedImage.rows(), Bitmap.Config.ARGB_8888);
-            Utils.matToBitmap(croppedImage, bmp);
-        }
-        catch (CvException e){Log.d("Exception ",e.getMessage());}
-
-        return bmp;
-    }
-
 
     /*** NATIVE METHODS ***/
     /**
@@ -276,5 +299,95 @@ public class ImageParser extends AsyncTask<Mat, Integer, Boolean> {
     public static native void ResizeImage(long imageAddr);
 
 
+    /*
+    //SOFIA
+    private void showToast(String message) {
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }*/
+
+
+    // SOFIA: Returns max image width, always for portrait mode. Caller needs to swap width / height for
+    // landscape mode.
+
+    private Integer getImageMaxWidth() {
+        if (mImageMaxWidth == null) {
+            // Calculate the max width in portrait mode. This is done lazily since we need to
+            // wait for
+            // a UI layout pass to get the right values. So delay it to first time image
+            // rendering time.
+            mImageMaxWidth = mImageView.getWidth();
+        }
+
+        return mImageMaxWidth;
+    }
+
+    // SOFIA: Returns max image height, always for portrait mode. Caller needs to swap width / height for
+    // landscape mode.
+
+    private Integer getImageMaxHeight() {
+        if (mImageMaxHeight == null) {
+            // Calculate the max width in portrait mode. This is done lazily since we need to
+            // wait for
+            // a UI layout pass to get the right values. So delay it to first time image
+            // rendering time.
+            mImageMaxHeight =
+                    mImageView.getHeight();
+        }
+
+        return mImageMaxHeight;
+    }
+
+    // SOFIA: Gets the targeted width / height.
+
+    private Pair<Integer, Integer> getTargetedWidthHeight() {
+        int targetWidth;
+        int targetHeight;
+        int maxWidthForPortraitMode = getImageMaxWidth();
+        int maxHeightForPortraitMode = getImageMaxHeight();
+        targetWidth = maxWidthForPortraitMode;
+        targetHeight = maxHeightForPortraitMode;
+        return new Pair<>(targetWidth, targetHeight);
+    }
+
+
+
+    //SOFIA
+    public Bitmap resize(Bitmap mImage){
+        // Get the dimensions of the View
+        Pair<Integer, Integer> targetedSize = getTargetedWidthHeight();
+
+        int targetWidth = targetedSize.first;
+        int maxHeight = targetedSize.second;
+
+        // Determine how much to scale down the image
+        float scaleFactor =
+                Math.max(
+                        (float) mImage.getWidth() / (float) targetWidth,
+                        (float) mImage.getHeight() / (float) maxHeight);
+
+        Bitmap resizedBitmap =
+                Bitmap.createScaledBitmap(
+                        mImage,
+                        (int) (mImage.getWidth() / scaleFactor),
+                        (int) (mImage.getHeight() / scaleFactor),
+                        true);
+
+        //mImageView.setImageBitmap(resizedBitmap);
+        return resizedBitmap;
+    }
+
+    public Bitmap getCroppedImage() {
+
+        Bitmap bmp = null;
+
+        try {
+
+            bmp = Bitmap.createBitmap(croppedImage.cols(), croppedImage.rows(), Bitmap.Config.ARGB_8888);
+            Utils.matToBitmap(croppedImage, bmp);
+        }
+        catch (CvException e){Log.d("Exception ",e.getMessage());}
+
+        return bmp;
+    }
 
 }

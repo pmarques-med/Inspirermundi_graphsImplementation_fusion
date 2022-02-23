@@ -11,6 +11,18 @@ android {
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+                abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'mips', 'mips64'
+            }
+        }
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
     }
     buildTypes {
         release {
@@ -96,7 +108,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
     //implementation 'com.google.android.gms:play-services-gcm:16.0.0'
 
-    //implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.0.0'
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.0.0'
     androidTestImplementation 'androidx.test:core:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
 

@@ -1,4 +1,4 @@
-# Install script for directory: D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule
+# Install script for directory: C:/Users/FERRAZ/AndroidStudioProjects/Inspirermundi_graphsImplementation_fusion2/InhalerDetectionModule
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/ProjetoInspirers/Inspirermundi_graphsImplementation - fusion/InhalerDetectionModule/.cxx/cmake/debug/x86/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/FERRAZ/AndroidStudioProjects/Inspirermundi_graphsImplementation_fusion2/InhalerDetectionModule/.cxx/cmake/debug/x86/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

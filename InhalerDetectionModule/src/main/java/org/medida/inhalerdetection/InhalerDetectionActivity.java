@@ -1,5 +1,7 @@
 package org.medida.inhalerdetection;
 
+import static java.sql.DriverManager.println;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -8,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -45,6 +48,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /*
@@ -265,6 +269,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        //Called when the activity is starting.
         Log.i(TAG, "called onCreate");
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -281,6 +286,13 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
         else
             InitView();
+        //SOFIA:
+        //Mat tmp = onCameraFrame(CvCameraViewFrame inputFrame);
+        Mat tmp = onCameraFrame((CvCameraViewFrame) this);
+        //bmp = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
+        Bitmap bmp = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(tmp, bmp);
+        runTextRecognition(bmp);
     }
 
     private boolean CheckPermissions() {
@@ -370,10 +382,10 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     }
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
-        //Log.d(TAG, "InhalerDetection - Frame Acquired "+frameCounter);
+        Log.d(TAG, "InhalerDetection - Frame Acquired " + frameCounter);
         try {
             mRgba = inputFrame.rgba();
-            
+
             if(finished)
                 return mRgba;
 
@@ -391,7 +403,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
             boolean photoTaken = --resultMarkerCount >= 0;
 
             //UpdateOverlay(addr, photoTaken, successResult); //update overlay ignores successResult unless photoTrue is true
-                                                            //yellow on default, green when photo taken + success, red when photo taken + !success
+            //yellow on default, green when photo taken + success, red when photo taken + !success
 
             if(inhalerType == InhalerType.Unknown)
                 TryKeepImages(mRgba);
@@ -425,7 +437,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
             {
                 case Flutiform:
                     template1 = Utils.loadResource(this, R.drawable.templateplusbdedges2cropelipsebb11, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
-                    template2 = Utils.loadResource(this, R.drawable.templateplusbdedges2cropnomouthbb, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
+                    template2 = Utils.loadResource(this, R.drawable.ellipta9_canny_cleanedrotcrop, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
                     template3 = Utils.loadResource(this, R.drawable.templateplusbdedges2crop, Imgcodecs.CV_LOAD_IMAGE_GRAYSCALE);
 
                     templateString = "flutiform";
@@ -600,7 +612,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
 
         if (allowParsing &&
-            (progressBar.getProgress() == progressBar.getMax() || (successCounterTarget == 0 && successCounter > 0) || successCounter >= successCounterTarget))
+                (progressBar.getProgress() == progressBar.getMax() || (successCounterTarget == 0 && successCounter > 0) || successCounter >= successCounterTarget))
         {
             allowParsing = false;
         }
@@ -666,22 +678,22 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
                 successCounter += successResult ? 1 : 0;
 
 
-               //if (successResult) {  // PEDRO REPOR QUANDO O TEMPLATE ESTIVER A FUNCIONAR MELHOR
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            successCounterView.setText(String.valueOf(successCounter));
-                            //parser.runTextRecognition();
-                             parsedImageBMP = parser.getCroppedImage();
-                            try {
-                                imageTextParserQueue.put(parser.getCroppedImage());
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            // PEDRO  when sucess modify to bitmapArrayOfDetectedImages.add(parsedImageBMP);
+                //if (successResult) {  // PEDRO REPOR QUANDO O TEMPLATE ESTIVER A FUNCIONAR MELHOR
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        successCounterView.setText(String.valueOf(successCounter));
+                        //parser.runTextRecognition();
+                        parsedImageBMP = parser.getCroppedImage();
+                        try {
+                            imageTextParserQueue.put(parser.getCroppedImage());
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
-                    });
-               // }
+                        // PEDRO  when sucess modify to bitmapArrayOfDetectedImages.add(parsedImageBMP);
+                    }
+                });
+                // }
 
                 TryKeepImages(parser, successResult);
             }
@@ -776,12 +788,6 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         lastImageName = imageName;
     }
 
-
-
-
-
-
-
     /*
     private void CreateEndDialog() {
 
@@ -840,7 +846,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
     }*/
 
 
-    private void runTextRecognition(Bitmap imageToParse) {
+    public void runTextRecognition(Bitmap imageToParse) {
         int rotationDegree =0;
         //Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.imagem_teste);
         InputImage image = InputImage.fromBitmap(imageToParse, rotationDegree);
@@ -854,8 +860,28 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
                             @Override
                             public void onSuccess(Text visionText) {
                                 // Task completed successfully
-                                // ...
+                                //SOFIA:
                                 String resultadoParsing = "";
+                                List<Text.TextBlock> blocks = visionText.getTextBlocks();
+                                if (blocks.size() == 0) {
+                                    println("No text found");
+                                    return;
+                                }
+                                //mGraphicOverlay.clear();
+                                for (int i = 0; i < blocks.size(); i++) {
+                                    List<Text.Line> lines = blocks.get(i).getLines();
+                                    for (int j = 0; j < lines.size(); j++) {
+                                        List<Text.Element> elements = lines.get(j).getElements();
+                                        for (int k = 0; k < elements.size(); k++) {
+                                            resultadoParsing = resultadoParsing + elements.get(k);
+                                            Log.d(TAG, "InhalerDetection - " + ">"+elements.get(k)+"<");
+
+                                        }
+                                    }
+                                }
+
+
+                                /*String resultadoParsing = "";
                                 for (Text.TextBlock block : visionText.getTextBlocks()) {
                                     //Rect boundingBox = block.getBoundingBox();
                                     //Point[] cornerPoints = block.getCornerPoints();
@@ -869,7 +895,7 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
 
                                         }
                                     }
-                                }
+                                }*/
                                 //TODO if(nao existem mais imagens entao sai senao chama esta funçºao novamente com a imagem seguinte.)
                                 // O resultadoPArsing já devera ser o resultado final
                                 proceedToNextActivity(resultadoParsing);
@@ -880,7 +906,8 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         // Task failed with an exception
-                                        // ...
+                                        //SOFIA:
+                                        e.printStackTrace();
                                     }
                                 });
 
@@ -897,7 +924,6 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
         }catch (Exception e){
             e.printStackTrace();
         }
-
 
         Intent intent = IntentPrepareIntentOutput(successCounter, a , successCounter >= successCounterTarget,parsedImageBMP);
         startActivityForResult(intent, POST_DETECTION_CODE);
@@ -931,12 +957,6 @@ public class InhalerDetectionActivity extends Activity implements CvCameraViewLi
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
 
 
 
